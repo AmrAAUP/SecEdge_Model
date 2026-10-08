@@ -1,0 +1,14 @@
+{
+  "source_url": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/LICENSE",
+  "resolved_url": "https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/LICENSE?%2Fmicrosoft%2FPhi-3-mini-4k-instruct%2Fresolve%2Fmain%2FLICENSE=&etag=%22700edcc5f42c4816520bc554926ad7e0d9e613d7%22",
+  "captured_utc": "2026-10-08T02:35:35.892035+00:00",
+  "bytes": 1105,
+  "sha256": "c49419617a6070bcb197cfe272f7007fdec3e790dbb529cb995473bd69c0bd51",
+  "response_metadata": {
+    "ETag": "\"700edcc5f42c4816520bc554926ad7e0d9e613d7\"",
+    "Last-Modified": null,
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "local_path": "C:\\Users\\MJO\\Downloads\\New folder (9)\\GitHub_evidence_20261008\\third-party-notices\\Microsoft-Phi-3-MIT-LICENSE.txt",
+  "exact_download_bytes_preserved": true
+}

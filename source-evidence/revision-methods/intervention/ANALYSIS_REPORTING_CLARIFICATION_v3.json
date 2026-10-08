@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-06T17:51:15.728645+00:00",
+  "identifier": "XAI-REV-20261006-ANALYSIS-REPORTING-v3",
+  "scope": "Operational validation and reporting clarification while run pending; no live effect events read. Scientific protocol, worker, selection, validity, score arithmetic, statistics, bootstrap and seeds unchanged.",
+  "analysis_script_path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\analyze_pi_sensitivity_v3.py",
+  "prior_analysis_script_sha256": "a835fd187c722be0b3d4cc351fc8a92c83df7d3b33643240ebc86ec071127211",
+  "analysis_script_sha256": "4e374eb13cab44d6322549a0c73f4165ba4edf7240c09c381afec432808df1b6",
+  "prior_script_preserved_at": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\analyze_pi_sensitivity_v3_pre_reporting_clarification.py",
+  "prior_plan_sha256": "0a93a023a7eb6f7cebc454d4a9a3cc7830572e5c8b9e20769a0cac86497793a4",
+  "changes": [
+    "Remove arbitrary <2-second completion-overhead assertion absent from scientific protocol; retain continuation scope and monotonic elapsed assertions.",
+    "Record completion-minus-last-flow elapsed descriptively only; no total or per-flow latency claim.",
+    "Rename distinct_altered_input_hashes to distinct_intervention_input_hashes; includes unchanged substitutions and cached inputs.",
+    "Defined/undefined Spearman counts already present per flow. Aggregate summary previously had undefined only; add matching defined aggregate without changing correlations or confidence intervals."
+  ],
+  "all_non_main_functions_AST_unchanged": true,
+  "top_level_constant_AST_unchanged": true,
+  "only_declared_replacements_applied": true,
+  "line_endings_normalized_to_LF": true,
+  "scientific_statistics_changed": false,
+  "synthetic_checks": {
+    "syntax_compile": "passed",
+    "tied_spearman_defined_and_flat_undefined": "passed",
+    "completion_gap_greater_than_two_seconds_allowed": "passed synthetic6.5seconds",
+    "nonmonotonic_flow_elapsed_rejected": "passed",
+    "incorrect_elapsed_scope_rejected": "passed",
+    "completion_before_last_flow_rejected": "passed",
+    "Spearman_defined_undefined_count_aggregation": "passed synthetic16defined4undefined",
+    "intervention_hash_count_includes_unchanged": "passed synthetic2uniqueincludingnoop"
+  },
+  "unchanged_protocol_worker_hashes": {
+    "INTERVENTION_PROTOCOL_v2.json": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+    "EXECUTION_CONTINUATION_v3.json": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+    "pi_sensitivity_remote_v2.py": "e4a4a6ed9bcbe1e7da63d7485ed352f2f9a83bce0ef5cdce822dbc3c0bb64880",
+    "pi_sensitivity_remote_v3.py": "d70f71e6b7a0797e2e767a3007dfb3631dd03e90a7aaec121816cf3daeb36527"
+  },
+  "live_results_read": false,
+  "completion_gate": "Full analyzer runs only after verified terminal exit0, final complete, immutable prefix and all30 flow_complete events."
+}

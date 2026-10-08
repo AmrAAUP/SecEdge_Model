@@ -1,0 +1,98 @@
+{
+  "title": "Exploratory contextual severity triage pilot",
+  "version": "1.0",
+  "frozen_utc": "2026-10-07T23:48:57.005210+00:00",
+  "status": "Revision-stage exploratory policy replay; not part of the original thirteen targets. Original detector outcomes were already known. This plan is frozen before computing the new pilot summaries; this is not independent preregistration.",
+  "research_question": "How do explicit operational context and retained class uncertainty change severity-aware human triage, and what is the incremental Pi CPU cost?",
+  "populations": [
+    "Original primary 6184-flow test draw",
+    "Original 600-flow realistic-mixture draw"
+  ],
+  "sampling": "Use every saved record in each population without exclusions. Report populations separately; they overlap and are not independent replications. Reusing a flow across hypothetical profiles does not create new independent observations.",
+  "profiles": [
+    {
+      "id": "P1_noncritical",
+      "critical_asset": false,
+      "serious_impact_reported": false,
+      "context_known": true,
+      "description": "Hypothetical noncritical asset with no reported operational impact; attack evidence gives Low triage severity."
+    },
+    {
+      "id": "P2_critical",
+      "critical_asset": true,
+      "serious_impact_reported": false,
+      "context_known": true,
+      "description": "Hypothetical production-critical asset with no reported operational impact; attack evidence gives Moderate triage severity."
+    },
+    {
+      "id": "P3_serious_impact",
+      "critical_asset": true,
+      "serious_impact_reported": true,
+      "context_known": true,
+      "description": "Hypothetical independently reported serious operational impact; High triage severity overrides a Normal model label. This supplied scenario is not an observed dataset impact."
+    },
+    {
+      "id": "P4_unknown",
+      "critical_asset": null,
+      "serious_impact_reported": null,
+      "context_known": false,
+      "description": "No usable asset/impact context; severity remains unassigned and context review is required."
+    }
+  ],
+  "severity_levels": {
+    "Not_indicated": "No attack indicated by the evaluated candidate labels; this does not certify absence of harm.",
+    "Low": "Human review for possible attack on the noncritical hypothetical asset.",
+    "Moderate": "Prioritized human review for possible attack on the critical hypothetical asset.",
+    "High": "Urgent human review because serious impact was supplied independently of the model.",
+    "Unassigned": "Context or model information is insufficient; request review."
+  },
+  "rules": [
+    "Known serious-impact report overrides all model outputs and assigns High plus review.",
+    "Unknown context returns Unassigned plus context review.",
+    "Any non-Normal candidate assigns Low in P1 or Moderate in P2, with review.",
+    "For confidence-aware modes, the inherited written-confidence floor 0.50 triggers review; it never scales the positive severity tier.",
+    "For the uncertainty mode, candidates are the union of the greedy label and the original nominal-95% prediction set. Empty/invalid sets require model review. Existing alert evidence is never discarded.",
+    "If only Normal is indicated with no review trigger, return Not_indicated/routine. Model review without attack evidence returns Unassigned.",
+    "No mitigation, blocking, isolation or external notification is executed."
+  ],
+  "modes": {
+    "label_only": "Greedy-label diagnostic baseline, without the floor.",
+    "confidence_floor": "Greedy label plus the inherited 0.50 confidence floor; main baseline.",
+    "set_augmented": "Greedy label union retained prediction set, plus the same floor; main comparison."
+  },
+  "primary_metrics": [
+    "True attacks assigned routine: count and rate among true attacks",
+    "True Normal records sent to review: count and rate among true Normal",
+    "Overall review count/rate",
+    "Severity and review-reason distributions",
+    "Additional attack referrals and additional Normal referrals relative to confidence-floor baseline"
+  ],
+  "metric_interpretation": "Attack/Normal truth assesses missed referrals and review burden only. No observed severity, impact, safety or operational-outcome labels exist. Do not report severity accuracy, severity F1, harm reduction or calibrated risk. Low/Moderate/High are authored demonstration policy choices, not mappings prescribed or endorsed by NIST/CISA.",
+  "uncertainty_reporting": "Descriptive exact counts and denominators. No p-values or confidence intervals that treat repeated scenario cases or duplicate input blocks as independent incidents.",
+  "implementation_checks": [
+    "Serious-impact override",
+    "Unknown-context review",
+    "Empty-set review",
+    "Prediction-set expansion cannot suppress an existing referral",
+    "Known criticality cannot reduce the positive severity tier",
+    "For fixed non-Normal evidence, confidence never changes Low/Moderate/High"
+  ],
+  "timing": "Local and Pi resident-memory replay using identical JSON inputs and Python standard library. Five warmup batches then thirty timed batches over both primary modes and all four profiles. Report median/p95 batch time normalized by decisions and full-batch time; parsing/setup are separate. No model calls and no claim of end-to-end detection or attribution latency.",
+  "evidence": "Preserve policy, data/code hashes, per-record output ledger, exact aggregates, device metadata and independent arithmetic checks. Sources unchanged.",
+  "references": [
+    {
+      "title": "Guide to Operational Technology (OT) Security",
+      "publisher": "NIST",
+      "identifier": "SP 800-82 Rev. 3",
+      "year": 2023,
+      "url": "https://doi.org/10.6028/NIST.SP.800-82r3",
+      "use": "Contextual rationale: OT risk assessment considers operational and safety consequences and organizational impact categories; it does not supply or validate this pilot policy."
+    },
+    {
+      "title": "CISA National Cyber Incident Scoring System",
+      "publisher": "CISA",
+      "url": "https://www.cisa.gov/sites/default/files/2023-01/cisa_national_cyber_incident_scoring_system_s508c.pdf",
+      "use": "Contextual rationale: severity/priority depends on impact and recovery context; the present pilot does not implement NCISS."
+    }
+  ]
+}

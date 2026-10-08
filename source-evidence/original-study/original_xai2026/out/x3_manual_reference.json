@@ -1,0 +1,32 @@
+{
+ "reference_rate": 0.9799866577718479,
+ "k": 1469,
+ "n": 1499,
+ "wilson95": [
+  0.9715735962015686,
+  0.9859458123641778
+ ],
+ "auto_rate": 0.6304202801867912,
+ "auditor_precision": 1.0,
+ "auditor_recall": 0.6432947583390062,
+ "confusion": {
+  "tp": 945,
+  "fp": 0,
+  "fn": 524,
+  "tn": 30
+ },
+ "content_claims_unsupported": {
+  "sql": [
+   91,
+   99
+  ],
+  "script": [
+   146,
+   146
+  ]
+ },
+ "by_correctness": {
+  "correct": 0.9780380673499268,
+  "wrong": 1.0
+ }
+}

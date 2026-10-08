@@ -1,0 +1,876 @@
+{
+  "protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+  "model": "/home/aaup/Desktop/paper/paper_q1/pi5_q8/pi5_q8/models/secedge-3.8b-q8_0-seed456.gguf",
+  "model_sha256": "c7aaaeefa586f616a1d91fbd007cfbfc7e1844baf7a399e6809cf4d24745d40a",
+  "bundle_sha256": "ff89b459da5c6a60ce62f6c3fa864d003400d63285c628f06a10432250810808",
+  "flows": [
+    {
+      "i": 1,
+      "source_row": 4170,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=3333.0  tcp_dstport=52816.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Upload of unknown-byte file to 0 via HTTP 0. File extension and payload entropy indicate potential malicious binary or web-shell upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 5,
+      "source_row": 6012,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=60230.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 7,
+      "source_row": 2189,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=41.51.79.228  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 41.51.79.228 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 12,
+      "source_row": 5605,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=_googlecast._tcp.local  tcp_len=5353.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 18,
+      "source_row": 1203,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=19792.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 23,
+      "source_row": 2595,
+      "true": "SQL_injection",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=39534.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 27,
+      "source_row": 2361,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=60210.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=208.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 30,
+      "source_row": 6065,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=38908.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=330.0  http_method=GET  http_uri_query=id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53  http_full_uri=http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53  mqtt_topic=0.0",
+      "rationale": "HTTP GET request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53 with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 35,
+      "source_row": 503,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=_googlecast._tcp.local  tcp_len=5353.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 37,
+      "source_row": 2165,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=48828.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=319.0  http_method=GET  http_uri_query=path=http://cirt.net/rfiinc.txt?  http_full_uri=http://192.168.0.128/DVWA/skin/dark/template.php?path=http://cirt.net/rfiinc.txt?  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 42,
+      "source_row": 5249,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=48438.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=330.0  http_method=GET  http_uri_query=CONFIG[main_path]=http://cirt.net/rfiinc.txt?  http_full_uri=http://192.168.0.128/DVWA/sources/template.php?CONFIG[main_path]=http://cirt.net/rfiinc.txt?  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 43,
+      "source_row": 763,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 45,
+      "source_row": 6048,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=6584.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Probe flows to a sweep of destination ports on 192.168.0.170 with no follow-up application traffic. Indicates network service discovery (T1046).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 50,
+      "source_row": 1853,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=53242.0  tcp_dstport=65535.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP/IP stack probe targeting 192.168.0.128 with characteristic OS-fingerprinting flag combinations (none). Consistent with Gather Victim Host Information Software (MITRE ATT&CK T1592.002), used to identify operating system and services for subsequent exploitation.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 55,
+      "source_row": 4095,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47924.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 58,
+      "source_row": 2296,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=174.143.226.251  dst_host=192.168.0.128  tcp_srcport=52384.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 70,
+      "source_row": 5959,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=46706.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP flow to port 80.0 exhibits non-human request cadence and uniform shape. The flow contributes to a distributed Layer-7 DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 79,
+      "source_row": 1275,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=44954.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 44954.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 91,
+      "source_row": 1075,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=59212.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=107.0  http_method=GET  http_uri_query=0.0  http_full_uri=http://192.168.0.128/DVWA/hackable/uploads/hack.php  mqtt_topic=0.0",
+      "rationale": "File-transfer pattern: directional asymmetry (mostly outbound from attacker to target), endpoint is an upload handler. Indicates malicious upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 92,
+      "source_row": 5237,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=56106.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=278.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 100,
+      "source_row": 2390,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=58098.0  tcp_dstport=1883.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 1883.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 103,
+      "source_row": 5458,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=104.109.179.159  dst_host=192.168.0.128  tcp_srcport=61395.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 107,
+      "source_row": 2572,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=38780.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 38780.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 114,
+      "source_row": 2501,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=56322.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=224.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 123,
+      "source_row": 986,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47924.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 124,
+      "source_row": 2229,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=206.202.210.47  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic profile (rate, payload, source-spread) matches the empirical fingerprint of a ping-flood denial-of-service campaign (T1498).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 125,
+      "source_row": 2469,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=59472.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web traffic carries client-side scripting payload designed to execute in victim browser. Classified as cross-site scripting (T1059.007).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 126,
+      "source_row": 6023,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=64399.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 64399.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 127,
+      "source_row": 4103,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=53792.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 138,
+      "source_row": 2235,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=4658.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Probe flows to a sweep of destination ports on 192.168.0.170 with no follow-up application traffic. Indicates network service discovery (T1046).",
+      "confirmation_output_matches_sampled_truth": true
+    }
+  ],
+  "donors": [
+    {
+      "donor_id": "val_normal_14185",
+      "source_partition": "validation",
+      "source_row_zero_based": 14185,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=50879.0  tcp_dstport=1883.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "4415e84b2c2be06d83be29d57f714cfdf42713ec56e4a274da7885680352ea0c",
+      "normalized_block_sha256": "1103a8142936a8eda7f129bdd9e25ed4a955b1ed8ae2d712cb011c35c6bcb8fd",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "50879.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "16.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 10,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "50879.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "16.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "94ca81a056312c93cf0f3cfa1010922f8c692a52337f854aa9ac441794ffcfdd"
+    },
+    {
+      "donor_id": "val_normal_137465",
+      "source_partition": "validation",
+      "source_row_zero_based": 137465,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=63968.0  tcp_dstport=1883.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=14.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0  mqtt_msgtype=1.0",
+      "flow_block_sha256": "99ce8b64ff858d610333d116789f9b18fb2649b7e5f7d856797e6f5c1d2ecb25",
+      "normalized_block_sha256": "c8b108c99cf1a8754357b3bb8fa0dfdf449ca487ccc9c31fd72ab25a76ccfc48",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "63968.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "24.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "14.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 12,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "63968.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "24.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "14.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "1.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "21aa084e268544521cf3928b5556a69f71d72fc9a689174f09c4e63327d2f798"
+    },
+    {
+      "donor_id": "val_normal_316710",
+      "source_partition": "validation",
+      "source_row_zero_based": 316710,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=53431.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "beada933259096a2b894616422595de9063ac2bd4c93ce1564b794101c4d7f12",
+      "normalized_block_sha256": "02858e43893331881ece049048bf21c0a1f53a6af60ed37f4d0bff1e416ee549",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "53431.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "18.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 10,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.128",
+        "ip.dst_host": "192.168.0.101",
+        "tcp.srcport": "1883.0",
+        "tcp.dstport": "53431.0",
+        "tcp.flags": "18.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "8dc9d93596ee484b7b4a7741e6cec5e22946f28866657e0a35dad2e3a334b7c6"
+    },
+    {
+      "donor_id": "val_normal_175587",
+      "source_partition": "validation",
+      "source_row_zero_based": 175587,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=52894.0  tcp_dstport=1883.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "57885daae71d0b0cc7a48633360562fa6b7540ebd666c293ced39c01b14e0ddd",
+      "normalized_block_sha256": "3d15620a8cc9eb2781fa0a40a92ff2b01053152f589e198efa4243d2e3cc93be",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "52894.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "16.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 10,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "52894.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "16.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "350c64db6ee1eb4bdabcf8badc4b8458d72bd53edad52c03fbf5f942ecf2fda7"
+    },
+    {
+      "donor_id": "val_normal_113936",
+      "source_partition": "validation",
+      "source_row_zero_based": 113936,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=53476.0  tcp_dstport=1883.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "bfd2b3a0de8f75b201ab5ebb9ff4cf2db06cca3b5a3476d3c2063b560fd81973",
+      "normalized_block_sha256": "046c7bb646242dacfbc2cbd0bea8933afac6f175e5d2d6bef15f1d8e7a658a4e",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "53476.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "2.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 9,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "53476.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "2.0",
+        "tcp.flags.ack": "0.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "703faf9fa38a57e2c857ed74f533a45c2a3177e6f33c864a8011cae22f1330b8"
+    }
+  ],
+  "field_order": [
+    "src_host",
+    "dst_host",
+    "tcp_srcport",
+    "tcp_dstport",
+    "tcp_flags",
+    "tcp_flags_ack",
+    "tcp_len",
+    "http_method",
+    "http_uri_query",
+    "http_full_uri",
+    "mqtt_topic",
+    "mqtt_msgtype",
+    "dns_qry_name",
+    "arp_opcode"
+  ],
+  "system_prompt": "You are SecEdge, a network-security analyst running on an industrial IoT edge gateway. For each network flow you receive, classify the flow into one of 15 categories, report your confidence as a number in [0,1], justify the classification with reasoning grounded in MITRE ATT&CK, propose a bounded response action, and justify the action. Respond strictly in the specified JSON schema with keys: label, confidence, rationale, action, action_rationale.",
+  "random_control_seed": 20261007,
+  "hardware": {
+    "model": "Raspberry Pi 5 Model B Rev 1.1",
+    "memory": [
+      "MemTotal:       16608176 kB",
+      "MemFree:         5903248 kB",
+      "MemAvailable:   15976720 kB"
+    ],
+    "machine": "aarch64",
+    "kernel": "6.12.75+rpt-rpi-2712",
+    "boot_id": "fce6dba0-f14a-4ff0-8172-e2fc3b72108a",
+    "cpu_count": 4,
+    "thermal_c": 46.85
+  }
+}

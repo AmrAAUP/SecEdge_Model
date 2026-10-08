@@ -1,0 +1,37 @@
+# SecEdge-3.8B constrained output schema (thesis Section 3.6.1, Appendix C).
+#
+# Enforces the five supervised fields at inference time so that every emission is
+# parseable and the action is drawn from the bounded set. Reasoning content
+# inside `rationale` is unconstrained apart from the character restriction below.
+#
+# Two llama.cpp GBNF constraints shape the syntax used here, both verified
+# against the server before this file was fixed:
+#   - a rule must occupy a single line; continuations and multi-line
+#     alternations fail to parse;
+#   - a character class may contain an escaped quote (\") but not a backslash,
+#     so the JSON escape grammar cannot be expressed directly.
+#
+# String content is therefore defined as any character other than a quote,
+# which forbids backslash escapes outright. This is stricter than RFC 8259 and
+# deliberately so: with no escape sequences available the decoder cannot emit a
+# malformed one, which is what the zero-schema-failure property depends on.
+
+# NOTE on whitespace: `ws` is bounded to a single optional space, matching the
+# instruction-tuning corpus exactly. An unbounded whitespace class here is a
+# trap: at
+# the position before the closing brace the model prefers a newline, and with
+# greedy decoding it emits newlines until the token limit instead of closing the
+# object. That yields unparseable output and, on the decision schema, silently
+# destroys the result.
+
+root ::= "{" ws "\"label\":" ws label ws "," ws "\"confidence\":" ws confidence ws "," ws "\"rationale\":" ws string ws "," ws "\"action\":" ws action ws "," ws "\"action_rationale\":" ws string ws "}"
+
+label ::= "\"Normal\"" | "\"DDoS_TCP\"" | "\"DDoS_UDP\"" | "\"DDoS_ICMP\"" | "\"DDoS_HTTP\"" | "\"SQL_injection\"" | "\"Password\"" | "\"Vulnerability_scanner\"" | "\"Uploading\"" | "\"Backdoor\"" | "\"Port_Scanning\"" | "\"XSS\"" | "\"Ransomware\"" | "\"MITM\"" | "\"Fingerprinting\""
+
+action ::= "\"allow\"" | "\"block_ip\"" | "\"isolate_device\"" | "\"drop_packet\"" | "\"escalate\""
+
+confidence ::= "0" | "1" | "0." [0-9] [0-9]? [0-9]?
+
+string ::= "\"" [^\"]* "\""
+
+ws ::= " "?

@@ -1,0 +1,565 @@
+{
+  "experiment": "Exploratory contextual severity triage pilot",
+  "protocol_sha256": "e774579b37f379bf5e2af9ff3b706bac929eb92e7f3ec44c38f6e236b48fc61b",
+  "input_sha256": "60311796b6fb70ee9d897493c4be468b5d785df0d80e96348be7ef927a1c7a2c",
+  "core_sha256": "43b5fc95ec5f3f9593353dd68d0c308e9484f7bb6dd5868e3f411478e22909d9",
+  "ledger_sha256": "b0f1b2efb54d87bd5651af523d738b7ff85f6217d8d3bf17ed3f5b9b2fe12e87",
+  "ledger_rows": 81408,
+  "summary": {
+    "realistic": {
+      "n": 600,
+      "unique_rendered_inputs": 530,
+      "profiles": {
+        "P1_noncritical": {
+          "label_only": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 1,
+            "normal_routed_review_rate": 0.002242152466367713,
+            "all_review": 155,
+            "all_review_rate": 0.25833333333333336,
+            "severity_counts": {
+              "Not_indicated": 445,
+              "Low": 155
+            },
+            "reason_counts": {
+              "routine": 445,
+              "attack_candidate": 155
+            }
+          },
+          "confidence_floor": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 1,
+            "normal_routed_review_rate": 0.002242152466367713,
+            "all_review": 155,
+            "all_review_rate": 0.25833333333333336,
+            "severity_counts": {
+              "Not_indicated": 445,
+              "Low": 155
+            },
+            "reason_counts": {
+              "routine": 445,
+              "attack_candidate": 141,
+              "attack_candidate_and_model_review": 14
+            }
+          },
+          "set_augmented": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 22,
+            "normal_routed_review_rate": 0.04932735426008968,
+            "all_review": 176,
+            "all_review_rate": 0.29333333333333333,
+            "severity_counts": {
+              "Not_indicated": 424,
+              "Low": 155,
+              "Unassigned": 21
+            },
+            "reason_counts": {
+              "routine": 424,
+              "attack_candidate": 140,
+              "model_review": 21,
+              "attack_candidate_and_model_review": 15
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 0,
+            "additional_normal_referrals": 21,
+            "additional_total_referrals": 21
+          }
+        },
+        "P2_critical": {
+          "label_only": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 1,
+            "normal_routed_review_rate": 0.002242152466367713,
+            "all_review": 155,
+            "all_review_rate": 0.25833333333333336,
+            "severity_counts": {
+              "Not_indicated": 445,
+              "Moderate": 155
+            },
+            "reason_counts": {
+              "routine": 445,
+              "attack_candidate": 155
+            }
+          },
+          "confidence_floor": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 1,
+            "normal_routed_review_rate": 0.002242152466367713,
+            "all_review": 155,
+            "all_review_rate": 0.25833333333333336,
+            "severity_counts": {
+              "Not_indicated": 445,
+              "Moderate": 155
+            },
+            "reason_counts": {
+              "routine": 445,
+              "attack_candidate": 141,
+              "attack_candidate_and_model_review": 14
+            }
+          },
+          "set_augmented": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 22,
+            "normal_routed_review_rate": 0.04932735426008968,
+            "all_review": 176,
+            "all_review_rate": 0.29333333333333333,
+            "severity_counts": {
+              "Not_indicated": 424,
+              "Moderate": 155,
+              "Unassigned": 21
+            },
+            "reason_counts": {
+              "routine": 424,
+              "attack_candidate": 140,
+              "model_review": 21,
+              "attack_candidate_and_model_review": 15
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 0,
+            "additional_normal_referrals": 21,
+            "additional_total_referrals": 21
+          }
+        },
+        "P3_serious_impact": {
+          "label_only": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 446,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 600,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "High": 600
+            },
+            "reason_counts": {
+              "reported_serious_impact": 600
+            }
+          },
+          "confidence_floor": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 446,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 600,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "High": 600
+            },
+            "reason_counts": {
+              "reported_serious_impact": 600
+            }
+          },
+          "set_augmented": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 446,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 600,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "High": 600
+            },
+            "reason_counts": {
+              "reported_serious_impact": 600
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 0,
+            "additional_normal_referrals": 0,
+            "additional_total_referrals": 0
+          }
+        },
+        "P4_unknown": {
+          "label_only": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 446,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 600,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "Unassigned": 600
+            },
+            "reason_counts": {
+              "context_review": 600
+            }
+          },
+          "confidence_floor": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 446,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 600,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "Unassigned": 600
+            },
+            "reason_counts": {
+              "context_review": 600
+            }
+          },
+          "set_augmented": {
+            "n": 600,
+            "true_attacks": 154,
+            "true_normal": 446,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 446,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 600,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "Unassigned": 600
+            },
+            "reason_counts": {
+              "context_review": 600
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 0,
+            "additional_normal_referrals": 0,
+            "additional_total_referrals": 0
+          }
+        }
+      }
+    },
+    "test": {
+      "n": 6184,
+      "unique_rendered_inputs": 4979,
+      "profiles": {
+        "P1_noncritical": {
+          "label_only": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 1,
+            "attacks_routed_routine_rate": 0.00017439832577607255,
+            "normal_routed_review": 5,
+            "normal_routed_review_rate": 0.011111111111111112,
+            "all_review": 5738,
+            "all_review_rate": 0.9278783958602846,
+            "severity_counts": {
+              "Low": 5738,
+              "Not_indicated": 446
+            },
+            "reason_counts": {
+              "attack_candidate": 5738,
+              "routine": 446
+            }
+          },
+          "confidence_floor": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 1,
+            "attacks_routed_routine_rate": 0.00017439832577607255,
+            "normal_routed_review": 5,
+            "normal_routed_review_rate": 0.011111111111111112,
+            "all_review": 5738,
+            "all_review_rate": 0.9278783958602846,
+            "severity_counts": {
+              "Low": 5738,
+              "Not_indicated": 446
+            },
+            "reason_counts": {
+              "attack_candidate": 4913,
+              "attack_candidate_and_model_review": 825,
+              "routine": 446
+            }
+          },
+          "set_augmented": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 36,
+            "normal_routed_review_rate": 0.08,
+            "all_review": 5770,
+            "all_review_rate": 0.9330530401034929,
+            "severity_counts": {
+              "Low": 5738,
+              "Not_indicated": 414,
+              "Unassigned": 32
+            },
+            "reason_counts": {
+              "attack_candidate": 4855,
+              "attack_candidate_and_model_review": 883,
+              "routine": 414,
+              "model_review": 32
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 1,
+            "additional_normal_referrals": 31,
+            "additional_total_referrals": 32
+          }
+        },
+        "P2_critical": {
+          "label_only": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 1,
+            "attacks_routed_routine_rate": 0.00017439832577607255,
+            "normal_routed_review": 5,
+            "normal_routed_review_rate": 0.011111111111111112,
+            "all_review": 5738,
+            "all_review_rate": 0.9278783958602846,
+            "severity_counts": {
+              "Moderate": 5738,
+              "Not_indicated": 446
+            },
+            "reason_counts": {
+              "attack_candidate": 5738,
+              "routine": 446
+            }
+          },
+          "confidence_floor": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 1,
+            "attacks_routed_routine_rate": 0.00017439832577607255,
+            "normal_routed_review": 5,
+            "normal_routed_review_rate": 0.011111111111111112,
+            "all_review": 5738,
+            "all_review_rate": 0.9278783958602846,
+            "severity_counts": {
+              "Moderate": 5738,
+              "Not_indicated": 446
+            },
+            "reason_counts": {
+              "attack_candidate": 4913,
+              "attack_candidate_and_model_review": 825,
+              "routine": 446
+            }
+          },
+          "set_augmented": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 36,
+            "normal_routed_review_rate": 0.08,
+            "all_review": 5770,
+            "all_review_rate": 0.9330530401034929,
+            "severity_counts": {
+              "Moderate": 5738,
+              "Not_indicated": 414,
+              "Unassigned": 32
+            },
+            "reason_counts": {
+              "attack_candidate": 4855,
+              "attack_candidate_and_model_review": 883,
+              "routine": 414,
+              "model_review": 32
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 1,
+            "additional_normal_referrals": 31,
+            "additional_total_referrals": 32
+          }
+        },
+        "P3_serious_impact": {
+          "label_only": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 450,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 6184,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "High": 6184
+            },
+            "reason_counts": {
+              "reported_serious_impact": 6184
+            }
+          },
+          "confidence_floor": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 450,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 6184,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "High": 6184
+            },
+            "reason_counts": {
+              "reported_serious_impact": 6184
+            }
+          },
+          "set_augmented": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 450,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 6184,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "High": 6184
+            },
+            "reason_counts": {
+              "reported_serious_impact": 6184
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 0,
+            "additional_normal_referrals": 0,
+            "additional_total_referrals": 0
+          }
+        },
+        "P4_unknown": {
+          "label_only": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 450,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 6184,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "Unassigned": 6184
+            },
+            "reason_counts": {
+              "context_review": 6184
+            }
+          },
+          "confidence_floor": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 450,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 6184,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "Unassigned": 6184
+            },
+            "reason_counts": {
+              "context_review": 6184
+            }
+          },
+          "set_augmented": {
+            "n": 6184,
+            "true_attacks": 5734,
+            "true_normal": 450,
+            "attacks_routed_routine": 0,
+            "attacks_routed_routine_rate": 0.0,
+            "normal_routed_review": 450,
+            "normal_routed_review_rate": 1.0,
+            "all_review": 6184,
+            "all_review_rate": 1.0,
+            "severity_counts": {
+              "Unassigned": 6184
+            },
+            "reason_counts": {
+              "context_review": 6184
+            }
+          },
+          "main_comparison": {
+            "additional_attack_referrals": 0,
+            "additional_normal_referrals": 0,
+            "additional_total_referrals": 0
+          }
+        }
+      }
+    }
+  },
+  "implementation_checks": [
+    {
+      "property": "Known criticality never reduces assigned severity",
+      "pass": true,
+      "cases": 225,
+      "interpretation": "Deterministic implementation property, not empirical severity validation."
+    },
+    {
+      "property": "Supplied serious impact overrides model outputs",
+      "pass": true,
+      "cases": 225,
+      "interpretation": "Deterministic implementation property, not empirical severity validation."
+    },
+    {
+      "property": "Unknown context always requests context review",
+      "pass": true,
+      "cases": 225,
+      "interpretation": "Deterministic implementation property, not empirical severity validation."
+    },
+    {
+      "property": "Prediction-set expansion never suppresses a referral",
+      "pass": true,
+      "cases": 4500,
+      "interpretation": "Deterministic implementation property, not empirical severity validation."
+    },
+    {
+      "property": "Empty prediction set requests review",
+      "pass": true,
+      "cases": 300,
+      "interpretation": "Deterministic implementation property, not empirical severity validation."
+    },
+    {
+      "property": "Confidence never changes positive Low/Moderate tiers",
+      "pass": true,
+      "cases": 75,
+      "interpretation": "Deterministic implementation property, not empirical severity validation."
+    }
+  ],
+  "interpretation": "Attack/Normal truth assesses missed referrals and review burden only. No observed severity, impact, safety or operational-outcome labels exist. Do not report severity accuracy, severity F1, harm reduction or calibrated risk. Low/Moderate/High are authored demonstration policy choices, not mappings prescribed or endorsed by NIST/CISA."
+}

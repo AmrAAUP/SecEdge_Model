@@ -1,0 +1,62 @@
+{
+ "title": "XAI-2026 pre-registration — SecEdge-3.8B explanation and uncertainty",
+ "registered_at": "2026-09-11T00:55:31+0100",
+ "status_at_registration": "Phase 0 gates passed; no test-draw record generated or scored yet.",
+ "frozen_inputs": {
+  "test_draw_largesample_n6184_sha256": "265dfd567e0622b6017e00aeb2741546de77b3a6d855fc194191a304d46e4623",
+  "realistic_n600_sha256": "8b95f452a7e8428d8dadbe3d4068a02c93e1b459cb0a2747b3103dff02535c7c",
+  "phase0_gates_sha256": "7132742a4a5e6ed868db2766b434b45d052d8dd65a7a4bd0c36593f887b4cd9d",
+  "models_sha256": {
+   "q8_s456": "c7aaaeefa586f616a1d91fbd007cfbfc7e1844baf7a399e6809cf4d24745d40a",
+   "q8_s42": "178f3ea5e20039e9e75c0622d8cd1378c5a0d66dc12b8b6438187dbb34f71d24",
+   "q8_s123": "83810c836b7d5058b49c9716e11d6c1e7193d45328109e345dbe167e3dd64153",
+   "bf16_s456": "7ce52993c71fab63ccac7cacc6d0f36983a6f436ecf7721eff966eb7c083c221",
+   "q4_s456": "43c53b8a116d8f6d96c4ad621adfe3fee835bac24318073e15a25055bef4026e"
+  },
+  "llama_cpp_build": "b10155 (1cbfd1988), CUDA, greedy, grammar secedge_decision.gbnf / secedge.gbnf",
+  "prompt_path": "HF token ids (oracle 300/300)"
+ },
+ "draws": {
+  "val_cal": "validation split, stratified by Attack_type, <=250 per class, pandas sample random_state=2026 — fitting only",
+  "val_sub1500": "100/class subset of val_cal (random_state=2026)",
+  "val_sub300": "20/class subset of val_sub1500",
+  "test": "largesample_n6184 (frozen)",
+  "realistic": "realistic_n600 (frozen)",
+  "test_sub1500": "100/class subset of test (random_state=2026)",
+  "test_sub300": "20/class subset of test_sub1500"
+ },
+ "analysis": {
+  "correctness": "greedy grammar label == true label",
+  "calibrators": [
+   "verbal_raw",
+   "verbal_hist(15 equal-mass bins)",
+   "verbal_isotonic",
+   "intrinsic_raw",
+   "intrinsic_ts(15-class temperature scaling, NLL)",
+   "stack(logistic on logit v, log pmax, margin, entropy, logit gate pmax, logit gate p(label), agreement)"
+  ],
+  "primary_selection": "primary calibrator = lowest 5-fold-CV ECE on val; primary ranking signal = highest 5-fold-CV AUROC on val; test never used for selection",
+  "ece": "15 equal-width bins (primary); 15 equal-mass bins (secondary)",
+  "uncertainty": "flow-level percentile bootstrap (2,000 for per-method CIs; 10,000 for paired primary-vs-verbal deltas)",
+  "conformal": "split conformal on temperature-scaled intrinsic distribution; LAC primary, APS secondary; Mondrian (class-conditional) primary, marginal secondary; alpha in {0.10,0.05,0.01}; calibration = val_cal only",
+  "per_class_tolerance": "1.645*sqrt(a(1-a)(1/n_cal_c + 1/n_test_c))",
+  "ambiguous_flow": "test flow whose rendered flow block occurs in the TRAIN split with >=2 distinct labels (vectorised renderer validated against build_flow_block)",
+  "deferral": "threshold fixed on val to catch 40.6% of val errors; report correct-deferred per error caught on test; baseline = verbal confidence with the deployed 0.50 floor"
+ },
+ "targets": {
+  "A-T1": "primary calibrator test ECE <= 0.03 and 95% CI upper <= 0.04",
+  "A-T2": "primary ranking test AUROC(correct vs incorrect) >= 0.90",
+  "A-T3": "primary ranking test AURC <= 0.0145",
+  "A-T4": "Mondrian LAC alpha=0.05 on test: every class coverage >= 0.95 - tolerance; mean set size <= 1.30; singleton rate >= 0.85",
+  "A-T5": "multi-label-set rate on ambiguous test flows >= 3x the rate on unambiguous flows",
+  "A-T6": "<= 2 correct deferrals per error caught at the val-fixed 40.6% catch threshold (primary ranking signal)",
+  "B-T1": "descriptive: hallucinated-value and unobservable-claim rates of full-schema rationales (test_sub1500), with Wilson 95% CIs",
+  "B-T2": "counterfactual comprehensiveness@3 >= 2x random-field comprehensiveness@3",
+  "B-T3": "evidence-bound explanation comprehensiveness@3 >= 1.5x template-cited-field comprehensiveness@3, with 0 hallucinated values and 0 unobservable claims",
+  "B-T4": "SLM-counterfactual vs gate-TreeSHAP top-3 overlap >= 0.6 => SHAP certified as on-device attribution proxy (< 5 ms)",
+  "C-T1": "direction (paired): Q4_K_M has larger mean conformal set size and higher unobservable-claim rate than Q8_0",
+  "D-T1": "GPU vs Pi 5: label agreement >= 99% and mean |delta pmax| <= 0.02 on 150 flows",
+  "D-T2": "trie scoring adds <= 10% to on-device decision latency"
+ },
+ "reporting_rule": "every target is reported PASS or FAIL as measured; no target, threshold or analysis choice is changed after registration; deviations are listed explicitly."
+}

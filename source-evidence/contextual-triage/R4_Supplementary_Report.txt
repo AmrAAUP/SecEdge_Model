@@ -1,0 +1,59 @@
+R4. EXPLORATORY CONTEXTUAL SEVERITY-TRIAGE PILOT
+Supplement to Explainable Intrusion Detection with Language Models on GPU-Free Edge Devices
+
+Purpose and status
+This revision-stage pilot evaluates an explicit referral policy on retained detector outputs. It demonstrates how attack evidence, uncertainty and supplied operational context can produce different review priorities. It does not train or validate a severity classifier. The original outputs were already available when the policy was written. PROTOCOL.json was frozen before the new replay summaries; this is an exploratory revision protocol, not an independently timestamped original preregistration or a fourteenth acceptance target.
+
+Inputs and comparison
+Every saved occurrence from the original 6,184-record stratified test draw and 600-record realistic draw is replayed, separately, using the primary seed-456 checkpoint's greedy label, raw written confidence and retained nominal 95% prediction set. The first draw contains 5,734 attack and 450 Normal labels; the second contains 154 attack and 446 Normal labels. These truth labels assess routing of attacks and review burden on Normal records, not actual incident severity.
+
+The main baseline uses the greedy label and a written-confidence floor of 0.50. The main comparison unions that label with the saved prediction set and retains the same floor. Any attack candidate prompts review. An empty or invalid set prompts model review rather than being discarded; an invalid label or invalid/low confidence also prompts review. Normal-only evidence without such a review trigger yields Not_indicated and routine routing, which does not certify safety. Label-only routing is retained as a diagnostic arm. Confidence can trigger review but does not multiply or scale the positive severity tier.
+
+Four supplied hypothetical profiles
+Profile             Supplied context                       Output rule
+P1_noncritical      Known noncritical asset, no reported    Attack candidate: Low + review.
+                    serious impact                         Otherwise Not_indicated, or
+                                                           Unassigned if model review needed.
+P2_critical         Known critical asset, no reported       Attack candidate: Moderate + review.
+                    serious impact                         Otherwise as P1.
+P3_serious_impact   Independently supplied serious         High + review for every record,
+                    operational-impact report              irrespective of prediction.
+P4_unknown          Asset/impact context unavailable       Unassigned + context review
+                                                           for every record.
+
+The serious-impact report is a scenario input, not an observed dataset event. The policy performs no automated mitigation. It assigns no intrinsic severity to a named attack family: the same attack candidate can receive Low or Moderate under different contexts. These tiers are the authors' demonstration policy. NIST's OT and incident-response guidance and CISA's context-sensitive incident scoring provide motivation for considering operational consequences and context [1-3]; they neither prescribe nor endorse these rules. This pilot does not implement the CISA scoring system.
+
+Exact results: baseline -> set-augmented comparison
+For both P1 and P2, routing counts are identical; P1 uses Low and P2 uses Moderate for positive attack evidence.
+
+Population        Attack routine       Normal review       All review
+Stratified 6,184   1/5,734 -> 0/5,734    5/450 -> 36/450     5,738 -> 5,770
+Realistic 600     0/154 -> 0/154        1/446 -> 22/446     155 -> 176
+
+Thus additional review totals are 32 (one attack and 31 Normal) and 21 (zero attacks and 21 Normal), respectively. Normal review rises from 1.11% to 8.00% on the stratified draw and from 0.22% to 4.93% on the realistic draw. The diagnostic label-only arm has the same routing counts as the confidence-floor baseline on these saved records.
+
+Set-augmented tier counts are:
+Population        P1                        P2                       P3          P4
+Stratified        Low 5,738;                Moderate 5,738;          High 6,184  Unassigned
+                  Unassigned 32;            Unassigned 32;                        6,184
+                  Not_indicated 414         Not_indicated 414
+Realistic         Low 155;                  Moderate 155;            High 600    Unassigned
+                  Unassigned 21;            Unassigned 21;                        600
+                  Not_indicated 424         Not_indicated 424
+
+Every additional referral arises from an empty prediction set and remains Unassigned. No additional Low or Moderate assignment is produced by prediction-set attack content. The newly reviewed attack is stratified row 1728 (Backdoor), whose greedy prediction was Normal with written confidence 0.997 and an empty set. There is no corresponding attack recovery on the realistic draw. This illustrates fallback review and its cost in additional Normal referrals, rather than new positive severity classification. P3 and P4 send all records to review by construction and therefore do not establish empirical incident-priority accuracy. All 102 stratified and 23 realistic empty sets are retained, including those attached to existing attack predictions.
+
+Implementation and Pi cost
+The scripted fixed-fixture checks pass for criticality monotonicity, serious-impact override, unknown-context review, empty-set review, non-suppression when candidates are added, and confidence separation from positive tiers. These are implementation properties on the tested fixtures, not independent measurements of operational safety.
+
+A separate resident-memory Python replay benchmark evaluates both primary modes under all four profiles: 54,272 decisions per batch, five warm-up batches and 30 timed batches. On Raspberry Pi 5, median batch cost is 79.2165 ms and p95 batch cost is 80.5403 ms, corresponding to 1.45962 and 1.48401 microseconds per decision after batch normalization. The desktop median is 1.28524 microseconds per decision. Desktop and Pi semantic output hashes match exactly. Parsing is separately measured (Pi 22.6608 ms) and excluded from these policy costs, as are model inference, attribution, source I/O, transport, initialization and operational actions. Batch-normalized p95 is not a measured p95 of individual decision latency or an end-to-end detector latency.
+
+Interpretation and reproducibility
+The 6,184 occurrences contain 4,979 distinct rendered inputs; the 600 contain 530. Twenty-five distinct rendered inputs occur in both draws. Profiles repeat the same records and are not additional independent observations. Results are descriptive occurrence counts, with no confidence intervals or significance claims that treat profiles or duplicates as independent. The inherited prediction sets retain the original calibration-reuse and empirical-coverage qualifications.
+
+This pilot supplies a reproducible contextual triage example and demonstrates inexpensive postprocessing on Pi. It does not validate actual severity, industrial harm, urgency calibration, operator benefit or safe control actions. Assessing those outcomes requires observed asset/impact information and an operational evaluation. The supplement retains the frozen protocol, pure policy code, input provenance, complete decision ledger, summaries and benchmark records; it adds no model inference run.
+
+References
+[1] K. Stouffer et al., Guide to Operational Technology (OT) Security, NIST Special Publication 800-82 Rev. 3, September 2023. https://doi.org/10.6028/NIST.SP.800-82r3
+[2] A. Nelson, S. Rekhi, M. Souppaya and K. Scarfone, Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile, NIST Special Publication 800-61 Rev. 3, April 2025. https://doi.org/10.6028/NIST.SP.800-61r3
+[3] Cybersecurity and Infrastructure Security Agency, CISA National Cyber Incident Scoring System (NCISS). Official guidance, accessed 8 October 2026. https://www.cisa.gov/sites/default/files/2023-01/cisa_national_cyber_incident_scoring_system_s508c.pdf

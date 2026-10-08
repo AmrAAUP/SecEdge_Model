@@ -1,0 +1,64 @@
+R5. CONTROLLED SERVICE-IMPACT FORECASTING ON RASPBERRY PI 5
+Supplement: Operational_Severity_Evidence.zip
+
+Purpose and experimental status
+This prospective revision-stage experiment adds observed client outcomes to the earlier hypothetical contextual triage replay in R4. It tests two simple forecasts of later service-impact tiers on a disposable Pi service. It evaluates neither severity learned by the inherited language model nor physical industrial harm. The protocol, thresholds, randomized order and fault probabilities were fixed before this run; local hashes and timestamps are released without a claim of independent timestamp certification. The original thirteen acceptance targets and the R4 policy remain unchanged.
+
+Task, isolation and operational reference
+A new standard-library HTTP endpoint binds only to 127.0.0.1 on an ephemeral port. Each task requests a unique nonce and its deterministic SHA-256 digest. The client independently checks the actual HTTP status, returned nonce/digest and elapsed completion time. A functional success requires HTTP 200, a correct body and completion within the authored 250 ms service objective. Reference outcomes use measured later responses, not the injected condition, expected error counts or configured delay.
+
+Time is measured from actual request-thread start through completion, including the HTTP exchange and body check. Planned-release scheduling lag and queue admission time are not retained. Accordingly, this is request-start latency, not proof of meeting deadlines from an intended arrival schedule. The nominal workload is eight submissions/s, capped at four client workers and eight server handlers; the client timeout is 750 ms and authored sleeps are capped at 450 ms. Faults affect only this created endpoint. No model call, production endpoint, stored-data corruption, configuration change or mitigation action occurs.
+
+Authored service-impact tiers
+For the fraction m of failed functional service-objective requests:
+Tier       Rule                     Early 16-task sample     Later 24-task reference
+None       m = 0                    0 failures               0 failures
+Low        0 < m <= 0.10            1                        1-2
+Moderate   0.10 < m <= 0.30          2-4                      3-7
+High       m > 0.30                 5-16                     8-24
+
+These are impact categories for this service objective, not NIST/CISA incident or industrial-safety severity standards. They cannot establish the real-world importance of a given response error.
+
+Temporal test and comparators
+Seven conditions appear once in each of four randomized blocks, producing 28 episodes (seed 2026100802). Each episode contains 16 earlier monitor tasks, 24 distinct later client tasks and eight healthy reset checks: 448 + 672 + 224 = 1,344 observed requests. Monitor and later tasks have different deterministic nonces and pseudorandom fault realizations.
+
+The functional-monitor persistence forecast maps the earlier fraction of failures of the full functional objective to a tier. The transport-only baseline ignores body correctness and uses earlier HTTP status and completion time. Both forecasts are emitted and flushed before ANY later request starts. The later 24-task sample supplies the reference tier. The same predefined objective in distinct time windows makes this a temporal forecasting test; no tier is scored against the observations that produced its forecast. All failures and all transition episodes are retained, with no outcome-driven rerun or tuning.
+
+Conditions and measured later outcomes
+Each row contains four episodes and 96 later tasks. F/T are exact tier matches for the functional/transport forecast.
+Condition                      Later failures/96   Observed None/Low/Moderate/High   F/T
+Healthy                        0                   4/0/0/0                           4/4, 4/4
+Intermittent 300 ms delay       18                  0/1/3/0                           3/4, 3/4
+Intermittent HTTP 503           21                  0/1/2/1                           1/4, 1/4
+Sustained 450 ms delay          96                  0/0/0/4                           4/4, 4/4
+Incorrect body with HTTP 200    33                  0/0/1/3                           3/4, 0/4
+Healthy -> sustained delay     96                  0/0/0/4                           0/4, 0/4
+Sustained delay -> healthy      0                   4/0/0/0                           0/4, 0/4
+
+Intermittent delay and HTTP-error probabilities are 0.20; incorrect-body probability is 0.25. These configured rates describe manipulations only. The table reports actual observed failures, including their sampling variability. Incorrect bodies model functional response errors, not damage to real stored data.
+
+Full-panel forecast results
+The functional monitor matches 15/28 later tiers (53.6%), versus 12/28 (42.9%) for transport alone. It under-triages 8 and over-triages 5 episodes; the baseline counts are 11 and 5. Among the 12 observed High episodes, the functional monitor identifies 6 (50.0%) and the baseline 4 (33.3%). Thus six High outcomes remain below High even with functional checking. Ordinal mean absolute tier errors are 1.036 and 1.393, respectively; these do not assign clinical, safety or financial costs to tier mistakes.
+
+Confusion matrices: rows observed, columns forecast; order None, Low, Moderate, High.
+Functional monitor             Transport-only baseline
+              N  L  M  H                      N  L  M  H
+None          4  0  0  4        None           4  0  0  4
+Low           0  1  1  0        Low            0  1  1  0
+Moderate      0  2  4  0        Moderate       1  2  3  0
+High          4  0  2  6        High           7  0  1  4
+
+The five stationary conditions yield 15/20 matches for functional checking and 12/20 for transport alone. On the incorrect-body challenge, three episodes are correct only with functional checking, none only with transport, and one is wrong with both. This supports the narrow value of semantic response checks for this deliberately constructed failure mode.
+
+Both forecasts match 0/8 transition episodes: four abrupt onsets are under-triaged and four recoveries over-triaged. These expose persistence lag; the stationary subset is not substituted for the full-panel result. After restoration to healthy operation, all 224 reset requests satisfy the functional objective. Reset success verifies recovery of this endpoint under the test, not reliable automatic mitigation.
+
+Completion, verification and interpretation
+One frozen run completes in about 165.89 s of collector elapsed time, exits zero, produces no stderr and reports a closed service with its service thread stopped. This elapsed time includes workload pacing and injected delays, not a forecast-computation benchmark. A separate AI-agent data-only audit recomputes success flags, all forecasts and later tiers, early-record hashes, unique nonces and exact coverage from the retained fields; both monotonic and UTC records confirm forecast-before-test ordering. Additional AI-agent static and scientific reviews check code boundaries and interpretation. These checks are not human annotation, external peer review or independent experimental replication. Raw response bytes are not saved; the returned fields and fixed-format response hashes support the stated body verification.
+
+The measured outcome is client-visible response correctness/availability/deadline degradation on one isolated endpoint. Twenty-eight episodes, not 1,344 requests, are the tier-forecast units. One Pi and service are reused; four repeats per condition and small samples yield discrete, variable tiers. Results are descriptive for this controlled panel. They show a semantic-monitor benefit and substantial errors, especially under abrupt change, rather than deployment-ready severity performance. General industrial harm, safety-critical priority, analyst benefit and the original LLM's severity capability remain unvalidated.
+
+Methodological context
+Fault-injection research measures the consequences of faults through service performance and availability [1]. NIST OT guidance distinguishes performance, reliability and safety requirements [2]. These motivate measured functional outcomes and the boundary around industrial consequences; neither endorses the authored tier thresholds or forecast policy.
+
+[1] K. Nagaraja, X. Li, R. Bianchini, R. P. Martin and T. D. Nguyen, Using Fault Injection and Modeling to Evaluate the Performability of Cluster-Based Services, USITS 2003. https://www.usenix.org/legacy/events/usits03/tech/full_papers/nagaraja/nagaraja_html/paper.html
+[2] K. Stouffer et al., Guide to Operational Technology (OT) Security, NIST SP 800-82 Rev. 3, September 2023. https://doi.org/10.6028/NIST.SP.800-82r3

@@ -1,0 +1,407 @@
+{
+  "created_utc": "2026-10-06T20:10:11.122812+00:00",
+  "status": "Completed supplementary retrospective experiment; verified completion marker and successful launcher exit",
+  "protocol_identifier": "XAI-REV-20261006-INTERVENTION-v2",
+  "protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+  "script_sha256": "4e374eb13cab44d6322549a0c73f4165ba4edf7240c09c381afec432808df1b6",
+  "result_sha256": "dd8c8aa32b79d52cd52f94d9429686e3819527ee2d870e745d16882574dde61a",
+  "result_bytes": 1469422,
+  "exit_verification_sha256": "bb3fea0cc0c8ba194789ca9940d8620c298abaea019b6ecde34b29bc508bb897",
+  "exit_verification": {
+    "completed_utc": "2026-10-06T20:09:12.017849+00:00",
+    "remote_exit_code": 0,
+    "last_event": "complete",
+    "has_final_complete": true,
+    "scientific_protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+    "execution_amendment_sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+    "worker_sha256": "d70f71e6b7a0797e2e767a3007dfb3631dd03e90a7aaec121816cf3daeb36527",
+    "merged_results_sha256": "dd8c8aa32b79d52cd52f94d9429686e3819527ee2d870e745d16882574dde61a",
+    "merged_results_bytes": 1469422,
+    "old_prefix_bytes": 32408,
+    "old_prefix_events": 86,
+    "new_events": 1752,
+    "immutable_v2_raw_sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+    "immutable_v2_raw_unchanged": true,
+    "merged_prefix_byte_identical": true,
+    "handle": {
+      "started_utc": "2026-10-06T16:55:24.818639+00:00",
+      "protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+      "execution_amendment_sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+      "immutable_v2_prefix_sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+      "merged_path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_results_v3.jsonl",
+      "local_pid": 23984,
+      "remote": {
+        "event": "execution_start",
+        "utc": "2026-10-06T16:55:25Z",
+        "execution_phase": "v3",
+        "execution_amendment_sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+        "pid": 152828,
+        "create_time": 1791305723.97,
+        "boot_id": "fce6dba0-f14a-4ff0-8172-e2fc3b72108a",
+        "protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+        "immutable_v2_prefix_sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+        "immutable_v2_prefix_events": 86,
+        "model": "/home/aaup/Desktop/paper/paper_q1/pi5_q8/pi5_q8/models/secedge-3.8b-q8_0-seed456.gguf"
+      }
+    },
+    "completion": {
+      "event": "complete",
+      "utc": "2026-10-06T20:09:11Z",
+      "execution_phase": "v3",
+      "execution_amendment_sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+      "flows": 30,
+      "protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+      "immutable_v2_prefix_sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+      "immutable_v2_prefix_events": 86,
+      "distinct_model_evaluations": 603,
+      "elapsed_s": 11616.475,
+      "elapsed_scope": "continuation",
+      "prefix_reuse": false,
+      "historical_model_evaluations": 38,
+      "continuation_model_evaluations": 565,
+      "actual_model_evaluations_total": 603,
+      "distinct_input_hashes_evaluated_total": 603
+    }
+  },
+  "remote_pid": 152828,
+  "original_prefix_remote_pid": 152248,
+  "boot_id": "fce6dba0-f14a-4ff0-8172-e2fc3b72108a",
+  "model_sha256": "c7aaaeefa586f616a1d91fbd007cfbfc7e1844baf7a399e6809cf4d24745d40a",
+  "execution_chain": {
+    "amendment_sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+    "immutable_prefix_sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+    "immutable_prefix_events": 86,
+    "immutable_prefix_bytes": 32408,
+    "merged_prefix_byte_identical": true,
+    "cache_and_counter_validation": {
+      "historical_model_evaluations": 38,
+      "continuation_model_evaluations": 565,
+      "actual_model_evaluations_total": 603,
+      "distinct_input_hashes_evaluated_total": 603,
+      "old_historical_hashes_recomputed_for_full_vector": 0,
+      "prior_metric_keys": 83,
+      "new_score_event_keys": 1678,
+      "continuation_cache_sources": {
+        "full_reset_evaluation": 565,
+        "prior_baseline_full": 8,
+        "prior_focal_scalar": 13,
+        "continuation_full": 1092
+      },
+      "counter_scope": "Recorded score evaluations across the retained prefix and continuation. Unlogged interrupted work and the rejected optimization benchmark are excluded."
+    },
+    "scientific_statistics_changed": false
+  },
+  "design": {
+    "n_flow_occurrences": 30,
+    "n_unique_original_input_clusters": 28,
+    "input_cluster_multiplicities": {
+      "1": 26,
+      "2": 2
+    },
+    "n_classes": 15,
+    "flows_per_class": 2,
+    "n_fixed_validation_normal_donors": 5,
+    "held_out_donor_pairs_per_flow": 5,
+    "n_planned_donor_pairs": 150,
+    "n_planned_pairwise_donor_comparisons": 300,
+    "top3_tie_break": "Descending raw single-field log drop, then fixed source field order; exact numerical ties in Spearman receive average ranks.",
+    "ci_unit": "Original input hash clusters, preserving all 30 occurrence weights; fixed donor panel treated as repeated measurements, not independent flows."
+  },
+  "completion_inventory": {
+    "n_events": 1838,
+    "event_counts": {
+      "starting": 1,
+      "tokenization_verified": 1,
+      "model_loaded": 1,
+      "baseline": 30,
+      "single": 1430,
+      "joint": 300,
+      "flow_complete": 30,
+      "execution_start": 1,
+      "execution_resume": 1,
+      "execution_tokenization_verified": 1,
+      "execution_model_loaded": 1,
+      "execution_flow_reused": 1,
+      "execution_progress": 39,
+      "complete": 1
+    }
+  },
+  "baselines": {
+    "planned_and_scored": 30,
+    "fresh_model_evaluations": 28,
+    "cached_events": 2,
+    "distinct_input_hashes": 28,
+    "q_focus_below_floor": 0,
+    "all_class_q_below_floor": 23,
+    "occurrences_with_flagged_issue": 2,
+    "unique_input_clusters_with_flagged_issue": 1,
+    "issue_code_counts": {
+      "tcp_srcport:non_numeric_port": 2
+    }
+  },
+  "interventions": {
+    "single": {
+      "planned_and_scored": 1430,
+      "fresh_model_evaluations": 414,
+      "cached_events": 1016,
+      "unchanged_events": 494,
+      "changed_cached_events": 522,
+      "distinct_intervention_input_hashes": 442,
+      "distinct_intervention_input_hash_scope": "All planned intervention events, including unchanged substitutions and cached inputs.",
+      "q_focus_below_floor": 0,
+      "q_focus_at_or_below_floor": 0,
+      "minimum_raw_q_focus": 2.722225078153814e-10,
+      "negative_drop_events": 173,
+      "events_with_any_flagged_issue": 128,
+      "events_with_newly_flagged_issue": 58,
+      "events_with_baseline_issue": 80,
+      "flagged_issue_code_counts": {
+        "tcp_ack_flag_disagreement_under_zero_omission": 58,
+        "tcp_srcport:non_numeric_port": 70
+      },
+      "introduced_issue_code_counts": {
+        "tcp_ack_flag_disagreement_under_zero_omission": 58
+      }
+    },
+    "joint_leave_one_donor_out": {
+      "planned_and_scored": 150,
+      "fresh_model_evaluations": 91,
+      "cached_events": 59,
+      "unchanged_events": 1,
+      "changed_cached_events": 58,
+      "distinct_intervention_input_hashes": 95,
+      "distinct_intervention_input_hash_scope": "All planned intervention events, including unchanged substitutions and cached inputs.",
+      "q_focus_below_floor": 0,
+      "q_focus_at_or_below_floor": 0,
+      "minimum_raw_q_focus": 1.8413515725656536e-12,
+      "negative_drop_events": 2,
+      "events_with_any_flagged_issue": 9,
+      "events_with_newly_flagged_issue": 9,
+      "events_with_baseline_issue": 10,
+      "flagged_issue_code_counts": {
+        "tcp_ack_flag_disagreement_under_zero_omission": 9
+      },
+      "introduced_issue_code_counts": {
+        "tcp_ack_flag_disagreement_under_zero_omission": 9
+      }
+    },
+    "joint_random": {
+      "planned_and_scored": 150,
+      "fresh_model_evaluations": 70,
+      "cached_events": 80,
+      "unchanged_events": 6,
+      "changed_cached_events": 74,
+      "distinct_intervention_input_hashes": 98,
+      "distinct_intervention_input_hash_scope": "All planned intervention events, including unchanged substitutions and cached inputs.",
+      "q_focus_below_floor": 0,
+      "q_focus_at_or_below_floor": 0,
+      "minimum_raw_q_focus": 8.8188007567438e-11,
+      "negative_drop_events": 19,
+      "events_with_any_flagged_issue": 21,
+      "events_with_newly_flagged_issue": 16,
+      "events_with_baseline_issue": 10,
+      "flagged_issue_code_counts": {
+        "tcp_ack_flag_disagreement_under_zero_omission": 16,
+        "tcp_srcport:non_numeric_port": 5
+      },
+      "introduced_issue_code_counts": {
+        "tcp_ack_flag_disagreement_under_zero_omission": 16
+      }
+    }
+  },
+  "n_planned_single_events": 1430,
+  "n_planned_joint_events": 300,
+  "n_total_score_events_including_baselines": 1760,
+  "n_recorded_actual_model_evaluations": 603,
+  "n_distinct_input_hashes_evaluated": 603,
+  "mean_metrics": {
+    "pairwise_top3_jaccard_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 0.8153333333333334,
+      "median": 0.8,
+      "min": 0.32999999999999996,
+      "max": 1.0,
+      "mean_ci95": [
+        0.7444827586206897,
+        0.8814319196428572
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "pairwise_top3_exact_agreement_fraction": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 0.6533333333333334,
+      "median": 0.6,
+      "min": 0.0,
+      "max": 1.0,
+      "mean_ci95": [
+        0.5310344827586208,
+        0.7724137931034483
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "all_five_top3_sets_identical": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 0.4,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "mean_ci95": [
+        0.21428571428571427,
+        0.5862068965517241
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "pairwise_spearman_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 0.7843221059123813,
+      "median": 0.8528084174597893,
+      "min": -0.1394047787957462,
+      "max": 0.9762159772503841,
+      "mean_ci95": [
+        0.6880858535509632,
+        0.8575147840130884
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "lodo_joint_drop_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 13.023531000681668,
+      "median": 14.111183936271939,
+      "min": 3.2501824688696353e-06,
+      "max": 23.361814381031433,
+      "mean_ci95": [
+        10.566860944075122,
+        15.362488259155432
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "random_joint_drop_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 4.623594410400519,
+      "median": 0.2344285869786283,
+      "min": -0.1250590955644813,
+      "max": 20.633495812046583,
+      "mean_ci95": [
+        2.452951702744931,
+        7.02213705432265
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "paired_lodo_minus_random_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 8.399936590281149,
+      "median": 8.833714951001028,
+      "min": -3.775333079108266,
+      "max": 20.580630643645254,
+      "mean_ci95": [
+        5.700350758321572,
+        11.093266144124941
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "paired_no_introduced_issues_difference_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 8.315849044046045,
+      "median": 8.62802568296858,
+      "min": -3.775333079108266,
+      "max": 19.361415457593818,
+      "mean_ci95": [
+        5.5827364705867755,
+        11.050315387690715
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "lodo_no_introduced_issues_drop_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 12.938166861665517,
+      "median": 14.111183936271939,
+      "min": 0.0,
+      "max": 23.528804925373187,
+      "mean_ci95": [
+        10.505373357872282,
+        15.263009248541321
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    },
+    "random_no_introduced_issues_drop_mean": {
+      "n_flows": 30,
+      "n_clusters": 28,
+      "mean": 4.622317817619471,
+      "median": 0.23223170817410668,
+      "min": -0.08972353380524728,
+      "max": 20.44095340413155,
+      "mean_ci95": [
+        2.415617015375407,
+        7.060789673002563
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261008,
+      "method": "Percentile cluster bootstrap by exact original input hash; sample contributing clusters with replacement and retain every occurrence within each sampled cluster."
+    }
+  },
+  "pairwise_spearman_defined_comparisons": 300,
+  "pairwise_spearman_undefined_comparisons": 0,
+  "no_introduced_issue_subset": {
+    "eligible_matched_donor_pairs": 129,
+    "eligible_flow_occurrences": 30,
+    "definition": "Both LODO and random joint replacements have no newly flagged issue relative to the same original baseline. Existing baseline issues may remain. Within each eligible flow, average only eligible donor-pair differences, then average flow occurrences with cluster resampling."
+  },
+  "runtime": {
+    "measurement": "Separate monotonic elapsed wall times of CPU-only original and continuation workers after model load/tokenization preflight. Not process CPU time or end-to-end decision latency.",
+    "original_prefix_last_completed_flow_elapsed_s": 563.013,
+    "original_prefix_last_completed_flow_id": 1,
+    "continuation_worker_elapsed_s": 11616.475,
+    "continuation_last_flow_complete_elapsed_s": 11616.475,
+    "continuation_completion_minus_last_flow_elapsed_s": 0.0,
+    "completion_minus_last_flow_scope": "Descriptive continuation-worker gap from last flow_complete to complete; no upper-bound acceptance gate and no total or per-flow latency interpretation.",
+    "continuation_flow_increment_elapsed_s": {
+      "n_increment_events": 29,
+      "mean": 400.56810344827585,
+      "median": 414.703,
+      "min": 51.771999999999935,
+      "max": 766.7350000000001
+    },
+    "total_full_experiment_elapsed_s": null,
+    "elapsed_scope_limit": "Original prefix includes unfinished flow5 work after its last flow_complete; that time is not available in a completed-prefix timer. Do not add the clocks or treat continuation increments as complete per-flow decision latencies. Model-loading, interrupted unlogged work, optimization benchmark, SSH and downtime are excluded.",
+    "thermal_c_range": [
+      66.65,
+      70.5
+    ]
+  },
+  "limits": [
+    "New small class-balanced retained-record supplement; no verification of the missing historical 1499-flow intervention study.",
+    "The 5 shared donors are a fixed panel. Cluster intervals describe target-input sampling conditional on that panel, not uncertainty across the full population of possible benign donors.",
+    "Two observations per class and 28 distinct input clusters limit generalization; 150 donor pairs and 300 donor comparisons are not independent observations.",
+    "Literal substitutions mix real donor fields with target fields. Limited port/flag/ACK checks do not establish physical or causal validity of mixed inputs.",
+    "Probability floor 1e-12 censors extremely small scores; raw minimum probabilities and floor counts are retained. Negative drops remain included.",
+    "Stable rank or larger log-drop is input sensitivity under this score definition, not proof of causal correctness or faithful model reasoning.",
+    "Root blind-span review is an additional AI quality check; it does not create a second independent human evaluator or an inter-rater agreement measure."
+  ]
+}

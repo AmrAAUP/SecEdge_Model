@@ -1,0 +1,152 @@
+llama_context: n_ctx_seq (2048) < n_ctx_train (4096) -- the full capacity of the model will not be utilized
+1/150 dec 27.2s trie 1.1s  {"label": "Normal", "confidence": 0.998}
+2/150 dec 29.7s trie 1.1s  {"label": "Normal", "confidence": 0.999 }
+3/150 dec 25.2s trie 1.1s  {"label": "Normal", "confidence": 0.998}
+4/150 dec 27.1s trie 1.1s  {"label": "Normal", "confidence": 0.998}
+5/150 dec 25.7s trie 1.1s  {"label": "Normal", "confidence": 0.998}
+6/150 dec 29.8s trie 1.1s  {"label": "Normal", "confidence": 0.999 }
+7/150 dec 29.7s trie 1.1s  {"label": "Normal", "confidence": 0.999 }
+8/150 dec 29.4s trie 1.1s  {"label": "Normal", "confidence": 0.998 }
+9/150 dec 27.1s trie 1.1s  {"label": "Normal", "confidence": 0.998}
+10/150 dec 27.5s trie 1.1s  {"label": "Normal", "confidence": 0.667}
+11/150 dec 29.2s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.994 }
+12/150 dec 29.1s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.994 }
+13/150 dec 28.5s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+14/150 dec 28.8s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+15/150 dec 29.1s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+16/150 dec 28.9s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+17/150 dec 29.2s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+18/150 dec 29.4s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+19/150 dec 28.8s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+20/150 dec 28.7s trie 1.1s  {"label": "DDoS_TCP", "confidence": 0.989 }
+21/150 dec 26.0s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+22/150 dec 25.1s trie 1.1s  {"label": "DDoS_UDP", "confidence": 0.995}
+23/150 dec 25.3s trie 1.2s  {"label": "DDoS_UDP", "confidence": 0.995}
+24/150 dec 25.3s trie 1.2s  {"label": "DDoS_UDP", "confidence": 0.995}
+25/150 dec 25.4s trie 1.1s  {"label": "DDoS_UDP", "confidence": 0.995}
+26/150 dec 25.4s trie 1.2s  {"label": "DDoS_UDP", "confidence": 0.995}
+27/150 dec 25.4s trie 1.1s  {"label": "DDoS_UDP", "confidence": 0.995}
+28/150 dec 25.4s trie 1.2s  {"label": "DDoS_UDP", "confidence": 0.995}
+29/150 dec 25.3s trie 1.1s  {"label": "DDoS_UDP", "confidence": 0.995}
+30/150 dec 25.2s trie 1.2s  {"label": "DDoS_UDP", "confidence": 0.995}
+31/150 dec 26.3s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+32/150 dec 26.5s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+33/150 dec 26.9s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+34/150 dec 26.9s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+35/150 dec 26.3s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+36/150 dec 26.3s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+37/150 dec 26.3s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+38/150 dec 26.4s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+39/150 dec 26.5s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+40/150 dec 26.3s trie 1.1s  {"label": "DDoS_ICMP", "confidence": 0.996 }
+41/150 dec 26.9s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.318}
+42/150 dec 28.7s trie 1.2s  {"label": "DDoS_HTTP", "confidence": 0.983 }
+43/150 dec 27.4s trie 1.2s  {"label": "XSS", "confidence": 0.212}
+44/150 dec 26.9s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.318}
+45/150 dec 28.3s trie 1.2s  {"label": "DDoS_HTTP", "confidence": 0.719}
+46/150 dec 28.3s trie 1.2s  {"label": "DDoS_HTTP", "confidence": 0.959}
+47/150 dec 27.2s trie 1.2s  {"label": "Password", "confidence": 0.992 }
+48/150 dec 26.8s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.318}
+49/150 dec 29.1s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.981 }
+50/150 dec 28.9s trie 1.2s  {"label": "DDoS_HTTP", "confidence": 0.788 }
+51/150 dec 37.7s trie 1.2s  {"label": "SQL_injection", "confidence": 0.684 }
+52/150 dec 27.9s trie 1.2s  {"label": "SQL_injection", "confidence": 0.981 }
+53/150 dec 27.9s trie 1.2s  {"label": "SQL_injection", "confidence": 0.965 }
+54/150 dec 26.7s trie 1.2s  {"label": "SQL_injection", "confidence": 0.183}
+55/150 dec 27.9s trie 1.2s  {"label": "SQL_injection", "confidence": 0.987 }
+56/150 dec 27.9s trie 1.2s  {"label": "SQL_injection", "confidence": 0.865 }
+57/150 dec 27.7s trie 1.2s  {"label": "SQL_injection", "confidence": 0.965 }
+58/150 dec 52.9s trie 1.2s  {"label": "SQL_injection", "confidence": 0.964}
+59/150 dec 28.6s trie 1.1s  {"label": "SQL_injection", "confidence": 0.988}
+60/150 dec 27.7s trie 1.2s  {"label": "SQL_injection", "confidence": 0.965 }
+61/150 dec 26.8s trie 1.2s  {"label": "Password", "confidence": 0.991}
+62/150 dec 27.4s trie 1.2s  {"label": "Password", "confidence": 0.991 }
+63/150 dec 27.4s trie 1.2s  {"label": "Password", "confidence": 0.989 }
+64/150 dec 28.6s trie 1.2s  {"label": "DDoS_HTTP", "confidence": 0.719}
+65/150 dec 27.0s trie 1.2s  {"label": "Password", "confidence": 0.983}
+66/150 dec 27.5s trie 1.2s  {"label": "Password", "confidence": 0.981 }
+67/150 dec 27.2s trie 1.2s  {"label": "Password", "confidence": 0.218 }
+68/150 dec 27.8s trie 1.1s  {"label": "Password", "confidence": 0.989 }
+69/150 dec 27.9s trie 1.1s  {"label": "Password", "confidence": 0.989 }
+70/150 dec 27.3s trie 1.2s  {"label": "Password", "confidence": 0.989 }
+71/150 dec 33.5s trie 1.2s  {"label": "Vulnerability_scanner", "confidence": 0
+72/150 dec 30.4s trie 1.1s  {"label": "Vulnerability_scanner", "confidence": 0
+73/150 dec 28.7s trie 1.2s  {"label": "Vulnerability_scanner", "confidence": 0
+74/150 dec 35.6s trie 1.2s  {"label": "Vulnerability_scanner", "confidence": 0
+75/150 dec 30.2s trie 1.1s  {"label": "Vulnerability_scanner", "confidence": 0
+76/150 dec 29.0s trie 1.2s  {"label": "Vulnerability_scanner", "confidence": 0
+77/150 dec 30.1s trie 1.1s  {"label": "Vulnerability_scanner", "confidence": 0
+78/150 dec 30.2s trie 1.1s  {"label": "Vulnerability_scanner", "confidence": 0
+79/150 dec 30.2s trie 1.1s  {"label": "Vulnerability_scanner", "confidence": 0
+80/150 dec 33.9s trie 1.2s  {"label": "Vulnerability_scanner", "confidence": 0
+81/150 dec 28.0s trie 1.1s  {"label": "Uploading", "confidence": 0.983 }
+82/150 dec 26.2s trie 1.1s  {"label": "Uploading", "confidence": 0.932 }
+83/150 dec 27.4s trie 1.2s  {"label": "XSS", "confidence": 0.978}
+84/150 dec 28.0s trie 1.1s  {"label": "Uploading", "confidence": 0.978 }
+85/150 dec 26.8s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.318}
+86/150 dec 26.9s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.318}
+87/150 dec 27.2s trie 1.2s  {"label": "XSS", "confidence": 0.993}
+88/150 dec 25.8s trie 1.2s  {"label": "XSS", "confidence": 0.098}
+89/150 dec 26.8s trie 1.1s  {"label": "DDoS_HTTP", "confidence": 0.318}
+90/150 dec 27.7s trie 1.2s  {"label": "Uploading", "confidence": 0.981 }
+91/150 dec 29.0s trie 1.1s  {"label": "Backdoor", "confidence": 0.995 }
+92/150 dec 29.2s trie 1.1s  {"label": "Backdoor", "confidence": 0.991 }
+93/150 dec 29.1s trie 1.1s  {"label": "Backdoor", "confidence": 0.993 }
+94/150 dec 29.2s trie 1.1s  {"label": "Backdoor", "confidence": 0.995 }
+95/150 dec 27.6s trie 1.1s  {"label": "Backdoor", "confidence": 0.879 }
+96/150 dec 27.6s trie 1.1s  {"label": "Backdoor", "confidence": 0.992 }
+97/150 dec 27.9s trie 1.1s  {"label": "Backdoor", "confidence": 0.976 }
+98/150 dec 27.8s trie 1.1s  {"label": "Backdoor", "confidence": 0.992 }
+99/150 dec 23.2s trie 1.1s  {"label": "Ransomware", "confidence": 0.107}
+100/150 dec 23.8s trie 1.1s  {"label": "Ransomware", "confidence": 0.107}
+101/150 dec 23.4s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.233}
+102/150 dec 27.8s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.984 }
+103/150 dec 23.7s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.263}
+104/150 dec 28.6s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.984 }
+105/150 dec 28.5s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.981 }
+106/150 dec 28.6s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.981 }
+107/150 dec 27.9s trie 1.2s  {"label": "Port_Scanning", "confidence": 0.984 }
+108/150 dec 27.8s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.984 }
+109/150 dec 28.3s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.986 }
+110/150 dec 28.5s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.981 }
+111/150 dec 27.4s trie 1.2s  {"label": "XSS", "confidence": 0.993}
+112/150 dec 27.4s trie 1.2s  {"label": "XSS", "confidence": 0.979}
+113/150 dec 22.1s trie 1.1s  {"label": "XSS", "confidence": 0.104}
+114/150 dec 30.9s trie 1.2s  {"label": "XSS", "confidence": 0.416}
+115/150 dec 27.8s trie 1.1s  {"label": "XSS", "confidence": 0.989}
+116/150 dec 25.5s trie 1.1s  {"label": "XSS", "confidence": 0.968}
+117/150 dec 27.2s trie 1.2s  {"label": "XSS", "confidence": 0.978}
+118/150 dec 27.3s trie 1.2s  {"label": "XSS", "confidence": 0.995}
+119/150 dec 25.6s trie 1.1s  {"label": "XSS", "confidence": 0.098}
+120/150 dec 25.9s trie 1.1s  {"label": "XSS", "confidence": 0.098}
+121/150 dec 28.2s trie 1.1s  {"label": "Ransomware", "confidence": 0.619}
+122/150 dec 28.7s trie 1.1s  {"label": "Ransomware", "confidence": 0.999 }
+123/150 dec 29.9s trie 1.1s  {"label": "Ransomware", "confidence": 0.992 }
+124/150 dec 30.0s trie 1.1s  {"label": "Ransomware", "confidence": 0.993 }
+125/150 dec 29.8s trie 1.1s  {"label": "Ransomware", "confidence": 0.993 }
+126/150 dec 27.3s trie 1.2s  {"label": "Ransomware", "confidence": 0.462}
+127/150 dec 28.7s trie 1.1s  {"label": "Ransomware", "confidence": 0.999 }
+128/150 dec 28.7s trie 1.1s  {"label": "Ransomware", "confidence": 0.999 }
+129/150 dec 30.1s trie 1.1s  {"label": "Ransomware", "confidence": 0.993 }
+130/150 dec 23.7s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.263}
+131/150 dec 22.4s trie 1.1s  {"label": "MITM", "confidence": 0.113}
+132/150 dec 24.1s trie 1.1s  {"label": "MITM", "confidence": 0.916}
+133/150 dec 22.4s trie 1.2s  {"label": "MITM", "confidence": 0.113}
+134/150 dec 24.0s trie 1.2s  {"label": "MITM", "confidence": 0.939}
+135/150 dec 22.4s trie 1.1s  {"label": "MITM", "confidence": 0.113}
+136/150 dec 22.3s trie 1.1s  {"label": "MITM", "confidence": 0.113}
+137/150 dec 23.3s trie 1.1s  {"label": "MITM", "confidence": 0.113}
+138/150 dec 23.8s trie 1.1s  {"label": "MITM", "confidence": 0.916}
+139/150 dec 22.3s trie 1.1s  {"label": "MITM", "confidence": 0.113}
+140/150 dec 23.8s trie 1.1s  {"label": "MITM", "confidence": 0.916}
+141/150 dec 28.9s trie 1.1s  {"label": "Fingerprinting", "confidence": 0.735 }
+142/150 dec 23.3s trie 1.1s  {"label": "Ransomware", "confidence": 0.107}
+143/150 dec 28.0s trie 1.2s  {"label": "Fingerprinting", "confidence": 0.954 }
+144/150 dec 28.1s trie 1.2s  {"label": "Fingerprinting", "confidence": 0.954 }
+145/150 dec 28.0s trie 1.2s  {"label": "Fingerprinting", "confidence": 0.954 }
+146/150 dec 28.2s trie 1.2s  {"label": "Fingerprinting", "confidence": 0.954 }
+147/150 dec 25.7s trie 1.1s  {"label": "Fingerprinting", "confidence": 0.411 }
+148/150 dec 28.4s trie 1.1s  {"label": "Fingerprinting", "confidence": 0.715}
+149/150 dec 25.6s trie 1.1s  {"label": "Fingerprinting", "confidence": 0.411 }
+150/150 dec 23.5s trie 1.1s  {"label": "Port_Scanning", "confidence": 0.233}
+DONE

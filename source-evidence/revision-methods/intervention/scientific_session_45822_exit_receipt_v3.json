@@ -1,0 +1,16 @@
+{
+  "scientific_session_id": 45822,
+  "monitor_cell_id": "71",
+  "observation_basis": "Terminal write_stdin tool result from the owned scientific worker session; not an intermediate analyzer run",
+  "observed_terminal_result": {
+    "chunk_id": "892f03",
+    "wall_time_seconds": 25.6263235,
+    "exit_code": 0,
+    "original_token_count": 347,
+    "output": "{\"event\": \"flow_complete\", \"utc\": \"2026-10-06T20:09:11Z\", \"execution_phase\": \"v3\", \"execution_amendment_sha256\": \"bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1\", \"flow_id\": 138, \"event_key\": \"[\\\"flow_complete\\\",138]\", \"ordinal\": 30, \"total\": 30, \"present_fields\": 10, \"distinct_model_evaluations\": 603, \"elapsed_s\": 11616.475, \"elapsed_scope\": \"continuation\", \"thermal_c\": 68.85, \"historical_model_evaluations\": 38, \"continuation_model_evaluations\": 565, \"actual_model_evaluations_total\": 603, \"distinct_input_hashes_evaluated_total\": 603}\r\n{\"event\": \"complete\", \"utc\": \"2026-10-06T20:09:11Z\", \"execution_phase\": \"v3\", \"execution_amendment_sha256\": \"bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1\", \"flows\": 30, \"protocol_sha256\": \"47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d\", \"immutable_v2_prefix_sha256\": \"a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96\", \"immutable_v2_prefix_events\": 86, \"distinct_model_evaluations\": 603, \"elapsed_s\": 11616.475, \"elapsed_scope\": \"continuation\", \"prefix_reuse\": false, \"historical_model_evaluations\": 38, \"continuation_model_evaluations\": 565, \"actual_model_evaluations_total\": 603, \"distinct_input_hashes_evaluated_total\": 603}\r\n{\"remote_exit_code\": 0, \"terminal_proof\": \"pi_sensitivity_terminal_v3.json\", \"has_final_complete\": true, \"merged_prefix_byte_identical\": true}\r\n"
+  },
+  "terminal_proof_filename": "pi_sensitivity_terminal_v3.json",
+  "terminal_proof_sha256": "bb3fea0cc0c8ba194789ca9940d8620c298abaea019b6ecde34b29bc508bb897",
+  "completed_event_ledger_filename": "continuation_completed_event_ledger_v3.json",
+  "completed_event_ledger_sha256": "32e83931b07efc479b5bcaa785123c241a0c55558fc96d7f37d4980196d5ecd5"
+}

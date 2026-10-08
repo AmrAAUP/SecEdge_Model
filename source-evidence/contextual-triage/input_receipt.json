@@ -1,0 +1,181 @@
+{
+  "status": "PASS_EXACT_INPUT_PREPARATION_NO_EXCLUSIONS",
+  "protocol_sha256": "e774579b37f379bf5e2af9ff3b706bac929eb92e7f3ec44c38f6e236b48fc61b",
+  "preparation_script": {
+    "path": "C:\\Users\\MJO\\Downloads\\New folder (9)\\Severity_pilot_20261008\\prepare_inputs_evidence_audit.py",
+    "sha256": "bc55c45e3e840881d26e633c224f1cb268e028e229a93d6c265533b8329b32cf"
+  },
+  "inputs": {
+    "path": "C:\\Users\\MJO\\Downloads\\New folder (9)\\Severity_pilot_20261008\\input_records.json",
+    "sha256": "60311796b6fb70ee9d897493c4be468b5d785df0d80e96348be7ef927a1c7a2c",
+    "bytes": 1888754,
+    "records": 6784,
+    "format": "JSON list, record keys population,row,true,label,confidence,labels_in_set,flow_sha256",
+    "population_ids": [
+      "test",
+      "realistic"
+    ],
+    "confidence_definition": "Original raw written confidence conf, not stack probability or temperature-scaled probability.",
+    "class_order": [
+      "Normal",
+      "DDoS_TCP",
+      "DDoS_UDP",
+      "DDoS_ICMP",
+      "DDoS_HTTP",
+      "SQL_injection",
+      "Password",
+      "Vulnerability_scanner",
+      "Uploading",
+      "Backdoor",
+      "Port_Scanning",
+      "XSS",
+      "Ransomware",
+      "MITM",
+      "Fingerprinting"
+    ],
+    "flow_sha256_definition": "SHA256 of exact UTF8 original flow_block string; no trimming, normalization or label included."
+  },
+  "populations": {
+    "test": {
+      "records": 6184,
+      "truth_counts": {
+        "DDoS_ICMP": 450,
+        "XSS": 450,
+        "Ransomware": 450,
+        "Normal": 450,
+        "Password": 450,
+        "DDoS_UDP": 450,
+        "Vulnerability_scanner": 450,
+        "SQL_injection": 450,
+        "Uploading": 450,
+        "Backdoor": 450,
+        "MITM": 183,
+        "DDoS_TCP": 450,
+        "Port_Scanning": 450,
+        "Fingerprinting": 151,
+        "DDoS_HTTP": 450
+      },
+      "unique_row_keys": 6184,
+      "unique_rendered_inputs": 4979,
+      "duplicate_input_occurrences_beyond_first": 1205,
+      "input_hashes_occurring_more_than_once": 110,
+      "max_input_multiplicity": 141,
+      "invalid_or_missing_written_confidence": 0,
+      "invalid_or_missing_greedy_label": 0,
+      "empty_prediction_sets": 102,
+      "NPZ_column_order_matches_original_config_distribution": true,
+      "temperature_distribution_max_absolute_error": 0.0,
+      "source_row_truth_key_order_and_binary_label_join": true,
+      "NPZ_y_label_correct_join": true
+    },
+    "realistic": {
+      "records": 600,
+      "truth_counts": {
+        "Normal": 446,
+        "DDoS_ICMP": 22,
+        "DDoS_UDP": 30,
+        "DDoS_TCP": 12,
+        "Uploading": 7,
+        "Backdoor": 8,
+        "Vulnerability_scanner": 16,
+        "SQL_injection": 10,
+        "Password": 19,
+        "DDoS_HTTP": 16,
+        "XSS": 7,
+        "Port_Scanning": 4,
+        "Ransomware": 2,
+        "MITM": 1
+      },
+      "unique_row_keys": 600,
+      "unique_rendered_inputs": 530,
+      "duplicate_input_occurrences_beyond_first": 70,
+      "input_hashes_occurring_more_than_once": 9,
+      "max_input_multiplicity": 28,
+      "invalid_or_missing_written_confidence": 0,
+      "invalid_or_missing_greedy_label": 0,
+      "empty_prediction_sets": 23,
+      "NPZ_column_order_matches_original_config_distribution": true,
+      "temperature_distribution_max_absolute_error": 0.0,
+      "source_row_truth_key_order_and_binary_label_join": true,
+      "NPZ_y_label_correct_join": true
+    }
+  },
+  "combined_inputs": {
+    "records": 6784,
+    "unique_rendered_inputs": 5484,
+    "duplicate_occurrences_beyond_first": 1300,
+    "shared_unique_rendered_inputs_between_populations": 25,
+    "test_occurrences_with_input_in_realistic": 424,
+    "realistic_occurrences_with_input_in_test": 93
+  },
+  "source_files": [
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (9)\\Severity_pilot_20261008\\PROTOCOL.json",
+      "sha256": "e774579b37f379bf5e2af9ff3b706bac929eb92e7f3ec44c38f6e236b48fc61b",
+      "bytes": 6329
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\transfer\\bundle\\config.json",
+      "sha256": "1847b7c48c667f0c1fc99f3ef4d89f0c77962eb407f82df2903eeeda211f2dee",
+      "bytes": 10314
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\draws\\manifest.json",
+      "sha256": "184db7d6e35c995ba55add45d6ccccd0a6c5a34c6e1d5c2160e932d97585e099",
+      "bytes": 3306
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\x2_trackA_q8_s456_val_cal.json",
+      "sha256": "0f8aa3581ecfcb324584c7c5cbe5cb6fb062272b55e6b6d6de071f0677d04333",
+      "bytes": 92153
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\x1_q8_s456_test_dec.jsonl",
+      "sha256": "331313450a8604af7ce9e044ae106b4ff49300591142acc566dbee5e7a3c042a",
+      "bytes": 9633995
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\x2_q8_s456_test_scores.npz",
+      "sha256": "a6ccd06eb6422e8efb807ce0c44e1e955d476d246ab8b6b89b3a591fcaf77c57",
+      "bytes": 741930
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\draws\\test_index.csv",
+      "sha256": "f301ca841bc701a0347f8e22e2b3f976b5c5ecff12729743073165b619de314d",
+      "bytes": 101291
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\transfer\\bundle\\artifacts\\samples\\largesample_n6184.csv",
+      "sha256": "265dfd567e0622b6017e00aeb2741546de77b3a6d855fc194191a304d46e4623",
+      "bytes": 3156156
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\x1_q8_s456_realistic_dec.jsonl",
+      "sha256": "e2b60b697c9855eb6db6fb58fe795eb941ecd5cc958b596d63c3f38073c1e182",
+      "bytes": 935167
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\x2_q8_s456_realistic_scores.npz",
+      "sha256": "2ef739928b9419a9a3ea8f23fa924fc988f2a2eebb195f1a57de1a23c50b07d2",
+      "bytes": 76415
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\xai2026\\out\\draws\\realistic_index.csv",
+      "sha256": "ac29a58c669028d815bae76eea5c76ff9001ad56c526cad267a3a191697ae012",
+      "bytes": 7703
+    },
+    {
+      "path": "F:\\server_xai\\FiveCapterThis\\transfer\\bundle\\artifacts\\samples\\realistic_n600.csv",
+      "sha256": "8b95f452a7e8428d8dadbe3d4068a02c93e1b459cb0a2747b3103dff02535c7c",
+      "bytes": 342304
+    }
+  ],
+  "guards": {
+    "source_files_modified": false,
+    "original_scripts_imported_or_executed": false,
+    "models_loaded_or_run": false,
+    "postprocessor_implemented_or_imported": false,
+    "any_record_excluded": false
+  },
+  "interpretation": "Attack/Normal truth may assess referral errors/burden. No observed severity/impact/asset-criticality ground truth is supplied or invented; context comes only from frozen hypothetical protocol profiles."
+}

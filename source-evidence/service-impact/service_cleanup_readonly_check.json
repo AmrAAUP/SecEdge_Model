@@ -1,0 +1,18 @@
+{
+  "captured_utc": "2026-10-08T00:17:39Z",
+  "experimental_pid191141_exists": false,
+  "experimental_port57151_listening": false,
+  "tcp_listeners": [
+    "State  Recv-Q Send-Q Local Address:Port Peer Address:Port",
+    "LISTEN 0      128          0.0.0.0:22        0.0.0.0:*   ",
+    "LISTEN 0      4096         0.0.0.0:111       0.0.0.0:*   ",
+    "LISTEN 0      128             [::]:22           [::]:*   ",
+    "LISTEN 0      4096            [::]:111          [::]:*   "
+  ],
+  "tcp_check_exit": 0,
+  "preexisting_suricata_process": [
+    "    PID COMMAND",
+    "   1436 Suricata-Main"
+  ],
+  "process_check_exit": 0
+}

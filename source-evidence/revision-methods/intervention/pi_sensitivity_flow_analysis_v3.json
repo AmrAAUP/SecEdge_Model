@@ -1,0 +1,2229 @@
+{
+  "protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+  "flows": [
+    {
+      "flow_id": 1,
+      "source_row": 4170,
+      "true": "Uploading",
+      "input_sha256": "a22138121ae272da0b8e6f01c89cedd9b37415a70fe31d600189b88c009cb032",
+      "focus_class": "Uploading",
+      "baseline_q_focus": 0.9999717539662146,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.6145366608505503,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_flags",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        1.0,
+        0.043078758424071266,
+        1.0,
+        0.9169621435980884,
+        0.043078758424071266,
+        1.0,
+        0.9169621435980884,
+        0.043078758424071266,
+        0.2652439024390244,
+        0.9169621435980884
+      ],
+      "lodo_joint_drop_mean": 19.648527771688588,
+      "random_joint_drop_mean": 3.6909743776151465,
+      "paired_lodo_minus_random_mean": 15.957553394073443,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 15.957553394073443,
+      "lodo_no_introduced_issues_drop_mean": 19.648527771688588,
+      "random_no_introduced_issues_drop_mean": 3.6909743776151465
+    },
+    {
+      "flow_id": 5,
+      "source_row": 6012,
+      "true": "XSS",
+      "input_sha256": "3ad3dc66f340f734f49c93aeb3e352af483b81d57bcd102fbd1766d5e1fedaca",
+      "focus_class": "XSS",
+      "baseline_q_focus": 0.6282429004825376,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9263513754860881,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "http_method"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9368777571686603,
+        0.9094529355684999,
+        1.0,
+        0.9094529355684999,
+        0.9538867936758637,
+        0.9368777571686603,
+        0.9169621435980884,
+        0.9094529355684999,
+        0.8810975609756098,
+        0.9094529355684999
+      ],
+      "lodo_joint_drop_mean": 23.256586269622908,
+      "random_joint_drop_mean": 20.633495812046583,
+      "paired_lodo_minus_random_mean": 2.623090457576322,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 3.087851521241636,
+      "lodo_no_introduced_issues_drop_mean": 23.528804925373187,
+      "random_no_introduced_issues_drop_mean": 20.44095340413155
+    },
+    {
+      "flow_id": 7,
+      "source_row": 2189,
+      "true": "DDoS_ICMP",
+      "input_sha256": "45c5b5f967ddf1bd9489f913b92f8e835634bc6c033d6ae14aff4932ef69b0b9",
+      "focus_class": "DDoS_ICMP",
+      "baseline_q_focus": 0.9999915689543976,
+      "present_fields": 7,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9762159772503841,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        1.0,
+        0.9405399431259603,
+        1.0,
+        1.0,
+        0.9405399431259603,
+        1.0,
+        1.0,
+        0.9405399431259603,
+        0.9405399431259603,
+        1.0
+      ],
+      "lodo_joint_drop_mean": 3.8956425794355427,
+      "random_joint_drop_mean": 0.00014491228644744662,
+      "paired_lodo_minus_random_mean": 3.895497667149095,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 3.895497667149095,
+      "lodo_no_introduced_issues_drop_mean": 3.8956425794355427,
+      "random_no_introduced_issues_drop_mean": 0.00014491228644744662
+    },
+    {
+      "flow_id": 12,
+      "source_row": 5605,
+      "true": "MITM",
+      "input_sha256": "fdd718561723c2b10fb788ac3258670a5086d4edbe99071b96364d73d50a9867",
+      "focus_class": "MITM",
+      "baseline_q_focus": 0.9999983199375213,
+      "present_fields": 8,
+      "baseline_issues": [
+        "tcp_srcport:non_numeric_port"
+      ],
+      "pairwise_top3_jaccard_mean": 0.7,
+      "pairwise_top3_exact_agreement_fraction": 0.4,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.97,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "dst_host",
+          "tcp_srcport",
+          "tcp_len"
+        ],
+        [
+          "dst_host",
+          "tcp_srcport",
+          "src_host"
+        ],
+        [
+          "tcp_srcport",
+          "dst_host",
+          "src_host"
+        ],
+        [
+          "dst_host",
+          "tcp_srcport",
+          "tcp_len"
+        ],
+        [
+          "tcp_srcport",
+          "dst_host",
+          "tcp_len"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.975,
+        0.95,
+        1.0,
+        0.975,
+        0.975,
+        0.975,
+        0.95,
+        0.95,
+        0.975,
+        0.975
+      ],
+      "lodo_joint_drop_mean": 11.444697782439553,
+      "random_joint_drop_mean": 8.506875821800042,
+      "paired_lodo_minus_random_mean": 2.9378219606395097,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 2.9378219606395097,
+      "lodo_no_introduced_issues_drop_mean": 11.444697782439553,
+      "random_no_introduced_issues_drop_mean": 8.506875821800042
+    },
+    {
+      "flow_id": 18,
+      "source_row": 1203,
+      "true": "DDoS_UDP",
+      "input_sha256": "83417ef0ccca357238b0462b2d21e71cc3f2374048a2e79ab9dd8d8be0593159",
+      "focus_class": "DDoS_UDP",
+      "baseline_q_focus": 0.9999999423197908,
+      "present_fields": 7,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.7,
+      "pairwise_top3_exact_agreement_fraction": 0.4,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.9053826062539816,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "dst_host",
+          "mqtt_topic",
+          "src_host"
+        ],
+        [
+          "dst_host",
+          "mqtt_topic",
+          "tcp_srcport"
+        ],
+        [
+          "dst_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "dst_host",
+          "mqtt_topic",
+          "src_host"
+        ],
+        [
+          "dst_host",
+          "mqtt_topic",
+          "src_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9615384615384616,
+        0.7565212586013159,
+        1.0,
+        1.0,
+        0.8996469021204838,
+        0.9615384615384616,
+        0.9615384615384616,
+        0.7565212586013159,
+        0.7565212586013159,
+        1.0
+      ],
+      "lodo_joint_drop_mean": 5.543647486703517,
+      "random_joint_drop_mean": 1.9595885673905834e-07,
+      "paired_lodo_minus_random_mean": 5.54364729074466,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 5.54364729074466,
+      "lodo_no_introduced_issues_drop_mean": 5.543647486703517,
+      "random_no_introduced_issues_drop_mean": 1.9595885673905834e-07
+    },
+    {
+      "flow_id": 23,
+      "source_row": 2595,
+      "true": "SQL_injection",
+      "input_sha256": "6daa36e86ca5d0925d3c130569d6df10c3de6c87a9518cef2a5d31c93bae2dac",
+      "focus_class": "SQL_injection",
+      "baseline_q_focus": 0.9991055057278305,
+      "present_fields": 9,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9298777146700296,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "http_method",
+          "http_uri_query",
+          "tcp_dstport"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "http_uri_query"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9333333333333333,
+        0.9166666666666666,
+        0.9833333333333333,
+        0.912141875543738,
+        0.8833333333333333,
+        0.95,
+        0.9958246164193104,
+        0.9333333333333333,
+        0.8619322310183947,
+        0.9288784237188525
+      ],
+      "lodo_joint_drop_mean": 19.97477481791131,
+      "random_joint_drop_mean": 20.18550412126052,
+      "paired_lodo_minus_random_mean": -0.21072930334920983,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": -0.21072930334920983,
+      "lodo_no_introduced_issues_drop_mean": 19.97477481791131,
+      "random_no_introduced_issues_drop_mean": 20.18550412126052
+    },
+    {
+      "flow_id": 27,
+      "source_row": 2361,
+      "true": "Backdoor",
+      "input_sha256": "c2a82d36602d597a55320fd53d18d48f3fe46e52528f525af2d66e6481273e53",
+      "focus_class": "Backdoor",
+      "baseline_q_focus": 0.9999993761237627,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.8449576674904972,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "src_host"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "src_host"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "dst_host"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "src_host"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "src_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.7807200583588265,
+        0.8490330634652238,
+        0.9904761904761905,
+        0.9766226943529525,
+        0.63,
+        0.7904790590883118,
+        0.7794228634059948,
+        0.8392740627357385,
+        0.8275353858384635,
+        0.9860132971832692
+      ],
+      "lodo_joint_drop_mean": 15.499007991725156,
+      "random_joint_drop_mean": 2.067619382377846e-05,
+      "paired_lodo_minus_random_mean": 15.498987315531332,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 15.498987315531332,
+      "lodo_no_introduced_issues_drop_mean": 15.499007991725156,
+      "random_no_introduced_issues_drop_mean": 2.067619382377846e-05
+    },
+    {
+      "flow_id": 30,
+      "source_row": 6065,
+      "true": "SQL_injection",
+      "input_sha256": "4efe418a265bf28a80f85035c05e141e98aa0c813c785ac9b7b7f106db5cf2c0",
+      "focus_class": "SQL_injection",
+      "baseline_q_focus": 0.9994860645963646,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9164953105181031,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "http_uri_query",
+          "tcp_dstport"
+        ],
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9839314453383708,
+        0.870161710874372,
+        0.9452054794520548,
+        0.9886130432447053,
+        0.8715963140583688,
+        0.9563445823849586,
+        0.9633432944855655,
+        0.7972685832618591,
+        0.8545454545454545,
+        0.9339431975353206
+      ],
+      "lodo_joint_drop_mean": 14.183003868535568,
+      "random_joint_drop_mean": 15.088250293937685,
+      "paired_lodo_minus_random_mean": -0.905246425402116,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": -0.905246425402116,
+      "lodo_no_introduced_issues_drop_mean": 14.183003868535568,
+      "random_no_introduced_issues_drop_mean": 15.088250293937685
+    },
+    {
+      "flow_id": 35,
+      "source_row": 503,
+      "true": "MITM",
+      "input_sha256": "fdd718561723c2b10fb788ac3258670a5086d4edbe99071b96364d73d50a9867",
+      "focus_class": "MITM",
+      "baseline_q_focus": 0.9999983199375213,
+      "present_fields": 8,
+      "baseline_issues": [
+        "tcp_srcport:non_numeric_port"
+      ],
+      "pairwise_top3_jaccard_mean": 0.7,
+      "pairwise_top3_exact_agreement_fraction": 0.4,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.97,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "dst_host",
+          "tcp_srcport",
+          "tcp_len"
+        ],
+        [
+          "dst_host",
+          "tcp_srcport",
+          "src_host"
+        ],
+        [
+          "tcp_srcport",
+          "dst_host",
+          "src_host"
+        ],
+        [
+          "dst_host",
+          "tcp_srcport",
+          "tcp_len"
+        ],
+        [
+          "tcp_srcport",
+          "dst_host",
+          "tcp_len"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.975,
+        0.95,
+        1.0,
+        0.975,
+        0.975,
+        0.975,
+        0.95,
+        0.95,
+        0.975,
+        0.975
+      ],
+      "lodo_joint_drop_mean": 11.444697782439553,
+      "random_joint_drop_mean": 0.8930279043361846,
+      "paired_lodo_minus_random_mean": 10.551669878103368,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 10.551669878103368,
+      "lodo_no_introduced_issues_drop_mean": 11.444697782439553,
+      "random_no_introduced_issues_drop_mean": 0.8930279043361846
+    },
+    {
+      "flow_id": 37,
+      "source_row": 2165,
+      "true": "Vulnerability_scanner",
+      "input_sha256": "5b2599cd9bdfe63036372067cd399e26a0535d68872f8725391943e7f7663aab",
+      "focus_class": "Vulnerability_scanner",
+      "baseline_q_focus": 0.9999938538213997,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.8553106307010738,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "http_full_uri",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "http_method",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "http_method",
+          "http_uri_query"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.8551927515557802,
+        0.6879288918430898,
+        0.9908675799086758,
+        0.8473826084954617,
+        0.8899457101438081,
+        0.8919752354936633,
+        0.9725179925282852,
+        0.7152638146977822,
+        0.8090909090909091,
+        0.8929408132532822
+      ],
+      "lodo_joint_drop_mean": 14.039364004008311,
+      "random_joint_drop_mean": 2.0147952764567743,
+      "paired_lodo_minus_random_mean": 12.024568727551536,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 12.331302473269258,
+      "lodo_no_introduced_issues_drop_mean": 14.039364004008311,
+      "random_no_introduced_issues_drop_mean": 1.7080615307390532
+    },
+    {
+      "flow_id": 42,
+      "source_row": 5249,
+      "true": "Vulnerability_scanner",
+      "input_sha256": "1e4d70788f5189b499d21904cf1c9b9ed3a576a7c43d372a42998562b18f6708",
+      "focus_class": "Vulnerability_scanner",
+      "baseline_q_focus": 0.9999898880899036,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.8151430812289991,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "http_uri_query",
+          "tcp_len"
+        ],
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ],
+        [
+          "http_full_uri",
+          "tcp_dstport",
+          "http_uri_query"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.8919752354936633,
+        0.5922566618516668,
+        0.9726027397260274,
+        0.956722299914231,
+        0.6055300708194983,
+        0.9563445823849586,
+        0.9541685964428458,
+        0.6195915847063591,
+        0.6181818181818182,
+        0.9840572227689233
+      ],
+      "lodo_joint_drop_mean": 7.1157642978691715,
+      "random_joint_drop_mean": 4.273970483473941e-06,
+      "paired_lodo_minus_random_mean": 7.115760023898687,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 6.704381487833791,
+      "lodo_no_introduced_issues_drop_mean": 6.704384378780766,
+      "random_no_introduced_issues_drop_mean": 2.890946975975566e-06
+    },
+    {
+      "flow_id": 43,
+      "source_row": 763,
+      "true": "Fingerprinting",
+      "input_sha256": "e361ae3bbbd3c4ff174de1d64c1dbfde83e84408d4ac8f377e1306311c7a25ed",
+      "focus_class": "Fingerprinting",
+      "baseline_q_focus": 0.9999852143785168,
+      "present_fields": 7,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9762159772503841,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "dst_host"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "dst_host"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "dst_host"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "dst_host"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "dst_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        1.0,
+        0.9405399431259603,
+        1.0,
+        1.0,
+        0.9405399431259603,
+        1.0,
+        1.0,
+        0.9405399431259603,
+        0.9405399431259603,
+        1.0
+      ],
+      "lodo_joint_drop_mean": 7.385055637077196,
+      "random_joint_drop_mean": 9.23384871136267,
+      "paired_lodo_minus_random_mean": -1.848793074285474,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": -1.848793074285474,
+      "lodo_no_introduced_issues_drop_mean": 7.385055637077196,
+      "random_no_introduced_issues_drop_mean": 9.23384871136267
+    },
+    {
+      "flow_id": 45,
+      "source_row": 6048,
+      "true": "Port_Scanning",
+      "input_sha256": "8f980916a7e5c6802d015154ee7c14db0685482bd74b2b8fe6fc7fcd3a026d80",
+      "focus_class": "Port_Scanning",
+      "baseline_q_focus": 0.9996430142739274,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.7993282518377142,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "tcp_flags"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.8709677419354839,
+        0.5669817440703095,
+        1.0,
+        0.7153188281085041,
+        0.8337966824563376,
+        0.8709677419354839,
+        0.9432080122846648,
+        0.5669817440703095,
+        0.9097411954075435,
+        0.7153188281085041
+      ],
+      "lodo_joint_drop_mean": 17.511686104934654,
+      "random_joint_drop_mean": 0.001036365404778552,
+      "paired_lodo_minus_random_mean": 17.510649739529875,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 17.89192848388503,
+      "lodo_no_introduced_issues_drop_mean": 17.892946872544467,
+      "random_no_introduced_issues_drop_mean": 0.0010183886594340294
+    },
+    {
+      "flow_id": 50,
+      "source_row": 1853,
+      "true": "Fingerprinting",
+      "input_sha256": "c92b7024b66697f834165a6c6fca8239865ec969e12de1825e8cd8864da96e34",
+      "focus_class": "Fingerprinting",
+      "baseline_q_focus": 0.9999680336059651,
+      "present_fields": 9,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.6,
+      "pairwise_top3_exact_agreement_fraction": 0.2,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.6817232732389097,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "dst_host"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "tcp_flags"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "dst_host"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "dst_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pairwise_spearman_defined": [
+        0.8181818181818182,
+        0.823299044463444,
+        0.6181818181818182,
+        0.8962548338908568,
+        0.5223079959499269,
+        0.9454545454545454,
+        0.6674238124719146,
+        0.34525443800079914,
+        0.7613508865259127,
+        0.41952353926806063
+      ],
+      "lodo_joint_drop_mean": 19.36902814373341,
+      "random_joint_drop_mean": 18.061082207358798,
+      "paired_lodo_minus_random_mean": 1.3079459363746142,
+      "eligible_no_introduced_issue_pairs": 1,
+      "paired_no_introduced_issues_difference_mean": -1.3182552644934376,
+      "lodo_no_introduced_issues_drop_mean": 17.862193718815778,
+      "random_no_introduced_issues_drop_mean": 19.180448983309216
+    },
+    {
+      "flow_id": 55,
+      "source_row": 4095,
+      "true": "Ransomware",
+      "input_sha256": "8b8769b55133d61bc6ab7eb3ee94ef210ee970dc3d028235e3e664094e54a086",
+      "focus_class": "Ransomware",
+      "baseline_q_focus": 0.9999781534956615,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.8528084174597893,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "mqtt_topic",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9368640700305918,
+        0.9466230707600771,
+        0.9904761904761905,
+        0.7042952122737638,
+        0.88,
+        0.9466230707600771,
+        0.731310340973526,
+        0.9661410722190478,
+        0.7120653320005385,
+        0.7136858151040806
+      ],
+      "lodo_joint_drop_mean": 16.77919378672749,
+      "random_joint_drop_mean": 4.810014455194477,
+      "paired_lodo_minus_random_mean": 11.969179331533013,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 12.473532106951623,
+      "lodo_no_introduced_issues_drop_mean": 16.594185551534437,
+      "random_no_introduced_issues_drop_mean": 4.120653444582815
+    },
+    {
+      "flow_id": 58,
+      "source_row": 2296,
+      "true": "DDoS_TCP",
+      "input_sha256": "65f8719b86beb069fd3b87dd998e1a76099a6bbc44d973fc3452826c6b555d25",
+      "focus_class": "DDoS_TCP",
+      "baseline_q_focus": 0.9999999898852112,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.65,
+      "pairwise_top3_exact_agreement_fraction": 0.3,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.9150041139040909,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_len"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "tcp_dstport"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_len"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_len"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9354838709677419,
+        0.8545844406606024,
+        1.0,
+        0.9271819108914474,
+        0.9178869918206469,
+        0.9354838709677419,
+        0.9271819108914474,
+        0.8545844406606024,
+        0.8704717912892322,
+        0.9271819108914474
+      ],
+      "lodo_joint_drop_mean": 12.487723312279186,
+      "random_joint_drop_mean": 10.670645747471118,
+      "paired_lodo_minus_random_mean": 1.8170775648080686,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 1.8170775648080686,
+      "lodo_no_introduced_issues_drop_mean": 12.487723312279186,
+      "random_no_introduced_issues_drop_mean": 10.670645747471118
+    },
+    {
+      "flow_id": 70,
+      "source_row": 5959,
+      "true": "DDoS_HTTP",
+      "input_sha256": "f3ee5c905c0f8d7bc7c9db45a445c4c2caf93c35259b88496c5a773b68205cc7",
+      "focus_class": "DDoS_HTTP",
+      "baseline_q_focus": 0.8298196278146057,
+      "present_fields": 9,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.7084596935211664,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_flags"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_srcport"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9831932773109243,
+        0.31799441532717476,
+        1.0,
+        0.902201178283859,
+        0.30125786715206027,
+        0.9831932773109243,
+        0.8341105233190395,
+        0.31799441532717476,
+        0.5424508028966484,
+        0.902201178283859
+      ],
+      "lodo_joint_drop_mean": 20.455571548080766,
+      "random_joint_drop_mean": -0.1250590955644813,
+      "paired_lodo_minus_random_mean": 20.580630643645254,
+      "eligible_no_introduced_issue_pairs": 1,
+      "paired_no_introduced_issues_difference_mean": 18.347064683381642,
+      "lodo_no_introduced_issues_drop_mean": 18.257341149576394,
+      "random_no_introduced_issues_drop_mean": -0.08972353380524728
+    },
+    {
+      "flow_id": 79,
+      "source_row": 1275,
+      "true": "Password",
+      "input_sha256": "7403dd21c74b8865e43a7a6cccd40565bf13b58ab2a0e1040810d54de753c621",
+      "focus_class": "Password",
+      "baseline_q_focus": 0.7203196531102405,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.41,
+      "pairwise_top3_exact_agreement_fraction": 0.1,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.31862774130466637,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "tcp_flags"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "dst_host"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "tcp_flags_ack"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.2,
+        1.0,
+        0.5,
+        0.2,
+        0.5,
+        0.5,
+        0.2,
+        0.0,
+        0.5
+      ],
+      "pairwise_spearman_defined": [
+        0.5609756097560976,
+        -0.3951416202814862,
+        1.0,
+        0.9057792600832962,
+        0.05644880289735517,
+        0.5609756097560976,
+        0.4680872686336497,
+        -0.3951416202814862,
+        -0.48148515760015625,
+        0.9057792600832962
+      ],
+      "lodo_joint_drop_mean": 16.747688883924248,
+      "random_joint_drop_mean": 0.4223005077266115,
+      "paired_lodo_minus_random_mean": 16.32538837619764,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 17.220584172459873,
+      "lodo_no_introduced_issues_drop_mean": 17.63849092257744,
+      "random_no_introduced_issues_drop_mean": 0.4179067501175682
+    },
+    {
+      "flow_id": 91,
+      "source_row": 1075,
+      "true": "Uploading",
+      "input_sha256": "5a740b32d9491d6269b1e7af458de7c596d6ea914016d5e727a9f58acb10e423",
+      "focus_class": "Uploading",
+      "baseline_q_focus": 0.9999613060731108,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.62,
+      "pairwise_top3_exact_agreement_fraction": 0.3,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.8039395326318658,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "http_full_uri",
+          "tcp_len",
+          "mqtt_topic"
+        ],
+        [
+          "http_full_uri",
+          "mqtt_topic",
+          "tcp_dstport"
+        ],
+        [
+          "http_full_uri",
+          "tcp_len",
+          "mqtt_topic"
+        ],
+        [
+          "http_full_uri",
+          "tcp_len",
+          "mqtt_topic"
+        ],
+        [
+          "http_full_uri",
+          "tcp_len",
+          "tcp_flags_ack"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.2,
+        1.0,
+        0.5,
+        0.5
+      ],
+      "pairwise_spearman_defined": [
+        0.816982446237566,
+        0.7080628158042481,
+        0.8611111111111112,
+        0.6344978479284821,
+        0.8579976892685502,
+        0.9578414886923188,
+        0.7787261636296081,
+        0.8459971305713095,
+        0.8333333333333334,
+        0.7448452997421312
+      ],
+      "lodo_joint_drop_mean": 5.014691121242177,
+      "random_joint_drop_mean": -7.162354042718926e-06,
+      "paired_lodo_minus_random_mean": 5.01469828359622,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 5.01469828359622,
+      "lodo_no_introduced_issues_drop_mean": 5.014691121242177,
+      "random_no_introduced_issues_drop_mean": -7.162354042718926e-06
+    },
+    {
+      "flow_id": 92,
+      "source_row": 5237,
+      "true": "DDoS_HTTP",
+      "input_sha256": "baf0db46b0ff76982258bd27497b9c3c5364b6b39eede318146579d20044d255",
+      "focus_class": "DDoS_HTTP",
+      "baseline_q_focus": 0.999999202657634,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.8393266331148309,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "tcp_len",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "http_method",
+          "tcp_len"
+        ],
+        [
+          "tcp_len",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_len",
+          "http_method"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_len",
+          "tcp_flags_ack"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        0.5,
+        0.5
+      ],
+      "pairwise_spearman_defined": [
+        0.9672320915226356,
+        0.9563445823849586,
+        0.9444444444444444,
+        0.7356496787576604,
+        0.8999649675479903,
+        0.9484508858620019,
+        0.7181067616704171,
+        0.8919752354936633,
+        0.6598173515981736,
+        0.6712803318663652
+      ],
+      "lodo_joint_drop_mean": 16.57941803937616,
+      "random_joint_drop_mean": 0.00013556109768518497,
+      "paired_lodo_minus_random_mean": 16.579282478278476,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 16.579282478278476,
+      "lodo_no_introduced_issues_drop_mean": 16.57941803937616,
+      "random_no_introduced_issues_drop_mean": 0.00013556109768518497
+    },
+    {
+      "flow_id": 100,
+      "source_row": 2390,
+      "true": "Normal",
+      "input_sha256": "ccc5f82f15c2c27c0dee58a2542afb6bdd5098fa3a18b28d2743377fa0340b09",
+      "focus_class": "Normal",
+      "baseline_q_focus": 0.9999934194283855,
+      "present_fields": 9,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.32999999999999996,
+      "pairwise_top3_exact_agreement_fraction": 0.0,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": -0.1394047787957462,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_flags",
+          "tcp_srcport",
+          "src_host"
+        ],
+        [
+          "src_host",
+          "dst_host",
+          "tcp_dstport"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_flags",
+          "http_method"
+        ],
+        [
+          "tcp_flags",
+          "src_host",
+          "dst_host"
+        ],
+        [
+          "tcp_srcport",
+          "src_host",
+          "dst_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.2,
+        0.2,
+        0.5,
+        0.5,
+        0.2,
+        0.5,
+        0.5,
+        0.2,
+        0.0,
+        0.5
+      ],
+      "pairwise_spearman_defined": [
+        -0.96875,
+        -0.02383656473113981,
+        0.125,
+        0.5625,
+        0.19069251784911848,
+        0.125,
+        -0.75,
+        0.6674238124719146,
+        -0.5720775535473553,
+        -0.75
+      ],
+      "lodo_joint_drop_mean": 3.2501824688696353e-06,
+      "random_joint_drop_mean": -9.891187754466398e-07,
+      "paired_lodo_minus_random_mean": 4.239301244316275e-06,
+      "eligible_no_introduced_issue_pairs": 1,
+      "paired_no_introduced_issues_difference_mean": 0.0,
+      "lodo_no_introduced_issues_drop_mean": 0.0,
+      "random_no_introduced_issues_drop_mean": 0.0
+    },
+    {
+      "flow_id": 103,
+      "source_row": 5458,
+      "true": "DDoS_TCP",
+      "input_sha256": "c4c70643742bc1abb90130b9c536b23f17a6d7ca197f5122c2da53cfa1d5c0c6",
+      "focus_class": "DDoS_TCP",
+      "baseline_q_focus": 0.9999999671367382,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.65,
+      "pairwise_top3_exact_agreement_fraction": 0.3,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.7560113218635802,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_len"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_srcport"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_len"
+        ],
+        [
+          "src_host",
+          "tcp_dstport",
+          "tcp_len"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.6774193548387096,
+        0.6140347462524328,
+        1.0,
+        0.9672041516493517,
+        0.8925659713566291,
+        0.6774193548387096,
+        0.6070039848282138,
+        0.6140347462524328,
+        0.543226756969972,
+        0.9672041516493517
+      ],
+      "lodo_joint_drop_mean": 11.744144130264985,
+      "random_joint_drop_mean": 5.5228425967226295e-05,
+      "paired_lodo_minus_random_mean": 11.744088901839017,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 11.744088901839017,
+      "lodo_no_introduced_issues_drop_mean": 11.744144130264985,
+      "random_no_introduced_issues_drop_mean": 5.5228425967226295e-05
+    },
+    {
+      "flow_id": 107,
+      "source_row": 2572,
+      "true": "Password",
+      "input_sha256": "a0bce55a4affe2cdc91d5ace802987f44d02ecfcf9934ea69c901dc549fdcf10",
+      "focus_class": "DDoS_HTTP",
+      "baseline_q_focus": 0.5249654602688112,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.8669615739771945,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.990811443753639,
+        0.7639751552795031,
+        1.0,
+        0.9019083851355778,
+        0.7815717599795786,
+        0.990811443753639,
+        0.8936211492096949,
+        0.7639751552795031,
+        0.6810328622452322,
+        0.9019083851355778
+      ],
+      "lodo_joint_drop_mean": 19.407972123824468,
+      "random_joint_drop_mean": 0.04655666623064514,
+      "paired_lodo_minus_random_mean": 19.361415457593818,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 19.361415457593818,
+      "lodo_no_introduced_issues_drop_mean": 19.407972123824468,
+      "random_no_introduced_issues_drop_mean": 0.04655666623064514
+    },
+    {
+      "flow_id": 114,
+      "source_row": 2501,
+      "true": "Backdoor",
+      "input_sha256": "d4e6336613abc02a2f6095c28bad8b8694c67563deb98bab10207b9488c4ea67",
+      "focus_class": "Backdoor",
+      "baseline_q_focus": 0.9999942928664386,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.7221890863457154,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "tcp_flags"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9759000729485331,
+        0.5074680379332372,
+        1.0,
+        0.849849556143675,
+        0.42,
+        0.9759000729485331,
+        0.8179128813519698,
+        0.5074680379332372,
+        0.31754264805429416,
+        0.849849556143675
+      ],
+      "lodo_joint_drop_mean": 13.876722027615006,
+      "random_joint_drop_mean": 0.009867958569257238,
+      "paired_lodo_minus_random_mean": 13.866854069045749,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 13.866854069045749,
+      "lodo_no_introduced_issues_drop_mean": 13.876722027615006,
+      "random_no_introduced_issues_drop_mean": 0.009867958569257238
+    },
+    {
+      "flow_id": 123,
+      "source_row": 986,
+      "true": "Ransomware",
+      "input_sha256": "8b8769b55133d61bc6ab7eb3ee94ef210ee970dc3d028235e3e664094e54a086",
+      "focus_class": "Ransomware",
+      "baseline_q_focus": 0.9999781534956615,
+      "present_fields": 11,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.8528084174597893,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "mqtt_topic",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.9368640700305918,
+        0.9466230707600771,
+        0.9904761904761905,
+        0.7042952122737638,
+        0.88,
+        0.9466230707600771,
+        0.731310340973526,
+        0.9661410722190478,
+        0.7120653320005385,
+        0.7136858151040806
+      ],
+      "lodo_joint_drop_mean": 16.77919378672749,
+      "random_joint_drop_mean": 0.0011086577012821793,
+      "paired_lodo_minus_random_mean": 16.77808512902621,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 16.593032001041404,
+      "lodo_no_introduced_issues_drop_mean": 16.594185551534437,
+      "random_no_introduced_issues_drop_mean": 0.0011535504930350708
+    },
+    {
+      "flow_id": 124,
+      "source_row": 2229,
+      "true": "DDoS_ICMP",
+      "input_sha256": "2f3ad51bf239ce92d2f6235c015e49e28ecb5639c79ae32f7104ff27d4995e2b",
+      "focus_class": "DDoS_ICMP",
+      "baseline_q_focus": 0.9999924685494679,
+      "present_fields": 7,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9762159772503841,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "src_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        1.0,
+        0.9405399431259603,
+        1.0,
+        1.0,
+        0.9405399431259603,
+        1.0,
+        1.0,
+        0.9405399431259603,
+        0.9405399431259603,
+        1.0
+      ],
+      "lodo_joint_drop_mean": 3.895643479037792,
+      "random_joint_drop_mean": 7.670976558146059,
+      "paired_lodo_minus_random_mean": -3.775333079108266,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": -3.775333079108266,
+      "lodo_no_introduced_issues_drop_mean": 3.895643479037792,
+      "random_no_introduced_issues_drop_mean": 7.670976558146059
+    },
+    {
+      "flow_id": 125,
+      "source_row": 2469,
+      "true": "XSS",
+      "input_sha256": "5d1e63a2953d781910f3caf7fb19e18bfe1021b27d56e8a58b7ee3851c479034",
+      "focus_class": "XSS",
+      "baseline_q_focus": 0.6205426290935738,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.9346106360549076,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "http_method"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.990811443753639,
+        0.8509316770186336,
+        1.0,
+        0.9878044218151566,
+        0.8677292768277212,
+        0.990811443753639,
+        0.9787279253249039,
+        0.8509316770186336,
+        0.8405540732215929,
+        0.9878044218151566
+      ],
+      "lodo_joint_drop_mean": 23.361814381031433,
+      "random_joint_drop_mean": 9.886890697543597,
+      "paired_lodo_minus_random_mean": 13.474923683487834,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": 13.474923683487834,
+      "lodo_no_introduced_issues_drop_mean": 23.361814381031433,
+      "random_no_introduced_issues_drop_mean": 9.886890697543597
+    },
+    {
+      "flow_id": 126,
+      "source_row": 6023,
+      "true": "Normal",
+      "input_sha256": "095231bf64a20f282cf5722b2c21d27b457fb4d7441723ed46c877958d9ddf6f",
+      "focus_class": "Normal",
+      "baseline_q_focus": 0.9999998794958139,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.8,
+      "pairwise_top3_exact_agreement_fraction": 0.6,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.4062599327372505,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "src_host"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "src_host"
+        ],
+        [
+          "src_host",
+          "dst_host",
+          "tcp_srcport"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "src_host"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "src_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        1.0,
+        -0.433289122413121,
+        1.0,
+        0.9271819108914474,
+        -0.433289122413121,
+        1.0,
+        0.9271819108914474,
+        -0.433289122413121,
+        -0.41907903806247476,
+        0.9271819108914474
+      ],
+      "lodo_joint_drop_mean": 8.295600298117085e-06,
+      "random_joint_drop_mean": -5.388485568155413e-08,
+      "paired_lodo_minus_random_mean": 8.34948515379864e-06,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 6.398104767465585e-06,
+      "lodo_no_introduced_issues_drop_mean": 6.358571567233609e-06,
+      "random_no_introduced_issues_drop_mean": -3.9533200231975356e-08
+    },
+    {
+      "flow_id": 127,
+      "source_row": 4103,
+      "true": "DDoS_UDP",
+      "input_sha256": "6e93eb35d9c6a5ea6c31e6458227c0b491594e7700ee9fd74100913b20ef60dd",
+      "focus_class": "DDoS_UDP",
+      "baseline_q_focus": 0.999999697303601,
+      "present_fields": 7,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 0.7,
+      "pairwise_top3_exact_agreement_fraction": 0.4,
+      "all_five_top3_sets_identical": 0.0,
+      "pairwise_spearman_mean": 0.6727233732405767,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "dst_host",
+          "mqtt_topic",
+          "src_host"
+        ],
+        [
+          "dst_host",
+          "mqtt_topic",
+          "tcp_srcport"
+        ],
+        [
+          "dst_host",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "dst_host",
+          "mqtt_topic",
+          "src_host"
+        ],
+        [
+          "dst_host",
+          "mqtt_topic",
+          "src_host"
+        ]
+      ],
+      "pairwise_jaccards": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.6153846153846154,
+        0.32714432804381227,
+        1.0,
+        1.0,
+        0.8996469021204838,
+        0.6153846153846154,
+        0.6153846153846154,
+        0.32714432804381227,
+        0.32714432804381227,
+        1.0
+      ],
+      "lodo_joint_drop_mean": 5.752655341213642,
+      "random_joint_drop_mean": 7.005283280474782,
+      "paired_lodo_minus_random_mean": -1.2526279392611408,
+      "eligible_no_introduced_issue_pairs": 5,
+      "paired_no_introduced_issues_difference_mean": -1.2526279392611408,
+      "lodo_no_introduced_issues_drop_mean": 5.752655341213642,
+      "random_no_introduced_issues_drop_mean": 7.005283280474782
+    },
+    {
+      "flow_id": 138,
+      "source_row": 2235,
+      "true": "Port_Scanning",
+      "input_sha256": "d1ef49c984c938953100602fb4e01023b5798bbd53a9b582ad920d80a4f043f1",
+      "focus_class": "Port_Scanning",
+      "baseline_q_focus": 0.9999588216505614,
+      "present_fields": 10,
+      "baseline_issues": [],
+      "pairwise_top3_jaccard_mean": 1.0,
+      "pairwise_top3_exact_agreement_fraction": 1.0,
+      "all_five_top3_sets_identical": 1.0,
+      "pairwise_spearman_mean": 0.8615829785246621,
+      "pairwise_spearman_defined_pairs": 10,
+      "pairwise_spearman_undefined_pairs": 0,
+      "single_donor_top3_fields": [
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_srcport",
+          "mqtt_topic",
+          "tcp_dstport"
+        ],
+        [
+          "tcp_srcport",
+          "tcp_dstport",
+          "mqtt_topic"
+        ],
+        [
+          "tcp_dstport",
+          "tcp_srcport",
+          "mqtt_topic"
+        ]
+      ],
+      "pairwise_jaccards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pairwise_spearman_defined": [
+        0.8580645161290322,
+        0.7270707071019265,
+        0.9870967741935484,
+        0.9811895429806916,
+        0.9138411639721461,
+        0.8709677419354839,
+        0.8419239304285934,
+        0.7537522009405292,
+        0.7133941748159873,
+        0.9685290327486826
+      ],
+      "lodo_joint_drop_mean": 17.51200197519801,
+      "random_joint_drop_mean": 3.3443674788707445e-06,
+      "paired_lodo_minus_random_mean": 17.511998630830533,
+      "eligible_no_introduced_issue_pairs": 4,
+      "paired_no_introduced_issues_difference_mean": 17.893255134221377,
+      "lodo_no_introduced_issues_drop_mean": 17.893262742807824,
+      "random_no_introduced_issues_drop_mean": 7.608586444795135e-06
+    }
+  ]
+}

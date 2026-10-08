@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-10-06T20:15:05.661462+00:00",
+  "observer": "locate_original",
+  "scope": "Independent completed-chain metadata/hash and immutable v2 raw-prefix verification only. No analyzer rerun, scientific session polling, full raw-ledger output, score/effect inspection or new scientific result calculation.",
+  "status": "passed",
+  "source_hashes": [
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_terminal_v3.json",
+      "sha256": "bb3fea0cc0c8ba194789ca9940d8620c298abaea019b6ecde34b29bc508bb897",
+      "bytes": 2822
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\continuation_completed_event_ledger_v3.json",
+      "sha256": "32e83931b07efc479b5bcaa785123c241a0c55558fc96d7f37d4980196d5ecd5",
+      "bytes": 849050
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_results_v3.jsonl",
+      "sha256": "dd8c8aa32b79d52cd52f94d9429686e3819527ee2d870e745d16882574dde61a",
+      "bytes": 1469422
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\scientific_session_45822_exit_receipt_v3.json",
+      "sha256": "a75f0ce5b7784d71c1b9b54d3f60a793817efcc3cdce8c69482245d285bccdbb",
+      "bytes": 2213
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_results_v2.jsonl",
+      "sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+      "bytes": 32408
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\INTERVENTION_PROTOCOL_v2.json",
+      "sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+      "bytes": 9346
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\EXECUTION_CONTINUATION_v3.json",
+      "sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+      "bytes": 6409
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\continuation_input_event_ledger_v3.json",
+      "sha256": "844220d553203dea6b630276c75da88906e5acd58b6ed6d618cdb03e1b03bbc2",
+      "bytes": 4067
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_remote_v3.py",
+      "sha256": "d70f71e6b7a0797e2e767a3007dfb3631dd03e90a7aaec121816cf3daeb36527",
+      "bytes": 12119
+    }
+  ],
+  "completion_artifacts": {
+    "scientific_session_id": 45822,
+    "retained_receipt_observed_exit_code": 0,
+    "terminal_remote_exit_code": 0,
+    "has_final_complete": true,
+    "completed_flows": 30,
+    "observation_scope": "Cross-checked retained receipt and terminal artifacts; this observer did not independently poll the live scientific session."
+  },
+  "raw_prefix": {
+    "byte_identical": true,
+    "bytes": 32408,
+    "events": 86,
+    "sha256": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+    "unchanged_frozen_file_and_merged_stream_prefix": true
+  },
+  "metadata_counts": {
+    "unique_planned_event_keys": 1790,
+    "metric_events": 1760,
+    "event_counts": {
+      "baseline": 30,
+      "single": 1430,
+      "joint": 300,
+      "flow_complete": 30
+    },
+    "fixed_target_flow_ids_and_baseline_input_hashes_match": true,
+    "class_population": "Two records per class across fifteen classes",
+    "original_input_hashes": 28,
+    "phase_event_counts": {
+      "v2": 83,
+      "v3": 1707
+    },
+    "actual_model_evaluations_by_phase": {
+      "v2": 38,
+      "v3": 565
+    },
+    "actual_model_evaluations_total": 603,
+    "distinct_evaluated_input_hashes": 603,
+    "metric_records_with_full_vector_retained_flag": 569
+  },
+  "unchanged_scientific_protocol": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+  "inference_scope": "Identical strict v2 full reset, model/n_ctx2048/n_threads4/n_batch512/logits_allTrue/tokenization/trie arithmetic. No prefix reuse.",
+  "reporting_limits": [
+    "Completion and hash integrity do not authenticate missing historical registration or original trust-study records.",
+    "The603 count denotes recorded completed distribution evaluations, not low-level model calls or unlogged interruptions.",
+    "Full-vector-retained flags need not be true on every metric/cache record; score/cache-lineage and effect-summary verification remains the responsibility of the approved completed-chain analyzer.",
+    "No stability effect, rank agreement, confidence interval or latency result was independently computed in this metadata audit."
+  ],
+  "analyzer_rerun": false,
+  "source_or_manuscript_changes": false
+}

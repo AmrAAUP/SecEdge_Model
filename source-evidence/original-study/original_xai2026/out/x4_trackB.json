@@ -1,0 +1,213 @@
+{
+ "n_flows": 750,
+ "comprehensiveness": {
+  "cf@1": {
+   "mean": 8.916310027450619,
+   "ci95": [
+    8.506664195686549,
+    9.341320695983269
+   ],
+   "n": 750
+  },
+  "cf@3": {
+   "mean": 12.808400759987528,
+   "ci95": [
+    12.322072013675346,
+    13.285449313717125
+   ],
+   "n": 750
+  },
+  "rat@1": {
+   "mean": 1.327780222579947,
+   "ci95": [
+    1.102516627556824,
+    1.5763719102262583
+   ],
+   "n": 750
+  },
+  "rat@3": {
+   "mean": 6.412449264815605,
+   "ci95": [
+    5.910508064933655,
+    6.914113905155048
+   ],
+   "n": 750
+  },
+  "shap@1": {
+   "mean": 3.5743718065068024,
+   "ci95": [
+    3.1968335687034233,
+    3.9683139768334943
+   ],
+   "n": 750
+  },
+  "shap@3": {
+   "mean": 5.728332931116952,
+   "ci95": [
+    5.305550592508257,
+    6.139073915057842
+   ],
+   "n": 750
+  },
+  "rand@1": {
+   "mean": 1.636291497747559,
+   "ci95": [
+    1.3599338686719171,
+    1.9379830891232182
+   ],
+   "n": 750
+  },
+  "rand@3": {
+   "mean": 4.876247969050655,
+   "ci95": [
+    4.431505701184517,
+    5.323995739161228
+   ],
+   "n": 750
+  },
+  "rat_cited_only@3": {
+   "mean": 3.5789126221286764,
+   "ci95": [
+    3.145102173437894,
+    3.999029462510568
+   ],
+   "n": 750
+  }
+ },
+ "sufficiency": {
+  "cf@3": {
+   "mean": 1.3558061389937657,
+   "ci95": [
+    1.1381654073309484,
+    1.6000342536139212
+   ],
+   "n": 750
+  },
+  "rat@3": {
+   "mean": 9.516643318967505,
+   "ci95": [
+    9.000564217849266,
+    10.077210138978556
+   ],
+   "n": 750
+  },
+  "shap@3": {
+   "mean": 10.055754079806743,
+   "ci95": [
+    9.506433463402647,
+    10.653288149645562
+   ],
+   "n": 750
+  },
+  "rand@3": {
+   "mean": 10.626183376934762,
+   "ci95": [
+    10.062679417319726,
+    11.18301759262171
+   ],
+   "n": 750
+  }
+ },
+ "B-T2": {
+  "cf@3": 12.808400759987528,
+  "rand@3": 4.876247969050655,
+  "ratio": 2.626691842023195,
+  "pass": true
+ },
+ "B-T4": {
+  "top3_overlap_with_fill": 0.33422222222222225,
+  "top3_overlap_shap_relevant_only": 0.9477838494231936,
+  "kendall_tau_mean": 0.5447480267152399,
+  "share_flows_top_cf_field_visible_to_gate": 0.2866666666666667,
+  "pass": false,
+  "shap_ms_per_flow_workstation": 42.54051600000821
+ },
+ "B-T3": {
+  "evidence_bound_comp@3": 12.808400759987528,
+  "rationale_cited_only_comp@3": 3.5789126221286764,
+  "ratio": 3.578852604780641,
+  "hallucinated": 0,
+  "unobservable": 0,
+  "mean_fields_cited_by_rationale": 1.2,
+  "share_rationales_citing_no_present_field": 0.42933333333333334,
+  "text_generation_ms_mean": 0.0029229332867544144,
+  "pass": true
+ },
+ "top_counterfactual_field_by_class": {
+  "Normal": {
+   "tcp_dstport": 0.48,
+   "tcp_srcport": 0.4,
+   "src_host": 0.12
+  },
+  "DDoS_TCP": {
+   "src_host": 0.4,
+   "tcp_dstport": 0.3,
+   "tcp_srcport": 0.22
+  },
+  "DDoS_UDP": {
+   "dst_host": 0.86,
+   "tcp_srcport": 0.1,
+   "src_host": 0.04
+  },
+  "DDoS_ICMP": {
+   "src_host": 0.56,
+   "dst_host": 0.4,
+   "tcp_srcport": 0.04
+  },
+  "DDoS_HTTP": {
+   "tcp_dstport": 0.64,
+   "tcp_srcport": 0.28,
+   "dst_host": 0.04
+  },
+  "SQL_injection": {
+   "http_uri_query": 0.32,
+   "tcp_srcport": 0.26,
+   "tcp_dstport": 0.18
+  },
+  "Password": {
+   "tcp_srcport": 0.5,
+   "tcp_dstport": 0.42,
+   "http_full_uri": 0.04
+  },
+  "Vulnerability_scanner": {
+   "http_uri_query": 0.44,
+   "http_full_uri": 0.22,
+   "http_method": 0.18
+  },
+  "Uploading": {
+   "tcp_dstport": 0.46,
+   "tcp_srcport": 0.26,
+   "http_full_uri": 0.14
+  },
+  "Backdoor": {
+   "tcp_srcport": 0.6,
+   "tcp_dstport": 0.38,
+   "mqtt_topic": 0.02
+  },
+  "Port_Scanning": {
+   "tcp_srcport": 0.46,
+   "tcp_dstport": 0.38,
+   "dst_host": 0.1
+  },
+  "XSS": {
+   "tcp_srcport": 0.54,
+   "tcp_dstport": 0.3,
+   "src_host": 0.1
+  },
+  "Ransomware": {
+   "tcp_srcport": 0.54,
+   "tcp_dstport": 0.42,
+   "src_host": 0.04
+  },
+  "MITM": {
+   "tcp_srcport": 0.8,
+   "dst_host": 0.16,
+   "dns_qry_name": 0.02
+  },
+  "Fingerprinting": {
+   "tcp_srcport": 0.6,
+   "tcp_dstport": 0.24,
+   "src_host": 0.1
+  }
+ }
+}

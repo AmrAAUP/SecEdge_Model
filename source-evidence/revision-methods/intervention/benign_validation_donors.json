@@ -1,0 +1,602 @@
+{
+  "created_utc": "2026-10-06T16:13:01.885256+00:00",
+  "seed": 20261006,
+  "source_csv": "F:\\FiveCapterThis\\transfer\\data\\splits\\val.csv",
+  "source_sha256": "8e44506213b1a6266acc574e9e134e1881f2f45ff8e1d151db31999174bd577a",
+  "source_validation_rows": 332874,
+  "normal_validation_rows": 242346,
+  "selection": "Pandas Normal-row permutation at seed20261006; first5 distinct normalized rendered blocks not in retained inputs.",
+  "pandas_version": "3.0.1",
+  "no_test_data_used_to_choose_donors": true,
+  "exclusion_rule": "Exclude any same field-order/value rendered block in base1500 or either retained150 Pi population. Numeric text is normalized through Decimal so0 and0.0 cannot bypass exclusion; omission/presence remains part of identity.",
+  "excluded_unique_normalized_target_blocks": 1385,
+  "exclusion_sources": [
+    {
+      "path": "F:\\FiveCapterThis\\transfer\\records\\base_n1500.jsonl",
+      "sha256": "27961be2025bf9dbc36a10ef9ee9b7c8b9eb6f18a19fea0f427f811c04a0a7d1"
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_work\\pi_evidence\\reconstructed_ondevice_inputs.json",
+      "sha256": "2393afc0af57fc10041acfbf206a1cecfa29d5c1e0954c44752d67e8c379d58f"
+    },
+    {
+      "path": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_work\\pi_evidence\\decoded_bundle_prompts.json",
+      "sha256": "68b999b969fe6d7e55fba679d92b9ee5a9630c4d190bbbac352e2c7c4378afa7"
+    }
+  ],
+  "rejections_before_fifth_donor": {
+    "matches_existing_target_block": 3
+  },
+  "donors": [
+    {
+      "donor_id": "val_normal_14185",
+      "source_partition": "validation",
+      "source_row_zero_based": 14185,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=50879.0  tcp_dstport=1883.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "4415e84b2c2be06d83be29d57f714cfdf42713ec56e4a274da7885680352ea0c",
+      "normalized_block_sha256": "1103a8142936a8eda7f129bdd9e25ed4a955b1ed8ae2d712cb011c35c6bcb8fd",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "50879.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "16.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 10,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "50879.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "16.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "94ca81a056312c93cf0f3cfa1010922f8c692a52337f854aa9ac441794ffcfdd"
+    },
+    {
+      "donor_id": "val_normal_137465",
+      "source_partition": "validation",
+      "source_row_zero_based": 137465,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=63968.0  tcp_dstport=1883.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=14.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0  mqtt_msgtype=1.0",
+      "flow_block_sha256": "99ce8b64ff858d610333d116789f9b18fb2649b7e5f7d856797e6f5c1d2ecb25",
+      "normalized_block_sha256": "c8b108c99cf1a8754357b3bb8fa0dfdf449ca487ccc9c31fd72ab25a76ccfc48",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "63968.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "24.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "14.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 12,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "63968.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "24.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "14.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "1.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "21aa084e268544521cf3928b5556a69f71d72fc9a689174f09c4e63327d2f798"
+    },
+    {
+      "donor_id": "val_normal_316710",
+      "source_partition": "validation",
+      "source_row_zero_based": 316710,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=53431.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "beada933259096a2b894616422595de9063ac2bd4c93ce1564b794101c4d7f12",
+      "normalized_block_sha256": "02858e43893331881ece049048bf21c0a1f53a6af60ed37f4d0bff1e416ee549",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "53431.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "18.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 10,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.128",
+        "ip.dst_host": "192.168.0.101",
+        "tcp.srcport": "1883.0",
+        "tcp.dstport": "53431.0",
+        "tcp.flags": "18.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "8dc9d93596ee484b7b4a7741e6cec5e22946f28866657e0a35dad2e3a334b7c6"
+    },
+    {
+      "donor_id": "val_normal_175587",
+      "source_partition": "validation",
+      "source_row_zero_based": 175587,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=52894.0  tcp_dstport=1883.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "57885daae71d0b0cc7a48633360562fa6b7540ebd666c293ced39c01b14e0ddd",
+      "normalized_block_sha256": "3d15620a8cc9eb2781fa0a40a92ff2b01053152f589e198efa4243d2e3cc93be",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "52894.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "16.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 10,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "52894.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "16.0",
+        "tcp.flags.ack": "1.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "350c64db6ee1eb4bdabcf8badc4b8458d72bd53edad52c03fbf5f942ecf2fda7"
+    },
+    {
+      "donor_id": "val_normal_113936",
+      "source_partition": "validation",
+      "source_row_zero_based": 113936,
+      "ground_truth": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=53476.0  tcp_dstport=1883.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "flow_block_sha256": "bfd2b3a0de8f75b201ab5ebb9ff4cf2db06cca3b5a3476d3c2063b560fd81973",
+      "normalized_block_sha256": "046c7bb646242dacfbc2cbd0bea8933afac6f175e5d2d6bef15f1d8e7a658a4e",
+      "all_14_source_values": [
+        {
+          "display_name": "src_host",
+          "source_column": "ip.src_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.101"
+        },
+        {
+          "display_name": "dst_host",
+          "source_column": "ip.dst_host",
+          "emission_rule": "always",
+          "pandas_value_text": "192.168.0.128"
+        },
+        {
+          "display_name": "tcp_srcport",
+          "source_column": "tcp.srcport",
+          "emission_rule": "always",
+          "pandas_value_text": "53476.0"
+        },
+        {
+          "display_name": "tcp_dstport",
+          "source_column": "tcp.dstport",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "1883.0"
+        },
+        {
+          "display_name": "tcp_flags",
+          "source_column": "tcp.flags",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "2.0"
+        },
+        {
+          "display_name": "tcp_flags_ack",
+          "source_column": "tcp.flags.ack",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "tcp_len",
+          "source_column": "tcp.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_method",
+          "source_column": "http.request.method",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_uri_query",
+          "source_column": "http.request.uri.query",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "http_full_uri",
+          "source_column": "http.request.full_uri",
+          "emission_rule": "always",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "mqtt_topic",
+          "source_column": "mqtt.topic",
+          "emission_rule": "always",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "mqtt_msgtype",
+          "source_column": "mqtt.msgtype",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        },
+        {
+          "display_name": "dns_qry_name",
+          "source_column": "dns.qry.name.len",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0"
+        },
+        {
+          "display_name": "arp_opcode",
+          "source_column": "arp.opcode",
+          "emission_rule": "nonzero",
+          "pandas_value_text": "0.0"
+        }
+      ],
+      "present_rendered_fields": 9,
+      "literal_csv_14_values": {
+        "ip.src_host": "192.168.0.101",
+        "ip.dst_host": "192.168.0.128",
+        "tcp.srcport": "53476.0",
+        "tcp.dstport": "1883.0",
+        "tcp.flags": "2.0",
+        "tcp.flags.ack": "0.0",
+        "tcp.len": "0.0",
+        "http.request.method": "0.0",
+        "http.request.uri.query": "0.0",
+        "http.request.full_uri": "0.0",
+        "mqtt.topic": "0",
+        "mqtt.msgtype": "0.0",
+        "dns.qry.name.len": "0",
+        "arp.opcode": "0.0"
+      },
+      "literal_csv_nonlabel_source_sha256": "703faf9fa38a57e2c857ed74f533a45c2a3177e6f33c864a8011cae22f1330b8"
+    }
+  ],
+  "n_donors": 5,
+  "source_files_modified": false,
+  "inference_calls": 0,
+  "validity_scope": "Each complete donor record is observed validation traffic labelled Normal. Marginal or partial group replacement into an attack target may create invalid feature relationships; those interventions require explicit constraint/presence checks and cannot be called physically validated solely because the donor is Normal.",
+  "representation": "Exact configured14-source-field renderer. Literal CSV values and pandas-rendered text both preserved; the field named dns_qry_name denotes dns.qry.name.len, not a domain name."
+}

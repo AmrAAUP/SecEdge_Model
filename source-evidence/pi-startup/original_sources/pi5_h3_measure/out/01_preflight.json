@@ -1,0 +1,126 @@
+{
+ "python": "3.13.5",
+ "imports": {
+  "numpy": {
+   "available": true,
+   "why": "required"
+  },
+  "pandas": {
+   "available": true,
+   "why": "required"
+  },
+  "sklearn": {
+   "available": true,
+   "why": "required for the Stage-1 gate"
+  },
+  "xgboost": {
+   "available": true,
+   "why": "required for the Stage-1 gate"
+  },
+  "psutil": {
+   "available": true,
+   "why": "required for H2.2 peak RSS"
+  },
+  "llama_cpp": {
+   "available": true,
+   "why": "required for phases 04-08 and the top-2 margin"
+  },
+  "sentence_transformers": {
+   "available": true,
+   "why": "pre-registered RAG embedder (all-MiniLM-L6-v2)"
+  },
+  "lancedb": {
+   "available": true,
+   "why": "optional: numpy flat index is used if absent"
+  }
+ },
+ "paths": {
+  "test_csv": {
+   "path": "/home/aaup/edge-secrag/splits/test_seed123.csv",
+   "exists": true,
+   "size_mb": 183.13
+  },
+  "train_csv": {
+   "path": "/home/aaup/edge-secrag/splits/train_seed123.csv",
+   "exists": true,
+   "size_mb": 852.15
+  },
+  "val_csv": {
+   "path": "/home/aaup/edge-secrag/splits/val_seed123.csv",
+   "exists": true,
+   "size_mb": 182.13
+  },
+  "grammar": {
+   "path": "/home/aaup/Desktop/pi5_h3_measure/secedge.gbnf",
+   "exists": true,
+   "size_mb": 0.0
+  },
+  "rationale_templates": {
+   "path": "/home/aaup/Desktop/pi5_h3_measure/templates/rationale_templates.json",
+   "exists": true,
+   "size_mb": 0.01
+  },
+  "action_policy": {
+   "path": "/home/aaup/Desktop/pi5_h3_measure/templates/action_policy.json",
+   "exists": true,
+   "size_mb": 0.0
+  },
+  "gguf_models": [
+   {
+    "seed": 123,
+    "path": "/home/aaup/Desktop/fulltest/secedge-3.8b-q8_0-seed123.gguf",
+    "size_gb": 4.06
+   }
+  ]
+ },
+ "prompt_reconstruction": {
+  "_status": "corpus_not_present",
+  "path": "/home/aaup/edge-secrag/secedge_train_v1.jsonl",
+  "note": "Reconstruction unverified. Drop the original corpus or configs/config_v2.py next to the bundle to verify."
+ },
+ "thresholds": {
+  "H1_1_server_macro_f1": 0.7,
+  "H1_2_quantisation_gap_pp": 10.0,
+  "H2_1_ondevice_macro_f1": 0.7,
+  "H2_2_peak_rss_gb": 6.0,
+  "H2_3_sustained_temp_p95_c": 80.0,
+  "H2_4_latency_p95_s": 5.0,
+  "H3_1_regression_tolerance_pp": 1.0,
+  "H3_2_min_speedup": 5.0,
+  "H3_3_min_activation_rate": 0.1,
+  "H3_3_min_lift_pp": 5.0,
+  "H3_4_compliance_rate": 1.0,
+  "family_wise_alpha": 0.05
+ },
+ "pipeline": {
+  "tau1_gate_threshold": 0.9,
+  "reflection_confidence_threshold": 0.7,
+  "reflection_margin_threshold": 0.2,
+  "action_confidence_floor": 0.5,
+  "agent_max_cycles": 3,
+  "rag_top_k": 3,
+  "rag_top_k_on_reflection": 4,
+  "rag_context_token_cap": 1024,
+  "_comment_rag_in_label_path": "The thesis specifies three things that cannot all hold. §3.10.2: the top-k documents are 'concatenated into a retrieval block prepended to the SLM prompt' — so retrieval enters the call that produces the label. §4.4.2.3: 'RAG and the cyclic agent never change the emitted label, only the action and the rationale grounding' — which is impossible if the block is prepended. H3.3: reflection must 'improve macro-F1 by at least 5 pp' on the triggered subset — which requires the label to be changeable. This flag selects which architecture is measured, and the choice is recorded in every result file. true = follow §3.10.2 literally: one call, retrieval in the prompt, label can change. Measured 2026-07-28: macro-F1 falls 0.909 -> 0.702 (-20.7 pp), because the instruction-tuning corpus contains no retrieval block and prepending one puts the prompt out of distribution. false = follow §4.4.2.3: label and confidence come from a bare in-distribution call, a second retrieval-enriched call produces the rationale and action grounding only. H3.1 then holds by construction and tests the Stage-1 gate alone, and the H3.3 macro-F1 lift is structurally zero rather than measurable.",
+  "rag_in_label_path": false,
+  "max_new_tokens": 384,
+  "temperature": 0.0,
+  "n_ctx": 4096,
+  "n_threads": 4,
+  "action_set": [
+   "allow",
+   "block_ip",
+   "isolate_device",
+   "drop_packet",
+   "escalate"
+  ],
+  "_comment_decision_first": "Emit only label+confidence on the critical path and derive the action from the deterministic policy table of Section 3.6.5, generating the rationale afterwards off-path. The full schema orders the fields label-confidence-rationale-action, so reaching the action costs the whole rationale — the term Section 5.6.1 identifies as dominant. Measured on 120 flows at Q8_0: label reproduced on 96.7%, post-floor action on 97.5%, macro-F1 0.8669 vs 0.8727, latency 4.86x lower.",
+  "decision_first": false,
+  "ground_after_decision": true
+ },
+ "blocking": [],
+ "warnings": [
+  "only 1 seed model(s) present; the thesis reports three seeds (42, 123, 456). Results will state which seeds were actually run."
+ ],
+ "ready": true
+}

@@ -1,0 +1,152 @@
+{
+ "configs": {
+  "q8_s456|test_sub1500": {
+   "accuracy": 0.9113333333333333,
+   "macro_f1": 0.9103491592204281,
+   "verbal_ece": 0.13902000000000003,
+   "verbal_auroc": 0.730753364757908,
+   "primary_calibrator": "verbal_isotonic",
+   "primary_ece": 0.012545068548384173,
+   "primary_ranking": "stack",
+   "primary_auroc": 0.9908366380472028,
+   "primary_aurc": 0.0048999295389101135,
+   "temperature": 1.5202513433502267,
+   "conformal_coverage": 0.954,
+   "conformal_mean_size": 1.2226666666666666,
+   "singleton_rate": 0.7753333333333333,
+   "all_classes_ok": false
+  },
+  "q8_s42|test_sub1500": {
+   "accuracy": 0.914,
+   "macro_f1": 0.9131785588012328,
+   "verbal_ece": 0.1359893333333334,
+   "verbal_auroc": 0.7402167828609232,
+   "primary_calibrator": "verbal_isotonic",
+   "primary_ece": 0.013802913430289243,
+   "primary_ranking": "stack",
+   "primary_auroc": 0.990189925307731,
+   "primary_aurc": 0.004709713712872548,
+   "temperature": 1.5611077114237186,
+   "conformal_coverage": 0.952,
+   "conformal_mean_size": 1.2006666666666668,
+   "singleton_rate": 0.8026666666666666,
+   "all_classes_ok": false
+  },
+  "q8_s123|test_sub1500": {
+   "accuracy": 0.908,
+   "macro_f1": 0.9068299782035824,
+   "verbal_ece": 0.14164733333333335,
+   "verbal_auroc": 0.7197934622996872,
+   "primary_calibrator": "verbal_isotonic",
+   "primary_ece": 0.014378732774023796,
+   "primary_ranking": "stack",
+   "primary_auroc": 0.9919396028857818,
+   "primary_aurc": 0.005146843078882094,
+   "temperature": 1.320023852615983,
+   "conformal_coverage": 0.9466666666666667,
+   "conformal_mean_size": 1.1693333333333333,
+   "singleton_rate": 0.7973333333333333,
+   "all_classes_ok": false
+  },
+  "q4_s456|test_sub1500": {
+   "accuracy": 0.8613333333333333,
+   "macro_f1": 0.8571103283182809,
+   "verbal_ece": 0.1478733333333333,
+   "verbal_auroc": 0.7557937901881401,
+   "primary_calibrator": "verbal_isotonic",
+   "primary_ece": 0.013832194903768802,
+   "primary_ranking": "stack",
+   "primary_auroc": 0.9796566146701595,
+   "primary_aurc": 0.01300428991074008,
+   "temperature": 1.3037575714107583,
+   "conformal_coverage": 0.952,
+   "conformal_mean_size": 1.6653333333333333,
+   "singleton_rate": 0.534,
+   "all_classes_ok": true
+  },
+  "q8_s456|test_sub300": {
+   "accuracy": 0.92,
+   "macro_f1": 0.9187632861206904,
+   "verbal_ece": 0.12399666666666659,
+   "verbal_auroc": 0.7437349033816426,
+   "primary_calibrator": "stack",
+   "primary_ece": 0.03260060242653113,
+   "primary_ranking": "stack",
+   "primary_auroc": 0.9902626811594203,
+   "primary_aurc": 0.004186246313635435,
+   "temperature": 1.532004596367803,
+   "conformal_coverage": 0.9633333333333334,
+   "conformal_mean_size": 1.25,
+   "singleton_rate": 0.7733333333333333,
+   "all_classes_ok": true
+  },
+  "bf16_s456|test_sub300": {
+   "accuracy": 0.92,
+   "macro_f1": 0.9187632861206904,
+   "verbal_ece": 0.12427666666666654,
+   "verbal_auroc": 0.7414704106280193,
+   "primary_calibrator": "verbal_hist",
+   "primary_ece": 0.022650425356240393,
+   "primary_ranking": "stack",
+   "primary_auroc": 0.9922252415458938,
+   "primary_aurc": 0.004031543021551763,
+   "temperature": 1.5258597490019907,
+   "conformal_coverage": 0.9566666666666667,
+   "conformal_mean_size": 1.24,
+   "singleton_rate": 0.7866666666666666,
+   "all_classes_ok": true
+  }
+ },
+ "C-T1": {
+  "mean_set_size_q8": 1.2226666666666666,
+  "mean_set_size_q4": 1.6653333333333333,
+  "paired_diff_q4_minus_q8": 0.44266666666666665,
+  "diff_ci95": [
+   0.408,
+   0.47733333333333333
+  ],
+  "wilcoxon_p": 2.8719982242258646e-99,
+  "unobservable_rate_q8": 0.6304202801867912,
+  "unobservable_rate_q4": 0.5699865410497981,
+  "unobservable_mcnemar": {
+   "only_second": 122,
+   "only_first": 208,
+   "p_exact": 2.54617870131771e-06
+  },
+  "pass": false
+ },
+ "seed_robustness_q8": {
+  "accuracy": {
+   "mean": 0.9111111111111111,
+   "sd": 0.0030061665018819308
+  },
+  "verbal_ece": {
+   "mean": 0.1388855555555556,
+   "sd": 0.0028313949709430006
+  },
+  "primary_ece": {
+   "mean": 0.013575571584232405,
+   "sd": 0.0009377336291954337
+  },
+  "primary_auroc": {
+   "mean": 0.9909887220802385,
+   "sd": 0.000884697728951373
+  },
+  "primary_aurc": {
+   "mean": 0.004918828776888253,
+   "sd": 0.00021917665604277446
+  },
+  "conformal_coverage": {
+   "mean": 0.950888888888889,
+   "sd": 0.003790827135384867
+  },
+  "conformal_mean_size": {
+   "mean": 1.1975555555555555,
+   "sd": 0.026802432172666125
+  },
+  "singleton_rate": {
+   "mean": 0.7917777777777778,
+   "sd": 0.0144888207224027
+  }
+ }
+}

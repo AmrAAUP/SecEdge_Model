@@ -1,0 +1,326 @@
+[
+ {
+  "pid": 0,
+  "count": 108,
+  "auto_flag_share": 1.0,
+  "example": "ICMP traffic profile (rate, payload, source-spread) matches the empirical fingerprint of a ping-flood denial-of-service campaign (T1498)."
+ },
+ {
+  "pid": 1,
+  "count": 100,
+  "auto_flag_share": 0.0,
+  "example": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family)."
+ },
+ {
+  "pid": 2,
+  "count": 100,
+  "auto_flag_share": 1.0,
+  "example": "TCP traffic exhibits connection-state-exhaustion pattern: SYN-only payload, sub-second duration, target on high-value port 58680.0. Classified as direct-network-flood TCP DDoS (T1498.001)."
+ },
+ {
+  "pid": 3,
+  "count": 92,
+  "auto_flag_share": 1.0,
+  "example": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002)."
+ },
+ {
+  "pid": 4,
+  "count": 79,
+  "auto_flag_share": 1.0,
+  "example": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood)."
+ },
+ {
+  "pid": 5,
+  "count": 75,
+  "auto_flag_share": 0.0,
+  "example": "Web traffic carries client-side scripting payload designed to execute in victim browser. Classified as cross-site scripting (T1059.007)."
+ },
+ {
+  "pid": 6,
+  "count": 71,
+  "auto_flag_share": 0.0,
+  "example": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection."
+ },
+ {
+  "pid": 7,
+  "count": 64,
+  "auto_flag_share": 1.0,
+  "example": "Authentication probes to 192.168.0.128:80.0 arrive at rate inconsistent with human typing. Classified as password brute-forcing (T1110.001)."
+ },
+ {
+  "pid": 8,
+  "count": 63,
+  "auto_flag_share": 1.0,
+  "example": "Protocol semantics for TCP are fully honoured (handshake, ack pattern, flag sequence). Payload size and duration fall inside legitimate-traffic envelope. No attack indicators on port 62909.0."
+ },
+ {
+  "pid": 9,
+  "count": 59,
+  "auto_flag_share": 0.0,
+  "example": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting."
+ },
+ {
+  "pid": 10,
+  "count": 53,
+  "auto_flag_share": 1.0,
+  "example": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication."
+ },
+ {
+  "pid": 11,
+  "count": 51,
+  "auto_flag_share": 0.0,
+  "example": "HTTP 0 request to 0 with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data."
+ },
+ {
+  "pid": 12,
+  "count": 50,
+  "auto_flag_share": 1.0,
+  "example": "SMB/CIFS traffic to 192.168.0.128 shows bulk-write pattern with high-entropy payload, preceded by outbound C2 contact. Indicates active ransomware (T1486)."
+ },
+ {
+  "pid": 13,
+  "count": 43,
+  "auto_flag_share": 1.0,
+  "example": "Outbound connection from 192.168.0.170 to 192.168.0.128:60210.0 with periodic beaconing pattern and unknown-byte payload. Consistent with Backdoor C2 channel using Application-Layer Protocol (MITRE ATT&CK T1071.001 Web Protocols), where compromised host beacons to command-and-control infrastructure."
+ },
+ {
+  "pid": 14,
+  "count": 40,
+  "auto_flag_share": 1.0,
+  "example": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486)."
+ },
+ {
+  "pid": 15,
+  "count": 40,
+  "auto_flag_share": 0.0,
+  "example": "HTTP request to 0 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input."
+ },
+ {
+  "pid": 16,
+  "count": 33,
+  "auto_flag_share": 0.0,
+  "example": "Port-and-service enumeration with embedded vulnerability check payloads. Pattern matches T1595.002, indicating reconnaissance preceding exploitation."
+ },
+ {
+  "pid": 17,
+  "count": 29,
+  "auto_flag_share": 1.0,
+  "example": "Sequential connection attempts from 0 to multiple destination ports on 0. Pattern matches Network Service Scanning (MITRE ATT&CK T1046), used to enumerate open services on a target host."
+ },
+ {
+  "pid": 18,
+  "count": 28,
+  "auto_flag_share": 0.0,
+  "example": "Coordinated probes targeting service banners on 192.168.0.170. Tool-fingerprint signatures (Nmap NSE, Nikto, OpenVAS) are typical of vulnerability scanning (T1595.002) preceding active exploitation."
+ },
+ {
+  "pid": 19,
+  "count": 28,
+  "auto_flag_share": 1.0,
+  "example": "Upload-path traffic delivers payload of size (unknown B) and entropy consistent with executable or web-shell content. Matches T1105."
+ },
+ {
+  "pid": 20,
+  "count": 25,
+  "auto_flag_share": 1.0,
+  "example": "1 connection attempts in <1s with varied destination ports and uniform packet structure. Consistent with port scanning (T1046), typically performed by Nmap or masscan."
+ },
+ {
+  "pid": 21,
+  "count": 24,
+  "auto_flag_share": 0.0,
+  "example": "Authentication-service traffic with sub-second retry intervals. Pattern matches automated password-guessing tooling (T1110.001) such as hydra or medusa."
+ },
+ {
+  "pid": 22,
+  "count": 24,
+  "auto_flag_share": 1.0,
+  "example": "Sequential connection attempts from 192.168.0.170 to multiple destination ports on 192.168.0.128. Pattern matches Network Service Scanning (MITRE ATT&CK T1046), used to enumerate open services on a target host."
+ },
+ {
+  "pid": 23,
+  "count": 20,
+  "auto_flag_share": 1.0,
+  "example": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Canonical SYN-scan pattern (T1046) used for stealthy service enumeration."
+ },
+ {
+  "pid": 24,
+  "count": 19,
+  "auto_flag_share": 1.0,
+  "example": "File-share writes carry encryption-grade entropy and unusual file-name patterns (rename + extension change). Matches T1486 data-encrypted-for-impact."
+ },
+ {
+  "pid": 25,
+  "count": 18,
+  "auto_flag_share": 0.0,
+  "example": "TCP/IP stack probe targeting 192.168.0.128 with characteristic OS-fingerprinting flag combinations (none). Consistent with Gather Victim Host Information Software (MITRE ATT&CK T1592.002), used to identify operating system and services for subsequent exploitation."
+ },
+ {
+  "pid": 26,
+  "count": 18,
+  "auto_flag_share": 0.0,
+  "example": "Targeted probes with tool-signature payloads attempt to identify exploitable software on 192.168.0.170. Matches T1595.002 active vulnerability discovery."
+ },
+ {
+  "pid": 27,
+  "count": 15,
+  "auto_flag_share": 1.0,
+  "example": "Port-discovery probes with consistent inter-flow timing and varied destination ports. Tool-driven enumeration (T1046)."
+ },
+ {
+  "pid": 28,
+  "count": 15,
+  "auto_flag_share": 1.0,
+  "example": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002)."
+ },
+ {
+  "pid": 29,
+  "count": 15,
+  "auto_flag_share": 1.0,
+  "example": "Bidirectional TCP flow shows balanced packet exchange and protocol-conformant behaviour. Classified as benign."
+ },
+ {
+  "pid": 30,
+  "count": 14,
+  "auto_flag_share": 1.0,
+  "example": "Upload of unknown-byte file to 0 via HTTP 0. File extension and payload entropy indicate potential malicious binary or web-shell upload (T1105)."
+ },
+ {
+  "pid": 31,
+  "count": 14,
+  "auto_flag_share": 1.0,
+  "example": "Sequential probe of multiple ports/services on 192.168.0.170 from 192.168.0.128 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions."
+ },
+ {
+  "pid": 32,
+  "count": 10,
+  "auto_flag_share": 0.0,
+  "example": "HTTP GET to http://192.168.0.128/DVWA/hackable/uploads/hack.php with file-upload content type and binary payload. Classified as T1105 ingress tool transfer."
+ },
+ {
+  "pid": 33,
+  "count": 9,
+  "auto_flag_share": 1.0,
+  "example": "HTTP flow to port 80.0 exhibits non-human request cadence and uniform shape. The flow contributes to a distributed Layer-7 DDoS (T1499.002)."
+ },
+ {
+  "pid": 34,
+  "count": 7,
+  "auto_flag_share": 1.0,
+  "example": "Standard application traffic: 1 packets, unknown bytes, <1s, headers well-formed. Source-destination pair 0→0 is within historical baseline. Benign."
+ },
+ {
+  "pid": 35,
+  "count": 6,
+  "auto_flag_share": 0.0,
+  "example": "Multi-port scan from 192.168.0.170 with version-detection probes embedded in payload. Pattern matches vulnerability assessment tooling (T1595.002), often a precursor to T1190 exploitation."
+ },
+ {
+  "pid": 36,
+  "count": 6,
+  "auto_flag_share": 0.0,
+  "example": "HTTP 0 to 0 with file-upload content type and binary payload. Classified as T1105 ingress tool transfer."
+ },
+ {
+  "pid": 37,
+  "count": 6,
+  "auto_flag_share": 1.0,
+  "example": "Routine TCP exchange to port 58445.0 with 1 packets totalling unknown bytes over <1s. Header flags and timing are consistent with legitimate application traffic."
+ },
+ {
+  "pid": 38,
+  "count": 5,
+  "auto_flag_share": 1.0,
+  "example": "HTTP POST or FTP STOR transferring unknown bytes from 192.168.0.170 to 192.168.0.128, with file-upload indicators in the payload. Consistent with Ingress Tool Transfer (MITRE ATT&CK T1105), where an attacker delivers a payload (web shell, RAT) to a compromised host."
+ },
+ {
+  "pid": 39,
+  "count": 4,
+  "auto_flag_share": 1.0,
+  "example": "Standard application traffic: 1 packets, unknown bytes, <1s, headers well-formed. Source-destination pair 192.168.0.101→192.168.0.128 is within historical baseline. Benign."
+ },
+ {
+  "pid": 40,
+  "count": 4,
+  "auto_flag_share": 0.0,
+  "example": "TCP/IP stack probe targeting 192.168.0.170 with characteristic OS-fingerprinting flag combinations (ACK). Consistent with Gather Victim Host Information Software (MITRE ATT&CK T1592.002), used to identify operating system and services for subsequent exploitation."
+ },
+ {
+  "pid": 41,
+  "count": 2,
+  "auto_flag_share": 0.0,
+  "example": "SYN-scan or connect-scan pattern detected: open-port enumeration across 192.168.0.170. Classified as T1046 service scanning."
+ },
+ {
+  "pid": 42,
+  "count": 2,
+  "auto_flag_share": 1.0,
+  "example": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 1883.0 match baseline application profile; no malicious signature detected."
+ },
+ {
+  "pid": 43,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP GET request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=7%20AND%20%28SELECT%204313%20FROM%20%28SELECT%28SLEEP%285%29%29%29yQpO%29&Submit=Submitid=57 with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data."
+ },
+ {
+  "pid": 44,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP GET request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=3&Submit=Submitid%3D54%20ORDER%20BY%201--%20hHcz with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data."
+ },
+ {
+  "pid": 45,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=3%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20CgOs&Submit=Submitid=54 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input."
+ },
+ {
+  "pid": 46,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=8&Submit=%28SELECT%20%28CASE%20WHEN%20%286972%3D7222%29%20THEN%20%27Submitid%3D58%27%20ELSE%20%28SELECT%207222%20UNION%20SELECT%207144%29%20END%29%29 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input."
+ },
+ {
+  "pid": 47,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=2%20AND%201272%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2872%29%7C%7CCHR%2869%29%7C%7CCHR%2881%29%7C%7CCHR%28108%29%2C5%29--%20rieE&Submit=Submitid=53 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input."
+ },
+ {
+  "pid": 48,
+  "count": 1,
+  "auto_flag_share": 1.0,
+  "example": "Anomalous file-share traffic to 192.168.0.170:4321.0 with high write-to-read ratio and characteristic encryption-payload entropy. Consistent with active ransomware encryption (T1486)."
+ },
+ {
+  "pid": 49,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=8&Submit=Submitid%3D58%20ORDER%20BY%204043--%20wCQz containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input."
+ },
+ {
+  "pid": 50,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "Reconnaissance traffic from 192.168.0.170 systematically tests known-vulnerability signatures against services on 192.168.0.128. Classified as vulnerability scanning (T1595.002)."
+ },
+ {
+  "pid": 51,
+  "count": 1,
+  "auto_flag_share": 1.0,
+  "example": "No deviation from normal traffic profile: balanced bidirectional packet counts, expected payload entropy, and conformant TCP state transitions. Flow is benign."
+ },
+ {
+  "pid": 52,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "Encoded SQL payload (URL-encoded quotes, double-encoded operators) detected in request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=7&Submit=Submitid%3D57%27dNBwsY%3C%27%22%3EbUhZqG. Matches T1190 SQL injection."
+ },
+ {
+  "pid": 53,
+  "count": 1,
+  "auto_flag_share": 0.0,
+  "example": "HTTP GET request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53 with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data."
+ }
+]

@@ -1,0 +1,296 @@
+{
+  "title": "Controlled Pi service-impact severity validation",
+  "version": "1.0",
+  "frozen_utc": "2026-10-08T00:10:56.781282+00:00",
+  "status": "Prospective revision-stage controlled experiment. Rules and schedule fixed before service outcomes. This is not original preregistration, independent timestamp certification, or a change to the original thirteen targets.",
+  "scope": "Validate temporal prediction of measured service-impact tiers for a disposable Pi loopback service. This does not validate LLM attack severity, industrial harm, human urgency judgments or automatic mitigation.",
+  "authorization": "User selected isolated Pi 5 service test in this conversation.",
+  "service": "New ephemeral Python standard-library HTTP service bound only to 127.0.0.1 on an OS-selected port. Echoes a nonce and its SHA-256 digest. No remote files, credentials, deployment changes, model calls or control actions.",
+  "request_slo_ms": 250,
+  "client_timeout_seconds": 0.75,
+  "rate_per_second": 8,
+  "max_client_workers": 4,
+  "max_server_workers": 8,
+  "monitor_requests_per_episode": 16,
+  "future_client_requests_per_episode": 24,
+  "recovery_requests_per_episode": 8,
+  "randomization_seed": 2026100802,
+  "conditions": [
+    {
+      "id": "healthy",
+      "monitor": "healthy",
+      "future": "healthy"
+    },
+    {
+      "id": "intermittent_delay",
+      "monitor": "delay20",
+      "future": "delay20"
+    },
+    {
+      "id": "intermittent_unavailable",
+      "monitor": "error20",
+      "future": "error20"
+    },
+    {
+      "id": "sustained_delay",
+      "monitor": "slow_all",
+      "future": "slow_all"
+    },
+    {
+      "id": "incorrect_success_body",
+      "monitor": "corrupt25",
+      "future": "corrupt25"
+    },
+    {
+      "id": "abrupt_onset",
+      "monitor": "healthy",
+      "future": "slow_all"
+    },
+    {
+      "id": "recovery_transition",
+      "monitor": "slow_all",
+      "future": "healthy"
+    }
+  ],
+  "episode_order": [
+    {
+      "episode": 1,
+      "block": 1,
+      "id": "intermittent_delay",
+      "monitor": "delay20",
+      "future": "delay20"
+    },
+    {
+      "episode": 2,
+      "block": 1,
+      "id": "recovery_transition",
+      "monitor": "slow_all",
+      "future": "healthy"
+    },
+    {
+      "episode": 3,
+      "block": 1,
+      "id": "incorrect_success_body",
+      "monitor": "corrupt25",
+      "future": "corrupt25"
+    },
+    {
+      "episode": 4,
+      "block": 1,
+      "id": "intermittent_unavailable",
+      "monitor": "error20",
+      "future": "error20"
+    },
+    {
+      "episode": 5,
+      "block": 1,
+      "id": "healthy",
+      "monitor": "healthy",
+      "future": "healthy"
+    },
+    {
+      "episode": 6,
+      "block": 1,
+      "id": "sustained_delay",
+      "monitor": "slow_all",
+      "future": "slow_all"
+    },
+    {
+      "episode": 7,
+      "block": 1,
+      "id": "abrupt_onset",
+      "monitor": "healthy",
+      "future": "slow_all"
+    },
+    {
+      "episode": 8,
+      "block": 2,
+      "id": "sustained_delay",
+      "monitor": "slow_all",
+      "future": "slow_all"
+    },
+    {
+      "episode": 9,
+      "block": 2,
+      "id": "incorrect_success_body",
+      "monitor": "corrupt25",
+      "future": "corrupt25"
+    },
+    {
+      "episode": 10,
+      "block": 2,
+      "id": "healthy",
+      "monitor": "healthy",
+      "future": "healthy"
+    },
+    {
+      "episode": 11,
+      "block": 2,
+      "id": "abrupt_onset",
+      "monitor": "healthy",
+      "future": "slow_all"
+    },
+    {
+      "episode": 12,
+      "block": 2,
+      "id": "recovery_transition",
+      "monitor": "slow_all",
+      "future": "healthy"
+    },
+    {
+      "episode": 13,
+      "block": 2,
+      "id": "intermittent_delay",
+      "monitor": "delay20",
+      "future": "delay20"
+    },
+    {
+      "episode": 14,
+      "block": 2,
+      "id": "intermittent_unavailable",
+      "monitor": "error20",
+      "future": "error20"
+    },
+    {
+      "episode": 15,
+      "block": 3,
+      "id": "incorrect_success_body",
+      "monitor": "corrupt25",
+      "future": "corrupt25"
+    },
+    {
+      "episode": 16,
+      "block": 3,
+      "id": "intermittent_delay",
+      "monitor": "delay20",
+      "future": "delay20"
+    },
+    {
+      "episode": 17,
+      "block": 3,
+      "id": "recovery_transition",
+      "monitor": "slow_all",
+      "future": "healthy"
+    },
+    {
+      "episode": 18,
+      "block": 3,
+      "id": "healthy",
+      "monitor": "healthy",
+      "future": "healthy"
+    },
+    {
+      "episode": 19,
+      "block": 3,
+      "id": "abrupt_onset",
+      "monitor": "healthy",
+      "future": "slow_all"
+    },
+    {
+      "episode": 20,
+      "block": 3,
+      "id": "sustained_delay",
+      "monitor": "slow_all",
+      "future": "slow_all"
+    },
+    {
+      "episode": 21,
+      "block": 3,
+      "id": "intermittent_unavailable",
+      "monitor": "error20",
+      "future": "error20"
+    },
+    {
+      "episode": 22,
+      "block": 4,
+      "id": "abrupt_onset",
+      "monitor": "healthy",
+      "future": "slow_all"
+    },
+    {
+      "episode": 23,
+      "block": 4,
+      "id": "recovery_transition",
+      "monitor": "slow_all",
+      "future": "healthy"
+    },
+    {
+      "episode": 24,
+      "block": 4,
+      "id": "intermittent_delay",
+      "monitor": "delay20",
+      "future": "delay20"
+    },
+    {
+      "episode": 25,
+      "block": 4,
+      "id": "intermittent_unavailable",
+      "monitor": "error20",
+      "future": "error20"
+    },
+    {
+      "episode": 26,
+      "block": 4,
+      "id": "healthy",
+      "monitor": "healthy",
+      "future": "healthy"
+    },
+    {
+      "episode": 27,
+      "block": 4,
+      "id": "sustained_delay",
+      "monitor": "slow_all",
+      "future": "slow_all"
+    },
+    {
+      "episode": 28,
+      "block": 4,
+      "id": "incorrect_success_body",
+      "monitor": "corrupt25",
+      "future": "corrupt25"
+    }
+  ],
+  "faults": {
+    "healthy": "Correct HTTP 200 nonce/digest response after 2ms authored delay.",
+    "delay20": "Each request independently has probability0.20 of 300ms authored delay; otherwise2ms.",
+    "error20": "Each request independently has probability0.20 of HTTP503; otherwise correct200 after2ms.",
+    "slow_all": "Every response receives450ms authored delay, with correctHTTP200 body.",
+    "corrupt25": "Each request independently has probability0.25 of incorrect digest despiteHTTP200, otherwise correct; no actual storeddata is altered."
+  },
+  "fault_randomization": "Each request uses an independent pseudorandom draw keyed by fixed seed, episode, phase and unique nonce; monitor and future requests use different seeds/nonces. Fault configuration never enters either prediction function or outcome labeling.",
+  "episode_procedure": [
+    "Run16 monitorrequests at8/s; wait for all results.",
+    "Commit both forecast tiers using only those monitor observations before initiating any later client request.",
+    "Run24 different later clientrequests at8/s. Compare observed correct completion within250ms against the committed forecasts.",
+    "Restore only this disposable service to healthy. Collect8 additional recoveryrequests after draining previous requests.",
+    "Retain all raw request records, timestamps, predictions, faultsettings and observed outcomes; randomize seven conditions in each of four blocks."
+  ],
+  "primary_predictor": "Functional-monitor persistence forecast: count earlier requests not completed withHTTP200, matchingnonce and correctdigest within250ms; map that observed fraction to a tier. Inputs contain earlier observations only, with no future data or injected condition.",
+  "baseline_predictor": "Transport-only persistence forecast: count earlier requests not completed withHTTP200 within250ms; ignore functionalbody correctness. Same tierthresholds and timing.",
+  "reference": "The later independent24request clientwindow determines observed impact tier from its actual fraction of failed functionalSLO requests. Fault schedule/probability/expected counts are never used as groundtruth. HTTP status, body correctness, elapsedwalltime and exceptions are retained.",
+  "tiers": {
+    "None": "0 failed functionalSLO requests.",
+    "Low": "More than0 and at most10% fail.",
+    "Moderate": "More than10% and at most30% fail.",
+    "High": "More than30% fail."
+  },
+  "tier_scope": "Authored serviceSLO impact categories for this experimental endpoint; no standards endorsement or measured physical/safety consequence. Monitor16 and future24 requests differ; the two tiers can disagree from sampling, drift, onset or recovery.",
+  "primary_metrics": [
+    "4x4 confusion matrix; exact forecastagreement count/28 for each predictor",
+    "under-triage and over-triage counts by ordinaltiers",
+    "missedHigh outcomes and Highrecall denominator",
+    "paired comparison on incorrect-success-body challenge",
+    "percondition and perblock records; recoverySLO counts"
+  ],
+  "reporting": "Retain every episode, exception and outcome. No parameter fitting, outcome-driven reruns, selection of successful episodes or post-result threshold changes. Report exact counts, not broad industrial generalization. Distinguish stationaryfiveconditions from two preregistered transitionchallenges, reportboth andtotal.",
+  "failure_policy": "If technical failure prevents complete collection, report all emitted data as an interrupted experiment. Do not silently replace the run. Request-level failures/timeouts are valid outcomes and must be retained.",
+  "resource_bounds": "At most8 launchedrequests/s,4clientworkers and8serverworkers; tiny bodies, delays<=450ms, total1344 plannedrequests, hardworker watchdog240s. UseOSwallclock measurements; no loadflooding, packetspoofing or contact withother endpoints. Servercloses andallworkerthreadsjoin in finally.",
+  "evidence": [
+    "PROTOCOL.json and SHA-256",
+    "worker source and SHA-256",
+    "raw JSONL eventstream including all requests and forecast-before-outcome timestamps",
+    "execution receipt/device metadata",
+    "independent arithmetic and scientific audits",
+    "paper/redline/reviewerresponse and R5 evidencearchive"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-10-06T16:58:18.802247+00:00",
+  "status": "Execution-chain validation update prepared before completed results; no partial effect results consumed",
+  "scientific_protocol_sha256": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+  "execution_amendment_sha256": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+  "analysis_script_sha256": "4e374eb13cab44d6322549a0c73f4165ba4edf7240c09c381afec432808df1b6",
+  "prior_analysis_script_sha256": "a5139560da6e0ac57041af423bdadab74f148ce657dc22a7cbaacb530f7b946f",
+  "bootstrap_seed": 20261008,
+  "bootstrap_replicates": 10000,
+  "scientific_arithmetic_functions_AST_unchanged": true,
+  "statistical_scope_changed": false,
+  "changes": [
+    "Frozen-prefix byte identity and completion/exit/phase verification",
+    "Exact baseline-vector/focal-scalar cache lineage and parity",
+    "Recorded model executions separate from distinct evaluated hashes",
+    "Separate elapsed clocks; no fabricated combined runtime",
+    "Remove arbitrary <2-second completion-overhead assertion absent from scientific protocol; retain continuation scope and monotonic elapsed assertions.",
+    "Record completion-minus-last-flow elapsed descriptively only; no total or per-flow latency claim.",
+    "Rename distinct_altered_input_hashes to distinct_intervention_input_hashes; includes unchanged substitutions and cached inputs.",
+    "Defined/undefined Spearman counts already present per flow. Aggregate summary previously had undefined only; add matching defined aggregate without changing correlations or confidence intervals."
+  ],
+  "requires": "pi_sensitivity_terminal_v3.json exit0, final complete event, exact frozen prefix and all30 completed flows",
+  "reporting_clarification_created_utc": "2026-10-06T17:51:15.728645+00:00",
+  "execution_chain_analysis_script_before_reporting_sha256": "a835fd187c722be0b3d4cc351fc8a92c83df7d3b33643240ebc86ec071127211",
+  "reporting_clarification_path": "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\ANALYSIS_REPORTING_CLARIFICATION_v3.json",
+  "reporting_clarification_sha256": "8c92dcd6e7da5437d81af15b5685f0c1558c0c47415b595a527a7287c6410f01"
+}

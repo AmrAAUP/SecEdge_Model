@@ -1,0 +1,62 @@
+{
+  "method": "SSH read-only stdlib file read; no original code executed or imported",
+  "remote": "aaup@192.168.1.38",
+  "chronology_limit": "mtime and ctime are filesystem metadata, not authenticated historical chronology",
+  "files": [
+    {
+      "path": "/home/aaup/Desktop/pi5_h3_measure/out_pi/xai_pi_results.jsonl",
+      "exists": true,
+      "bytes": 100943,
+      "sha256": "f6a589d112fdf4220369a2865a0a06f158f514e7a65b391f6e9691db574044aa",
+      "mtime_utc": "2026-09-11T01:12:26.665380+00:00",
+      "ctime_utc": "2026-09-11T01:12:26.665380+00:00",
+      "source_stat_stable": true,
+      "local_copy": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_v9\\pi_startup_evidence\\sources\\pi5_h3_measure\\out_pi\\xai_pi_results.jsonl",
+      "local_copy_verified": true
+    },
+    {
+      "path": "/home/aaup/Desktop/pi5_h3_measure/out_pi/xai_ondevice.jsonl",
+      "exists": true,
+      "bytes": 56085,
+      "sha256": "66aef07ca0d3bb781282629aca8076ddc2b1f2faadb27438287d02d470fe0909",
+      "mtime_utc": "2026-09-10T20:00:54.748753+00:00",
+      "ctime_utc": "2026-09-10T20:00:54.748753+00:00",
+      "source_stat_stable": true,
+      "local_copy": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_v9\\pi_startup_evidence\\sources\\pi5_h3_measure\\out_pi\\xai_ondevice.jsonl",
+      "local_copy_verified": true
+    },
+    {
+      "path": "/home/aaup/Desktop/pi5_h3_measure/secedge.gbnf",
+      "exists": true,
+      "bytes": 2154,
+      "sha256": "b375ee6e44313877fdc815431df2fa123bf4bd6d663901716918e727577764cd",
+      "mtime_utc": "2026-07-28T12:26:54+00:00",
+      "ctime_utc": "2026-07-28T13:26:28.920428+00:00",
+      "source_stat_stable": true,
+      "local_copy": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_v9\\pi_startup_evidence\\sources\\pi5_h3_measure\\secedge.gbnf",
+      "local_copy_verified": true
+    },
+    {
+      "path": "/home/aaup/Desktop/pi5_h3_measure/secedge_decision.gbnf",
+      "exists": true,
+      "bytes": 2321,
+      "sha256": "728f363200a99f12c39dbd8b08179116e152cdc27da2abc75a89190fa1d5bebc",
+      "mtime_utc": "2026-07-28T12:26:54+00:00",
+      "ctime_utc": "2026-07-28T13:26:28.920428+00:00",
+      "source_stat_stable": true,
+      "local_copy": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_v9\\pi_startup_evidence\\sources\\pi5_h3_measure\\secedge_decision.gbnf",
+      "local_copy_verified": true
+    },
+    {
+      "path": "/home/aaup/Desktop/pi5_h3_measure/out/01_preflight.json",
+      "exists": true,
+      "bytes": 4764,
+      "sha256": "9920ee27c15378d48fc7bd46cc92635fd87637906ee039d54f497157643fb1f9",
+      "mtime_utc": "2026-07-28T13:26:58.192353+00:00",
+      "ctime_utc": "2026-07-28T13:26:58.192353+00:00",
+      "source_stat_stable": true,
+      "local_copy": "C:\\Users\\MJO\\Downloads\\New folder (9)\\revision_v9\\pi_startup_evidence\\sources\\pi5_h3_measure\\out\\01_preflight.json",
+      "local_copy_verified": true
+    }
+  ]
+}

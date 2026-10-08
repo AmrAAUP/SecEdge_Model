@@ -1,0 +1,1364 @@
+{
+  "source": "F:\\FiveCapterThis\\pi5_h3_measure\\artifacts\\samples\\largesample_n6184.csv",
+  "source_sha256": "265dfd567e0622b6017e00aeb2741546de77b3a6d855fc194191a304d46e4623",
+  "source_hash_matches_remote_pi": true,
+  "sampling_script": "xai_ondevice.py",
+  "sampling_seed": 2026,
+  "n_per_class": 10,
+  "n": 150,
+  "all_indices_and_truth_labels_match_retained_outputs": true,
+  "pandas_reconstruction_version": "3.0.1",
+  "purpose": "Retrospective reconstruction of a separate 150-flow confirmation; does not recover the original 1,499-rationale annotation draw.",
+  "flows": [
+    {
+      "i": 0,
+      "source_row": 2458,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=1854.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Canonical SYN-scan pattern (T1046) used for stealthy service enumeration.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 1,
+      "source_row": 4170,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=3333.0  tcp_dstport=52816.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Upload of unknown-byte file to 0 via HTTP 0. File extension and payload entropy indicate potential malicious binary or web-shell upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 2,
+      "source_row": 5293,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=48960.0  tcp_dstport=4321.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Anomalous file-share traffic to 192.168.0.170:4321.0 with high write-to-read ratio and characteristic encryption-payload entropy. Consistent with active ransomware encryption (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 3,
+      "source_row": 3139,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=5789.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 4,
+      "source_row": 4214,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=55250.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=32.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 5,
+      "source_row": 6012,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=60230.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 6,
+      "source_row": 1287,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=39902.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP flow to port 80.0 exhibits non-human request cadence and uniform shape. The flow contributes to a distributed Layer-7 DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 7,
+      "source_row": 2189,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=41.51.79.228  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 41.51.79.228 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 8,
+      "source_row": 144,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.152  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 9,
+      "source_row": 3571,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 10,
+      "source_row": 5986,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=35306.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Anomalous file-share traffic to 192.168.0.170:4321.0 with high write-to-read ratio and characteristic encryption-payload entropy. Consistent with active ransomware encryption (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 11,
+      "source_row": 2519,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=59970.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 12,
+      "source_row": 5605,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=_googlecast._tcp.local  tcp_len=5353.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 13,
+      "source_row": 1018,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 14,
+      "source_row": 3141,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=54656.0  tcp_flags=4.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 54656.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 15,
+      "source_row": 2995,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=8125.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Indicates port scanning (T1046), preparing attacker with informed exploit choices.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 16,
+      "source_row": 1343,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=56322.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=416.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 17,
+      "source_row": 2398,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=58222.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 18,
+      "source_row": 1203,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=19792.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 19,
+      "source_row": 6069,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=38.143.58.153  dst_host=192.168.0.128  tcp_srcport=21520.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 20,
+      "source_row": 3220,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=58380.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 58380.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 21,
+      "source_row": 2318,
+      "true": "Password",
+      "pred": "Password",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=54570.0  tcp_flags=17.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Brute-force pattern: 1 login attempts in <1s from 192.168.0.128, all targeting port 54570.0. Tool-driven credential guessing (T1110.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 22,
+      "source_row": 5336,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=5710.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 23,
+      "source_row": 2595,
+      "true": "SQL_injection",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=39534.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 24,
+      "source_row": 4160,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=38490.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 25,
+      "source_row": 3893,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 26,
+      "source_row": 2339,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=253.61.120.53  dst_host=192.168.0.128  tcp_srcport=56959.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP traffic exhibits connection-state-exhaustion pattern: SYN-only payload, sub-second duration, target on high-value port 80.0. Classified as direct-network-flood TCP DDoS (T1498.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 27,
+      "source_row": 2361,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=60210.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=208.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 28,
+      "source_row": 4318,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=59112.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 29,
+      "source_row": 2587,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=37174.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 30,
+      "source_row": 6065,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=38908.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=330.0  http_method=GET  http_uri_query=id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53  http_full_uri=http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53  mqtt_topic=0.0",
+      "rationale": "HTTP GET request to http://192.168.0.128/DVWA/vulnerabilities/sqli_blind/?id=2%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20WkCs&Submit=Submitid=53 with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 31,
+      "source_row": 4006,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=4321.0  tcp_dstport=35306.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "File-share writes carry encryption-grade entropy and unusual file-name patterns (rename + extension change). Matches T1486 data-encrypted-for-impact.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 32,
+      "source_row": 2405,
+      "true": "DDoS_HTTP",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=60742.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 33,
+      "source_row": 2199,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=31568.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 34,
+      "source_row": 3080,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=48180.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.170 from 192.168.0.128 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 35,
+      "source_row": 503,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=_googlecast._tcp.local  tcp_len=5353.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 36,
+      "source_row": 2090,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=51200.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=4.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0  mqtt_msgtype=2.0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 51200.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 37,
+      "source_row": 2165,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=48828.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=319.0  http_method=GET  http_uri_query=path=http://cirt.net/rfiinc.txt?  http_full_uri=http://192.168.0.128/DVWA/skin/dark/template.php?path=http://cirt.net/rfiinc.txt?  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 38,
+      "source_row": 2257,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=44550.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=28.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 39,
+      "source_row": 2084,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=4321.0  tcp_dstport=47924.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "SMB/CIFS traffic to 192.168.0.128 shows bulk-write pattern with high-entropy payload, preceded by outbound C2 contact. Indicates active ransomware (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 40,
+      "source_row": 2448,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=57771.0  tcp_dstport=1883.0  tcp_flags=25.0  tcp_flags_ack=1.0  tcp_len=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0  mqtt_msgtype=14.0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 1883.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 41,
+      "source_row": 2547,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=56322.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=304.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 42,
+      "source_row": 5249,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=48438.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=330.0  http_method=GET  http_uri_query=CONFIG[main_path]=http://cirt.net/rfiinc.txt?  http_full_uri=http://192.168.0.128/DVWA/sources/template.php?CONFIG[main_path]=http://cirt.net/rfiinc.txt?  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 43,
+      "source_row": 763,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 44,
+      "source_row": 3473,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=60768.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web traffic carries client-side scripting payload designed to execute in victim browser. Classified as cross-site scripting (T1059.007).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 45,
+      "source_row": 6048,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=6584.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Probe flows to a sweep of destination ports on 192.168.0.170 with no follow-up application traffic. Indicates network service discovery (T1046).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 46,
+      "source_row": 2506,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=4321.0  tcp_dstport=60210.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound connection from 192.168.0.170 to 192.168.0.128:60210.0 with periodic beaconing pattern and unknown-byte payload. Consistent with Backdoor C2 channel using Application-Layer Protocol (MITRE ATT&CK T1071.001 Web Protocols), where compromised host beacons to command-and-control infrastructure.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 47,
+      "source_row": 1998,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47924.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "SMB/CIFS traffic to 192.168.0.170 shows bulk-write pattern with high-entropy payload, preceded by outbound C2 contact. Indicates active ransomware (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 48,
+      "source_row": 2411,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=3467.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Probe flows to a sweep of destination ports on 192.168.0.170 with no follow-up application traffic. Indicates network service discovery (T1046).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 49,
+      "source_row": 1919,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0.0.0.0  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 50,
+      "source_row": 1853,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=53242.0  tcp_dstport=65535.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP/IP stack probe targeting 192.168.0.128 with characteristic OS-fingerprinting flag combinations (none). Consistent with Gather Victim Host Information Software (MITRE ATT&CK T1592.002), used to identify operating system and services for subsequent exploitation.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 51,
+      "source_row": 4453,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=56322.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=304.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 52,
+      "source_row": 2343,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=51588.0  tcp_dstport=3333.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Upload of unknown-byte file to 0 via HTTP 0. File extension and payload entropy indicate potential malicious binary or web-shell upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 53,
+      "source_row": 2301,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=33788.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=107.0  http_method=GET  http_uri_query=0.0  http_full_uri=http://192.168.0.128/DVWA/hackable/uploads/hack.php  mqtt_topic=0.0",
+      "rationale": "File-transfer pattern: directional asymmetry (mostly outbound from attacker to target), endpoint is an upload handler. Indicates malicious upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 54,
+      "source_row": 4185,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=60645.0  tcp_flags=4.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 60645.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 55,
+      "source_row": 4095,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47924.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 56,
+      "source_row": 4255,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=50352.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=317.0  http_method=GET  http_uri_query=commonpath=http://cirt.net/rfiinc.txt??  http_full_uri=http://192.168.0.128/DVWA/common/db.php?commonpath=http://cirt.net/rfiinc.txt??  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 57,
+      "source_row": 2381,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=32902.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=35.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 58,
+      "source_row": 2296,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=174.143.226.251  dst_host=192.168.0.128  tcp_srcport=52384.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 59,
+      "source_row": 6049,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=46192.0  tcp_dstport=3333.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Upload of unknown-byte file to 0 via HTTP 0. File extension and payload entropy indicate potential malicious binary or web-shell upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 60,
+      "source_row": 5377,
+      "true": "Port_Scanning",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 61,
+      "source_row": 2174,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 62,
+      "source_row": 5248,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=60358.0  tcp_dstport=1883.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=14.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0  mqtt_msgtype=1.0",
+      "rationale": "Flow exhibits expected protocol behaviour for TCP between 192.168.0.101 and 192.168.0.128: typical packet rate (1 packets), payload size (unknown bytes), and duration (<1s). No indicators of attack patterns are present.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 63,
+      "source_row": 5374,
+      "true": "Uploading",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=33068.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP flow to port 80.0 exhibits non-human request cadence and uniform shape. The flow contributes to a distributed Layer-7 DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 64,
+      "source_row": 5186,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=141.253.127.206  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 141.253.127.206 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 65,
+      "source_row": 4121,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=50492.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=495.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.170 from 192.168.0.128 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 66,
+      "source_row": 1261,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=32900.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 67,
+      "source_row": 2007,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=49942.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.170 from 192.168.0.128 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 68,
+      "source_row": 2918,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47924.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 69,
+      "source_row": 3258,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=60210.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=320.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 70,
+      "source_row": 5959,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=46706.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP flow to port 80.0 exhibits non-human request cadence and uniform shape. The flow contributes to a distributed Layer-7 DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 71,
+      "source_row": 2627,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 72,
+      "source_row": 5474,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=60190.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=102.0  http_method=GET  http_uri_query=0.0  http_full_uri=http://192.168.0.128/dvwa/vulnerabilities/  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 73,
+      "source_row": 5165,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=65535.0  tcp_dstport=49435.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 74,
+      "source_row": 5244,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=38354.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 75,
+      "source_row": 2638,
+      "true": "Password",
+      "pred": "Password",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=48120.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Authentication probes to 192.168.0.170:48120.0 arrive at rate inconsistent with human typing. Classified as password brute-forcing (T1110.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 76,
+      "source_row": 2341,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=52341.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 77,
+      "source_row": 6025,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=42722.0  tcp_dstport=80.0  tcp_flags=17.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 78,
+      "source_row": 4244,
+      "true": "Uploading",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=59806.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 79,
+      "source_row": 1275,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=44954.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 44954.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 80,
+      "source_row": 2265,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=174.172.187.79  tcp_srcport=80.0  tcp_dstport=42274.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 174.172.187.79:42274.0 with anomalous flag combination (ACK) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 81,
+      "source_row": 3960,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=49454.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 82,
+      "source_row": 2515,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=39748.0  tcp_flags=17.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 83,
+      "source_row": 4874,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 84,
+      "source_row": 2333,
+      "true": "Uploading",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=59870.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web traffic carries client-side scripting payload designed to execute in victim browser. Classified as cross-site scripting (T1059.007).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 85,
+      "source_row": 6045,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=_googlecast._tcp.local  tcp_len=5353.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0  dns_qry_name=1.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 86,
+      "source_row": 3051,
+      "true": "Uploading",
+      "pred": "Password",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=60488.0  tcp_dstport=80.0  tcp_flags=17.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Brute-force pattern: 1 login attempts in <1s from 192.168.0.170, all targeting port 80.0. Tool-driven credential guessing (T1110.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 87,
+      "source_row": 1882,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=48290.0  tcp_dstport=4321.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 88,
+      "source_row": 6005,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=48152.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=155.0  http_method=GET  http_uri_query=0  http_full_uri=http://192.168.0.128/DVWA/fd5ljfpL.local  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 89,
+      "source_row": 2385,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=37332.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 90,
+      "source_row": 3126,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=39006.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=23.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 91,
+      "source_row": 1075,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=59212.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=107.0  http_method=GET  http_uri_query=0.0  http_full_uri=http://192.168.0.128/DVWA/hackable/uploads/hack.php  mqtt_topic=0.0",
+      "rationale": "File-transfer pattern: directional asymmetry (mostly outbound from attacker to target), endpoint is an upload handler. Indicates malicious upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 92,
+      "source_row": 5237,
+      "true": "DDoS_HTTP",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=56106.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=278.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 with abnormally short inter-arrival time (<1s) and minimal payload (unknown bytes). Consistent with HTTP Application-Layer Flood (MITRE ATT&CK T1499.002 Service Exhaustion Flood).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 93,
+      "source_row": 1000,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=52622.0  tcp_flags=17.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 52622.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 94,
+      "source_row": 1246,
+      "true": "SQL_injection",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=45470.0  tcp_dstport=80.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 80.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 95,
+      "source_row": 2052,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=48542.0  tcp_dstport=4321.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Anomalous file-share traffic to 192.168.0.170:4321.0 with high write-to-read ratio and characteristic encryption-payload entropy. Consistent with active ransomware encryption (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 96,
+      "source_row": 2857,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=163.48.166.143  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 163.48.166.143 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 97,
+      "source_row": 2818,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=16888.0  tcp_dstport=65535.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP/IP stack probe targeting 192.168.0.128 with characteristic OS-fingerprinting flag combinations (none). Consistent with Gather Victim Host Information Software (MITRE ATT&CK T1592.002), used to identify operating system and services for subsequent exploitation.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 98,
+      "source_row": 3037,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=23.250.116.116  dst_host=192.168.0.128  tcp_srcport=24221.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 99,
+      "source_row": 4392,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0  tcp_srcport=0.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 100,
+      "source_row": 2390,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=192.168.0.128  tcp_srcport=58098.0  tcp_dstport=1883.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 1883.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 101,
+      "source_row": 2520,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=42684.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP 0 request to 0 with payload containing SQL control characters. Pattern matches SQL injection probes (T1190) used to enumerate database structure or extract data.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 102,
+      "source_row": 5993,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=65535.0  tcp_dstport=23756.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP probes carry crafted options (window size, MSS, timestamp) designed to identify target operating system. Matches T1592.002 active fingerprinting.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 103,
+      "source_row": 5458,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=104.109.179.159  dst_host=192.168.0.128  tcp_srcport=61395.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 104,
+      "source_row": 4063,
+      "true": "Password",
+      "pred": "Password",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=36306.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=429.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Brute-force pattern: 1 login attempts in <1s from 192.168.0.128, all targeting port 36306.0. Tool-driven credential guessing (T1110.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 105,
+      "source_row": 1048,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=84.103.226.104  dst_host=192.168.0.128  tcp_srcport=49742.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 106,
+      "source_row": 4156,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=3586.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Canonical SYN-scan pattern (T1046) used for stealthy service enumeration.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 107,
+      "source_row": 2572,
+      "true": "Password",
+      "pred": "DDoS_HTTP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=38780.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP traffic to port 38780.0 with characteristic flood signature: high request rate, low response success ratio, uniform request structure. Consistent with application-layer DDoS (T1499.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 108,
+      "source_row": 5938,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=41464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 109,
+      "source_row": 2210,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=192.166.148.5  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic profile (rate, payload, source-spread) matches the empirical fingerprint of a ping-flood denial-of-service campaign (T1498).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 110,
+      "source_row": 6013,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=4321.0  tcp_dstport=60210.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound connection from 192.168.0.170 to 192.168.0.128:60210.0 with periodic beaconing pattern and unknown-byte payload. Consistent with Backdoor C2 channel using Application-Layer Protocol (MITRE ATT&CK T1071.001 Web Protocols), where compromised host beacons to command-and-control infrastructure.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 111,
+      "source_row": 3989,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=195.108.32.243  tcp_srcport=80.0  tcp_dstport=48999.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 195.108.32.243:48999.0 with anomalous flag combination (ACK) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 112,
+      "source_row": 4100,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=9317.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Canonical SYN-scan pattern (T1046) used for stealthy service enumeration.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 113,
+      "source_row": 2047,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=192.227.153.231  dst_host=192.168.0.128  tcp_srcport=45575.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 114,
+      "source_row": 2501,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=56322.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=224.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 115,
+      "source_row": 2164,
+      "true": "Uploading",
+      "pred": "Uploading",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47128.0  tcp_dstport=3333.0  tcp_flags=2.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Upload of unknown-byte file to 0 via HTTP 0. File extension and payload entropy indicate potential malicious binary or web-shell upload (T1105).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 116,
+      "source_row": 3157,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 117,
+      "source_row": 4022,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=42280.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 118,
+      "source_row": 2434,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=4858.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 119,
+      "source_row": 831,
+      "true": "Fingerprinting",
+      "pred": "Fingerprinting",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=60294.0  tcp_dstport=65535.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP/IP stack probe targeting 192.168.0.128 with characteristic OS-fingerprinting flag combinations (none). Consistent with Gather Victim Host Information Software (MITRE ATT&CK T1592.002), used to identify operating system and services for subsequent exploitation.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 120,
+      "source_row": 2485,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0  tcp_srcport=60944.0  tcp_dstport=5900.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=32.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 5900.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 121,
+      "source_row": 2395,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=11320.0  tcp_dstport=80.0  tcp_flags=2.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Canonical SYN-scan pattern (T1046) used for stealthy service enumeration.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 122,
+      "source_row": 1078,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=11079.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP SYN packets to a range of destination ports without follow-up handshake completion. Indicates port scanning (T1046), preparing attacker with informed exploit strategy.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 123,
+      "source_row": 986,
+      "true": "Ransomware",
+      "pred": "Ransomware",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=47924.0  tcp_dstport=4321.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=464.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Coordinated rapid encryption of network-share files preceded by attacker-controlled key-exchange traffic. Indicates ransomware operation (T1486).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 124,
+      "source_row": 2229,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=206.202.210.47  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic profile (rate, payload, source-spread) matches the empirical fingerprint of a ping-flood denial-of-service campaign (T1498).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 125,
+      "source_row": 2469,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=59472.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web traffic carries client-side scripting payload designed to execute in victim browser. Classified as cross-site scripting (T1059.007).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 126,
+      "source_row": 6023,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.101  tcp_srcport=1883.0  tcp_dstport=64399.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 64399.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 127,
+      "source_row": 4103,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=53792.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 128,
+      "source_row": 2449,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=33032.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Web traffic carries client-side scripting payload designed to execute in victim browser. Classified as cross-site scripting (T1059.007).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 129,
+      "source_row": 4149,
+      "true": "DDoS_HTTP",
+      "pred": "Password",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=57162.0  tcp_flags=18.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0.0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Brute-force pattern: 1 login attempts in <1s from 192.168.0.128, all targeting port 57162.0. Tool-driven credential guessing (T1110.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 130,
+      "source_row": 4151,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.152  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 131,
+      "source_row": 3134,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=42748.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 132,
+      "source_row": 1588,
+      "true": "MITM",
+      "pred": "MITM",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.101  dst_host=0.0  tcp_srcport=0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "DNS responses inconsistent with authoritative records, originating from non-DNS server source. Consistent with DNS-spoofing-based MITM (T1557 family).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 133,
+      "source_row": 879,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=9.176.35.77  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 9.176.35.77 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 134,
+      "source_row": 4074,
+      "true": "DDoS_TCP",
+      "pred": "DDoS_TCP",
+      "flow_block": "Flow features:\nsrc_host=230.127.187.81  dst_host=192.168.0.128  tcp_srcport=50924.0  tcp_dstport=80.0  tcp_flags=2.0  tcp_len=120.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "TCP flow to 192.168.0.128:80.0 with anomalous flag combination (none) and minimal payload. Consistent with crafted-packet TCP DDoS (T1498.001) targeting protocol state machinery.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 135,
+      "source_row": 4263,
+      "true": "DDoS_UDP",
+      "pred": "DDoS_UDP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=0  tcp_srcport=3134.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "UDP flow exhibits attacker-controlled source-port pattern and abnormal payload size for the destination service on port 0.0. Pattern matches volumetric UDP flooding (T1498.002).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 136,
+      "source_row": 5451,
+      "true": "SQL_injection",
+      "pred": "SQL_injection",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=45112.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "HTTP request to 0 containing SQL meta-characters or syntactic patterns. Consistent with SQL Injection (MITRE ATT&CK T1190 Exploit Public-Facing Application). The payload attempts to manipulate the back-end database query through unsanitised input.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 137,
+      "source_row": 1301,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=49260.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=366.0  http_method=GET  http_uri_query=0  http_full_uri=http://192.168.0.128/DVWA/ewebeditpro2/samples/asp/database/index.asp  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 138,
+      "source_row": 2235,
+      "true": "Port_Scanning",
+      "pred": "Port_Scanning",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=4658.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Probe flows to a sweep of destination ports on 192.168.0.170 with no follow-up application traffic. Indicates network service discovery (T1046).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 139,
+      "source_row": 4360,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=4321.0  tcp_dstport=60210.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound connection from 192.168.0.170 to 192.168.0.128:60210.0 with periodic beaconing pattern and unknown-byte payload. Consistent with Backdoor C2 channel using Application-Layer Protocol (MITRE ATT&CK T1071.001 Web Protocols), where compromised host beacons to command-and-control infrastructure.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 140,
+      "source_row": 3998,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=151.153.123.141  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 192.168.0.128 to 151.153.123.141 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 141,
+      "source_row": 2255,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=50492.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=495.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.170 from 192.168.0.128 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 142,
+      "source_row": 4108,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=167.206.206.141  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 167.206.206.141 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 143,
+      "source_row": 2266,
+      "true": "SQL_injection",
+      "pred": "Password",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.128  dst_host=192.168.0.170  tcp_srcport=80.0  tcp_dstport=44290.0  tcp_flags=17.0  tcp_flags_ack=1.0  http_method=0  http_uri_query=0  http_full_uri=0  mqtt_topic=0.0",
+      "rationale": "Authentication probes to 192.168.0.170:44290.0 arrive at rate inconsistent with human typing. Classified as password brute-forcing (T1110.001).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 144,
+      "source_row": 6007,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=22.157.228.27  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic profile (rate, payload, source-spread) matches the empirical fingerprint of a ping-flood denial-of-service campaign (T1498).",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 145,
+      "source_row": 2197,
+      "true": "XSS",
+      "pred": "XSS",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=59628.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=102.0  http_method=GET  http_uri_query=0.0  http_full_uri=http://192.168.0.128/dvwa/vulnerabilities/  mqtt_topic=0.0",
+      "rationale": "Web request payload contains script tags or event-handler attributes targeting client-side execution. Pattern matches XSS attack (T1059.007) attempting reflected or stored script injection.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 146,
+      "source_row": 4080,
+      "true": "Normal",
+      "pred": "Normal",
+      "flow_block": "Flow features:\nsrc_host=0  dst_host=0  tcp_srcport=60944.0  tcp_dstport=5900.0  tcp_flags=16.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0",
+      "rationale": "The observed flow on TCP carries a small number of packets (1) and modest payload (unknown B). Inter-arrival pattern, header layout, and target service on port 5900.0 match baseline application profile; no malicious signature detected.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 147,
+      "source_row": 2020,
+      "true": "DDoS_ICMP",
+      "pred": "DDoS_ICMP",
+      "flow_block": "Flow features:\nsrc_host=173.47.93.162  dst_host=192.168.0.128  tcp_srcport=0.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "ICMP traffic from 173.47.93.162 to 192.168.0.128 at high frequency with non-default payload size. Consistent with ICMP flood (T1498) using crafted packets to maximise victim processing cost.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 148,
+      "source_row": 2208,
+      "true": "Vulnerability_scanner",
+      "pred": "Vulnerability_scanner",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=48524.0  tcp_dstport=80.0  tcp_flags=24.0  tcp_flags_ack=1.0  tcp_len=290.0  http_method=GET  http_uri_query=wsdl  http_full_uri=http://192.168.0.128/DVWA/dswsbobje/services/AdminService?wsdl  mqtt_topic=0.0",
+      "rationale": "Sequential probe of multiple ports/services on 192.168.0.128 from 192.168.0.170 with characteristic scanner fingerprint. Consistent with Active Scanning Vulnerability Scanning (MITRE ATT&CK T1595.002), where the attacker enumerates services to identify exploitable software versions.",
+      "confirmation_output_matches_sampled_truth": true
+    },
+    {
+      "i": 149,
+      "source_row": 5392,
+      "true": "Backdoor",
+      "pred": "Backdoor",
+      "flow_block": "Flow features:\nsrc_host=192.168.0.170  dst_host=192.168.0.128  tcp_srcport=4321.0  tcp_dstport=60444.0  tcp_flags=20.0  tcp_flags_ack=1.0  http_method=0.0  http_uri_query=0.0  http_full_uri=0.0  mqtt_topic=0.0",
+      "rationale": "Outbound traffic exhibits jittered-interval beaconing with payload entropy and size characteristic of C2 frameworks. Matches T1071.001 backdoor communication.",
+      "confirmation_output_matches_sampled_truth": true
+    }
+  ]
+}

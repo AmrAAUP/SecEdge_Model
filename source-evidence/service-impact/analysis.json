@@ -1,0 +1,1324 @@
+{
+  "title": "Controlled Pi service-impact severity validation",
+  "protocol_sha256": "d7fdb737d6e7286502ad8d873a9ca0939269bbf617f404257e8796f8ce349ca5",
+  "worker_sha256": "ba40b200b2dace0847baddc265985ab5c31624b5a245a5dd07a567c08da3d5d3",
+  "raw_sha256": "430fa50d241af15b5bcfd3b4ce954ec57fe6125252949e13de780dca99b7950e",
+  "request_count": 1344,
+  "episode_count": 28,
+  "levels": [
+    "None",
+    "Low",
+    "Moderate",
+    "High"
+  ],
+  "summary": {
+    "all": {
+      "functional": {
+        "n": 28,
+        "exact": 15,
+        "agreement": 0.5357142857142857,
+        "under_triage": 8,
+        "over_triage": 5,
+        "high_n": 12,
+        "high_correct": 6,
+        "mean_absolute_tier_error": 1.0357142857142858,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            4,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            4,
+            0
+          ],
+          [
+            4,
+            0,
+            2,
+            6
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 28,
+        "exact": 12,
+        "agreement": 0.42857142857142855,
+        "under_triage": 11,
+        "over_triage": 5,
+        "high_n": 12,
+        "high_correct": 4,
+        "mean_absolute_tier_error": 1.3928571428571428,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            4,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            0
+          ],
+          [
+            7,
+            0,
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    "stationary": {
+      "functional": {
+        "n": 20,
+        "exact": 15,
+        "agreement": 0.75,
+        "under_triage": 4,
+        "over_triage": 1,
+        "high_n": 8,
+        "high_correct": 6,
+        "mean_absolute_tier_error": 0.25,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            6
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 20,
+        "exact": 12,
+        "agreement": 0.6,
+        "under_triage": 7,
+        "over_triage": 1,
+        "high_n": 8,
+        "high_correct": 4,
+        "mean_absolute_tier_error": 0.75,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            0
+          ],
+          [
+            3,
+            0,
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    "transition": {
+      "functional": {
+        "n": 8,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 4,
+        "over_triage": 4,
+        "high_n": 4,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 3.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 8,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 4,
+        "over_triage": 4,
+        "high_n": 4,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 3.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "per_condition": {
+    "healthy": {
+      "n": 4,
+      "future_failed": 0,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "None": 4
+      },
+      "functional": {
+        "n": 4,
+        "exact": 4,
+        "agreement": 1.0,
+        "under_triage": 0,
+        "over_triage": 0,
+        "high_n": 0,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 0.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 4,
+        "agreement": 1.0,
+        "under_triage": 0,
+        "over_triage": 0,
+        "high_n": 0,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 0.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "intermittent_delay": {
+      "n": 4,
+      "future_failed": 18,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "Low": 1,
+        "Moderate": 3
+      },
+      "functional": {
+        "n": 4,
+        "exact": 3,
+        "agreement": 0.75,
+        "under_triage": 1,
+        "over_triage": 0,
+        "high_n": 0,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 0.25,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 3,
+        "agreement": 0.75,
+        "under_triage": 1,
+        "over_triage": 0,
+        "high_n": 0,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 0.25,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "intermittent_unavailable": {
+      "n": 4,
+      "future_failed": 21,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "Moderate": 2,
+        "Low": 1,
+        "High": 1
+      },
+      "functional": {
+        "n": 4,
+        "exact": 1,
+        "agreement": 0.25,
+        "under_triage": 2,
+        "over_triage": 1,
+        "high_n": 1,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 0.75,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 1,
+        "agreement": 0.25,
+        "under_triage": 2,
+        "over_triage": 1,
+        "high_n": 1,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 0.75,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    "sustained_delay": {
+      "n": 4,
+      "future_failed": 96,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "High": 4
+      },
+      "functional": {
+        "n": 4,
+        "exact": 4,
+        "agreement": 1.0,
+        "under_triage": 0,
+        "over_triage": 0,
+        "high_n": 4,
+        "high_correct": 4,
+        "mean_absolute_tier_error": 0.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 4,
+        "agreement": 1.0,
+        "under_triage": 0,
+        "over_triage": 0,
+        "high_n": 4,
+        "high_correct": 4,
+        "mean_absolute_tier_error": 0.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ]
+      }
+    },
+    "incorrect_success_body": {
+      "n": 4,
+      "future_failed": 33,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "High": 3,
+        "Moderate": 1
+      },
+      "functional": {
+        "n": 4,
+        "exact": 3,
+        "agreement": 0.75,
+        "under_triage": 1,
+        "over_triage": 0,
+        "high_n": 3,
+        "high_correct": 2,
+        "mean_absolute_tier_error": 0.25,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 4,
+        "over_triage": 0,
+        "high_n": 3,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 2.75,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "abrupt_onset": {
+      "n": 4,
+      "future_failed": 96,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "High": 4
+      },
+      "functional": {
+        "n": 4,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 4,
+        "over_triage": 0,
+        "high_n": 4,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 3.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 4,
+        "over_triage": 0,
+        "high_n": 4,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 3.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "recovery_transition": {
+      "n": 4,
+      "future_failed": 0,
+      "future_n": 96,
+      "observed_tier_counts": {
+        "None": 4
+      },
+      "functional": {
+        "n": 4,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 0,
+        "over_triage": 4,
+        "high_n": 0,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 3.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "transport_only": {
+        "n": 4,
+        "exact": 0,
+        "agreement": 0.0,
+        "under_triage": 0,
+        "over_triage": 4,
+        "high_n": 0,
+        "high_correct": 0,
+        "mean_absolute_tier_error": 3.0,
+        "confusion_rows_observed_columns_predicted": [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "observed_tier_counts": {
+    "Low": 2,
+    "None": 8,
+    "High": 12,
+    "Moderate": 6
+  },
+  "recovery_success": 224,
+  "recovery_n": 224,
+  "forecast_precedes_every_future_request": true,
+  "episodes": [
+    {
+      "episode": 1,
+      "block": 1,
+      "condition": "intermittent_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Low",
+        "transport_only": "Low"
+      },
+      "observed": "Low",
+      "future_bad": 2,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 1,
+      "monitor_transport_bad": 1
+    },
+    {
+      "episode": 2,
+      "block": 1,
+      "condition": "recovery_transition",
+      "scope": "transition",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 3,
+      "block": 1,
+      "condition": "incorrect_success_body",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 9,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 6,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 4,
+      "block": 1,
+      "condition": "intermittent_unavailable",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "Moderate"
+      },
+      "observed": "Moderate",
+      "future_bad": 4,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 2,
+      "monitor_transport_bad": 2
+    },
+    {
+      "episode": 5,
+      "block": 1,
+      "condition": "healthy",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 6,
+      "block": 1,
+      "condition": "sustained_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 7,
+      "block": 1,
+      "condition": "abrupt_onset",
+      "scope": "transition",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 8,
+      "block": 2,
+      "condition": "sustained_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 9,
+      "block": 2,
+      "condition": "incorrect_success_body",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 9,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 5,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 10,
+      "block": 2,
+      "condition": "healthy",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 11,
+      "block": 2,
+      "condition": "abrupt_onset",
+      "scope": "transition",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 12,
+      "block": 2,
+      "condition": "recovery_transition",
+      "scope": "transition",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 13,
+      "block": 2,
+      "condition": "intermittent_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Low",
+        "transport_only": "Low"
+      },
+      "observed": "Moderate",
+      "future_bad": 7,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 1,
+      "monitor_transport_bad": 1
+    },
+    {
+      "episode": 14,
+      "block": 2,
+      "condition": "intermittent_unavailable",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "Moderate"
+      },
+      "observed": "Low",
+      "future_bad": 2,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 3,
+      "monitor_transport_bad": 3
+    },
+    {
+      "episode": 15,
+      "block": 3,
+      "condition": "incorrect_success_body",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 9,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 3,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 16,
+      "block": 3,
+      "condition": "intermittent_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "Moderate"
+      },
+      "observed": "Moderate",
+      "future_bad": 4,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 3,
+      "monitor_transport_bad": 3
+    },
+    {
+      "episode": 17,
+      "block": 3,
+      "condition": "recovery_transition",
+      "scope": "transition",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 18,
+      "block": 3,
+      "condition": "healthy",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 19,
+      "block": 3,
+      "condition": "abrupt_onset",
+      "scope": "transition",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 20,
+      "block": 3,
+      "condition": "sustained_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 21,
+      "block": 3,
+      "condition": "intermittent_unavailable",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "Moderate"
+      },
+      "observed": "High",
+      "future_bad": 8,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 3,
+      "monitor_transport_bad": 3
+    },
+    {
+      "episode": 22,
+      "block": 4,
+      "condition": "abrupt_onset",
+      "scope": "transition",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 23,
+      "block": 4,
+      "condition": "recovery_transition",
+      "scope": "transition",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 24,
+      "block": 4,
+      "condition": "intermittent_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "Moderate"
+      },
+      "observed": "Moderate",
+      "future_bad": 5,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 2,
+      "monitor_transport_bad": 2
+    },
+    {
+      "episode": 25,
+      "block": 4,
+      "condition": "intermittent_unavailable",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Low",
+        "transport_only": "Low"
+      },
+      "observed": "Moderate",
+      "future_bad": 7,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 1,
+      "monitor_transport_bad": 1
+    },
+    {
+      "episode": 26,
+      "block": 4,
+      "condition": "healthy",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "None",
+        "transport_only": "None"
+      },
+      "observed": "None",
+      "future_bad": 0,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 0,
+      "monitor_transport_bad": 0
+    },
+    {
+      "episode": 27,
+      "block": 4,
+      "condition": "sustained_delay",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "High",
+        "transport_only": "High"
+      },
+      "observed": "High",
+      "future_bad": 24,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 16,
+      "monitor_transport_bad": 16
+    },
+    {
+      "episode": 28,
+      "block": 4,
+      "condition": "incorrect_success_body",
+      "scope": "stationary",
+      "predicted": {
+        "functional": "Moderate",
+        "transport_only": "None"
+      },
+      "observed": "Moderate",
+      "future_bad": 6,
+      "future_n": 24,
+      "recovery_bad": 0,
+      "recovery_n": 8,
+      "monitor_functional_bad": 3,
+      "monitor_transport_bad": 0
+    }
+  ],
+  "metadata": {
+    "body_sha256": "aa858767ebe35ec12c7645bbffdb87b7fc55a78fef5d16e071003ba591213b3f",
+    "client_workers": 4,
+    "configured_rate_per_second": 8,
+    "elapsed_ns": 3966461,
+    "endpoint": "127.0.0.1:57151",
+    "event": "run_started",
+    "hostname": "AAUP",
+    "load_average": [
+      0.0,
+      0.04736328125,
+      0.0361328125
+    ],
+    "machine": "aarch64",
+    "pid": 191141,
+    "protocol_sha256": "d7fdb737d6e7286502ad8d873a9ca0939269bbf617f404257e8796f8ce349ca5",
+    "python": "3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]",
+    "server_workers": 8,
+    "utc": "2026-10-08T00:13:36.129964+00:00"
+  },
+  "closure": {
+    "complete": true,
+    "elapsed_ns": 165885517281,
+    "event": "run_closed",
+    "load_average": [
+      0.00244140625,
+      0.029296875,
+      0.025390625
+    ],
+    "max_rss_kib": 22976,
+    "service_thread_alive": false,
+    "utc": "2026-10-08T00:16:22.011524+00:00"
+  }
+}

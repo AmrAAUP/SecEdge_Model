@@ -1,0 +1,44 @@
+{
+ "single_feature_auroc": {
+  "logit_v": 0.7322,
+  "log_pmax": 0.9328,
+  "margin": 0.9302,
+  "entropy": 0.9319,
+  "logit_gmax": 0.7136,
+  "logit_g_of_lab": 0.9629,
+  "agree": 0.8369
+ },
+ "stack_all": {
+  "auroc": 0.9868296731556729,
+  "aurc": 0.004618277878979602,
+  "ece": 0.009222012101351323
+ },
+ "stack_slm_only(v,pmax,margin,entropy)": {
+  "auroc": 0.9322547184227965,
+  "aurc": 0.009328864732679605,
+  "ece": 0.013424018942953196
+ },
+ "stack_gate_only(gmax,g_of_lab,agree)": {
+  "auroc": 0.9670803058950231,
+  "aurc": 0.006308662759393201,
+  "ece": 0.025041197952257822
+ },
+ "stack_without_verbal": {
+  "auroc": 0.9860645561441691,
+  "aurc": 0.004685450846278965,
+  "ece": 0.005957838805698028
+ },
+ "standardized_coefficients": {
+  "logit_v": -0.504,
+  "log_pmax": -1.157,
+  "margin": 1.466,
+  "entropy": -1.253,
+  "logit_gmax": -0.009,
+  "logit_g_of_lab": 3.832,
+  "agree": -0.654
+ },
+ "agreement_rate": 0.8530077619663649,
+ "acc_when_agree": 0.9772511848341232,
+ "acc_when_disagree": 0.5698569856985699,
+ "_label": "EXPLORATORY (not pre-registered): feature ablation of the stacked ranking signal; fitted on val_cal, scored on test"
+}

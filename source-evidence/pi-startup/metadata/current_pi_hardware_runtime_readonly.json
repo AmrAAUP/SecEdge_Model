@@ -1,0 +1,17 @@
+{
+  "hardware": {
+    "device_model": "Raspberry Pi 5 Model B Rev 1.1",
+    "device_model_sha256": "875678377a0254841bd0212cc0d02fe4a84046ab4f58643fb4ab8d38a717b37d",
+    "mem_total": [
+      "MemTotal:       16608176 kB"
+    ],
+    "cpu_model_fields": [
+      "Model\t\t: Raspberry Pi 5 Model B Rev 1.1"
+    ]
+  },
+  "runtime_defaults": [],
+  "runtime_versions": [],
+  "files": [],
+  "observed_utc": "2026-10-07T18:35:43.192139+00:00",
+  "scope": "Current-device metadata and exact installed library source read without importing it, inference or mutations. This cannot authenticate the historical runtime/hardware configuration."
+}

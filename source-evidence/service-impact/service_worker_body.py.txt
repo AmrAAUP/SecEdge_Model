@@ -1,0 +1,111 @@
+import concurrent.futures,datetime,hashlib,http.client,http.server,json,os,platform,random,socket,sys,threading,time,urllib.parse,resource
+
+P=json.loads(PROTOCOL_TEXT)
+START=time.perf_counter_ns();LOCK=threading.Lock();EMIT_LOCK=threading.Lock()
+CONTEXT={'mode':'healthy','episode':0,'phase':'startup'}
+def stamp():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+def emit(kind,**data):
+    with EMIT_LOCK:
+        print(json.dumps({'event':kind,'utc':stamp(),'elapsed_ns':time.perf_counter_ns()-START,**data},sort_keys=True,separators=(',',':')),flush=True)
+def watchdog():
+    emit('aborted',reason='240-second hard watchdog');os._exit(99)
+timer=threading.Timer(240,watchdog);timer.daemon=True;timer.start()
+
+class Server(http.server.ThreadingHTTPServer):
+    daemon_threads=False
+    block_on_close=True
+    request_queue_size=8
+    allow_reuse_address=False
+    def __init__(self,*a,**k):
+        self.slots=threading.BoundedSemaphore(P['max_server_workers']);super().__init__(*a,**k)
+    def process_request(self,request,client_address):
+        self.slots.acquire()
+        try:super().process_request(request,client_address)
+        except BaseException:self.slots.release();raise
+    def process_request_thread(self,request,client_address):
+        try:super().process_request_thread(request,client_address)
+        finally:self.slots.release()
+
+class Handler(http.server.BaseHTTPRequestHandler):
+    def log_message(self,*a):pass
+    def do_GET(self):
+        n=urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query).get('n',[''])[0]
+        if len(n)!=32 or any(c not in '0123456789abcdef' for c in n):
+            self.send_error(400);return
+        with LOCK:c=dict(CONTEXT)
+        seed=hashlib.sha256(f"{P['randomization_seed']}|{c['episode']}|{c['phase']}|{n}|fault".encode()).digest()
+        u=random.Random(int.from_bytes(seed,'big')).random()
+        delay=.002;status=200;digest=hashlib.sha256((n+'|service-v1').encode()).hexdigest()
+        if c['mode']=='delay20' and u<.2:delay=.300
+        if c['mode']=='error20' and u<.2:status=503
+        if c['mode']=='slow_all':delay=.450
+        if c['mode']=='corrupt25' and u<.25:digest='0'*64
+        time.sleep(delay)
+        body=json.dumps({'nonce':n,'digest':digest},separators=(',',':')).encode()
+        try:
+            self.send_response(status);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body)
+        except (BrokenPipeError,ConnectionResetError):pass
+
+def request(port,ep,phase,i):
+    nonce=hashlib.sha256(f"{P['randomization_seed']}|{ep}|{phase}|{i}|client".encode()).hexdigest()[:32]
+    expected=hashlib.sha256((nonce+'|service-v1').encode()).hexdigest()
+    t=time.perf_counter_ns();started=stamp();status=None;correct=False;error=None;body=b'';got_nonce=None;got_digest=None
+    conn=http.client.HTTPConnection('127.0.0.1',port,timeout=P['client_timeout_seconds'])
+    try:
+        conn.request('GET','/work?n='+nonce,headers={'Connection':'close'})
+        response=conn.getresponse();status=response.status;body=response.read(2048)
+        try:
+            d=json.loads(body);got_nonce=d.get('nonce');got_digest=d.get('digest');correct=got_nonce==nonce and got_digest==expected
+        except (ValueError,AttributeError,TypeError):correct=False
+    except Exception as exc:error=type(exc).__name__+': '+str(exc)
+    finally:conn.close()
+    elapsed=time.perf_counter_ns()-t
+    transport=status==200 and error is None and elapsed<=P['request_slo_ms']*1000000
+    out={'episode':ep,'phase':phase,'request_index':i,'nonce':nonce,'started_utc':started,'started_elapsed_ns':t-START,'finished_elapsed_ns':time.perf_counter_ns()-START,'duration_ns':elapsed,'status':status,'body_correct':correct,'returned_nonce':got_nonce,'returned_digest':got_digest,'response_sha256':hashlib.sha256(body).hexdigest(),'error':error,'transport_slo_success':transport,'functional_slo_success':transport and correct}
+    emit('request',**out);return out
+
+def window(pool,port,ep,phase,mode,n):
+    with LOCK:CONTEXT.update(mode=mode,episode=ep,phase=phase)
+    futures=[];base=time.perf_counter()
+    for i in range(n):
+        wait=base+i/P['rate_per_second']-time.perf_counter()
+        if wait>0:time.sleep(wait)
+        futures.append(pool.submit(request,port,ep,phase,i))
+    return [f.result() for f in futures]
+
+def tier(bad,n):
+    if bad==0:return 'None'
+    if 10*bad<=n:return 'Low'
+    if 10*bad<=3*n:return 'Moderate'
+    return 'High'
+
+def predict(early):
+    # This function receives only earlier observations, never condition/future outcomes.
+    functional_bad=sum(not x['functional_slo_success'] for x in early)
+    transport_bad=sum(not x['transport_slo_success'] for x in early)
+    return {'functional':tier(functional_bad,len(early)),'transport_only':tier(transport_bad,len(early)),'functional_bad':functional_bad,'transport_bad':transport_bad,'n':len(early)}
+
+server=None;thread=None;pool=None;completed=False
+try:
+    server=Server(('127.0.0.1',0),Handler);port=server.server_address[1]
+    thread=threading.Thread(target=server.serve_forever,kwargs={'poll_interval':.05},name='isolated-http-service',daemon=True);thread.start()
+    pool=concurrent.futures.ThreadPoolExecutor(max_workers=P['max_client_workers'],thread_name_prefix='isolated-client')
+    emit('run_started',hostname=platform.node(),machine=platform.machine(),python=sys.version,pid=os.getpid(),protocol_sha256=hashlib.sha256(PROTOCOL_TEXT.encode()).hexdigest(),body_sha256=BODY_SHA256,endpoint='127.0.0.1:'+str(port),configured_rate_per_second=P['rate_per_second'],client_workers=P['max_client_workers'],server_workers=P['max_server_workers'],load_average=os.getloadavg())
+    for ep in P['episode_order']:
+        eid=ep['episode'];emit('episode_started',episode=eid,block=ep['block'],condition=ep['id'])
+        early=window(pool,port,eid,'monitor',ep['monitor'],P['monitor_requests_per_episode'])
+        forecast=predict(early)
+        early_hash=hashlib.sha256(json.dumps(early,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+        emit('forecast_committed',episode=eid,forecast=forecast,early_records_sha256=early_hash)
+        future=window(pool,port,eid,'future_client',ep['future'],P['future_client_requests_per_episode'])
+        bad=sum(not x['functional_slo_success'] for x in future)
+        observed=tier(bad,len(future))
+        recovery=window(pool,port,eid,'recovery','healthy',P['recovery_requests_per_episode'])
+        emit('episode_completed',episode=eid,block=ep['block'],condition=ep['id'],forecast=forecast,observed_tier=observed,future_functional_bad=bad,future_n=len(future),recovery_bad=sum(not x['functional_slo_success'] for x in recovery),recovery_n=len(recovery))
+    completed=True
+finally:
+    if pool is not None:pool.shutdown(wait=True,cancel_futures=True)
+    if server is not None:server.shutdown();server.server_close()
+    if thread is not None:thread.join(timeout=2)
+    timer.cancel()
+    emit('run_closed',complete=completed,service_thread_alive=thread.is_alive() if thread else False,load_average=os.getloadavg(),max_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)

@@ -1,0 +1,223 @@
+{
+  "identifier": "XAI-REV-20261006-INTERVENTION-v2",
+  "created_utc": "2026-10-06T16:28:49.812243+00:00",
+  "scope": "New supplementary Pi input-sensitivity validation; protocol fixed after inspection of earlier studies and before these new scores. Does not authenticate historical pre-registration or replicate its unknown intervention population.",
+  "target_population": "Retained separate150-flow Pi confirmation, source6184 draw; select2perclass without using predictions or scores.",
+  "target_seed": 20261006,
+  "target_n": 30,
+  "donor_n": 5,
+  "donor_seed": 20261006,
+  "random_control_seed": 20261007,
+  "model": "/home/aaup/Desktop/paper/paper_q1/pi5_q8/pi5_q8/models/secedge-3.8b-q8_0-seed456.gguf",
+  "model_sha256": "c7aaaeefa586f616a1d91fbd007cfbfc7e1844baf7a399e6809cf4d24745d40a",
+  "donor_manifest_sha256": "b26615bf28181a529ee86403f234b2b51b8a1712ad5b802475d873805d41eafd",
+  "retained_inputs_sha256": "2393afc0af57fc10041acfbf206a1cecfa29d5c1e0954c44752d67e8c379d58f",
+  "bundle_sha256": "ff89b459da5c6a60ce62f6c3fa864d003400d63285c628f06a10432250810808",
+  "runner_sha256": "e4a4a6ed9bcbe1e7da63d7485ed352f2f9a83bce0ef5cdce822dbc3c0bb64880",
+  "target_indices": [
+    {
+      "i": 1,
+      "source_row": 4170,
+      "true": "Uploading",
+      "input_sha256": "a22138121ae272da0b8e6f01c89cedd9b37415a70fe31d600189b88c009cb032"
+    },
+    {
+      "i": 5,
+      "source_row": 6012,
+      "true": "XSS",
+      "input_sha256": "3ad3dc66f340f734f49c93aeb3e352af483b81d57bcd102fbd1766d5e1fedaca"
+    },
+    {
+      "i": 7,
+      "source_row": 2189,
+      "true": "DDoS_ICMP",
+      "input_sha256": "45c5b5f967ddf1bd9489f913b92f8e835634bc6c033d6ae14aff4932ef69b0b9"
+    },
+    {
+      "i": 12,
+      "source_row": 5605,
+      "true": "MITM",
+      "input_sha256": "fdd718561723c2b10fb788ac3258670a5086d4edbe99071b96364d73d50a9867"
+    },
+    {
+      "i": 18,
+      "source_row": 1203,
+      "true": "DDoS_UDP",
+      "input_sha256": "83417ef0ccca357238b0462b2d21e71cc3f2374048a2e79ab9dd8d8be0593159"
+    },
+    {
+      "i": 23,
+      "source_row": 2595,
+      "true": "SQL_injection",
+      "input_sha256": "6daa36e86ca5d0925d3c130569d6df10c3de6c87a9518cef2a5d31c93bae2dac"
+    },
+    {
+      "i": 27,
+      "source_row": 2361,
+      "true": "Backdoor",
+      "input_sha256": "c2a82d36602d597a55320fd53d18d48f3fe46e52528f525af2d66e6481273e53"
+    },
+    {
+      "i": 30,
+      "source_row": 6065,
+      "true": "SQL_injection",
+      "input_sha256": "4efe418a265bf28a80f85035c05e141e98aa0c813c785ac9b7b7f106db5cf2c0"
+    },
+    {
+      "i": 35,
+      "source_row": 503,
+      "true": "MITM",
+      "input_sha256": "fdd718561723c2b10fb788ac3258670a5086d4edbe99071b96364d73d50a9867"
+    },
+    {
+      "i": 37,
+      "source_row": 2165,
+      "true": "Vulnerability_scanner",
+      "input_sha256": "5b2599cd9bdfe63036372067cd399e26a0535d68872f8725391943e7f7663aab"
+    },
+    {
+      "i": 42,
+      "source_row": 5249,
+      "true": "Vulnerability_scanner",
+      "input_sha256": "1e4d70788f5189b499d21904cf1c9b9ed3a576a7c43d372a42998562b18f6708"
+    },
+    {
+      "i": 43,
+      "source_row": 763,
+      "true": "Fingerprinting",
+      "input_sha256": "e361ae3bbbd3c4ff174de1d64c1dbfde83e84408d4ac8f377e1306311c7a25ed"
+    },
+    {
+      "i": 45,
+      "source_row": 6048,
+      "true": "Port_Scanning",
+      "input_sha256": "8f980916a7e5c6802d015154ee7c14db0685482bd74b2b8fe6fc7fcd3a026d80"
+    },
+    {
+      "i": 50,
+      "source_row": 1853,
+      "true": "Fingerprinting",
+      "input_sha256": "c92b7024b66697f834165a6c6fca8239865ec969e12de1825e8cd8864da96e34"
+    },
+    {
+      "i": 55,
+      "source_row": 4095,
+      "true": "Ransomware",
+      "input_sha256": "8b8769b55133d61bc6ab7eb3ee94ef210ee970dc3d028235e3e664094e54a086"
+    },
+    {
+      "i": 58,
+      "source_row": 2296,
+      "true": "DDoS_TCP",
+      "input_sha256": "65f8719b86beb069fd3b87dd998e1a76099a6bbc44d973fc3452826c6b555d25"
+    },
+    {
+      "i": 70,
+      "source_row": 5959,
+      "true": "DDoS_HTTP",
+      "input_sha256": "f3ee5c905c0f8d7bc7c9db45a445c4c2caf93c35259b88496c5a773b68205cc7"
+    },
+    {
+      "i": 79,
+      "source_row": 1275,
+      "true": "Password",
+      "input_sha256": "7403dd21c74b8865e43a7a6cccd40565bf13b58ab2a0e1040810d54de753c621"
+    },
+    {
+      "i": 91,
+      "source_row": 1075,
+      "true": "Uploading",
+      "input_sha256": "5a740b32d9491d6269b1e7af458de7c596d6ea914016d5e727a9f58acb10e423"
+    },
+    {
+      "i": 92,
+      "source_row": 5237,
+      "true": "DDoS_HTTP",
+      "input_sha256": "baf0db46b0ff76982258bd27497b9c3c5364b6b39eede318146579d20044d255"
+    },
+    {
+      "i": 100,
+      "source_row": 2390,
+      "true": "Normal",
+      "input_sha256": "ccc5f82f15c2c27c0dee58a2542afb6bdd5098fa3a18b28d2743377fa0340b09"
+    },
+    {
+      "i": 103,
+      "source_row": 5458,
+      "true": "DDoS_TCP",
+      "input_sha256": "c4c70643742bc1abb90130b9c536b23f17a6d7ca197f5122c2da53cfa1d5c0c6"
+    },
+    {
+      "i": 107,
+      "source_row": 2572,
+      "true": "Password",
+      "input_sha256": "a0bce55a4affe2cdc91d5ace802987f44d02ecfcf9934ea69c901dc549fdcf10"
+    },
+    {
+      "i": 114,
+      "source_row": 2501,
+      "true": "Backdoor",
+      "input_sha256": "d4e6336613abc02a2f6095c28bad8b8694c67563deb98bab10207b9488c4ea67"
+    },
+    {
+      "i": 123,
+      "source_row": 986,
+      "true": "Ransomware",
+      "input_sha256": "8b8769b55133d61bc6ab7eb3ee94ef210ee970dc3d028235e3e664094e54a086"
+    },
+    {
+      "i": 124,
+      "source_row": 2229,
+      "true": "DDoS_ICMP",
+      "input_sha256": "2f3ad51bf239ce92d2f6235c015e49e28ecb5639c79ae32f7104ff27d4995e2b"
+    },
+    {
+      "i": 125,
+      "source_row": 2469,
+      "true": "XSS",
+      "input_sha256": "5d1e63a2953d781910f3caf7fb19e18bfe1021b27d56e8a58b7ee3851c479034"
+    },
+    {
+      "i": 126,
+      "source_row": 6023,
+      "true": "Normal",
+      "input_sha256": "095231bf64a20f282cf5722b2c21d27b457fb4d7441723ed46c877958d9ddf6f"
+    },
+    {
+      "i": 127,
+      "source_row": 4103,
+      "true": "DDoS_UDP",
+      "input_sha256": "6e93eb35d9c6a5ea6c31e6458227c0b491594e7700ee9fd74100913b20ef60dd"
+    },
+    {
+      "i": 138,
+      "source_row": 2235,
+      "true": "Port_Scanning",
+      "input_sha256": "d1ef49c984c938953100602fb4e01023b5798bbd53a9b582ad920d80a4f043f1"
+    }
+  ],
+  "score": "At each branching grammar node, softmax only allowed child logits and multiply branch probabilities for each class path; all15classes sum to1. Focus class is argmax of this grammar-normalized joint distribution, which is not assumed identical to greedy decoding.",
+  "single_interventions": "Replace each actually rendered field with same field from each validation Normal donor; if donor lacks it, omit it according to the source renderer. Other rendered fields unchanged. All possible present fields, at most14, evaluated once per donor; unchanged blocks retained with zero effect.",
+  "comprehensiveness": "log q_focus(original) minus log q_focus(replaced); clamp probabilities to1e-12 before log. Negative effects retained.",
+  "selection": "For each held-out donor, rank fields using mean single-field drops over the other4 donors; jointreplace up to3 top fields with held-out donor. Fixed seedrandom3field control uses same held-out donor.",
+  "stability": "Withinflow pairwise Jaccard of five single-donor top3sets, exact top3set agreement, Spearman ranks with ties; leave-one-donor-out joint drop vs matched randomcontrol. Summarize over flows, do not treat five repeated donors as150independentflows.",
+  "validity": "Score all planned mixed inputs. Flag port range/integer/nonnumeric errors and finite integer TCPflags in0..511, ACKin{0,1}, flags bit0x10 versusACK consistency under zero-omission convention. These checks do not cover all protocol relationships or establish physical validity. Report baseline issues, newly introduced issues, unchanged substitutions, and results restricted to no newly flagged issues separately.",
+  "statistics": "Report30flows and unique renderedinputs. Clusterbootstrap95% intervals by exact renderedinput hash using seed20261008 and10000resamples; preserve all occurrence weights. Report1e-12floor hits and uncensored rawq values. Five donors are repeated measurements, not150independentflows.",
+  "hardware": {
+    "model": "Raspberry Pi 5 Model B Rev 1.1",
+    "memory": [
+      "MemTotal:       16608176 kB",
+      "MemFree:         5903248 kB",
+      "MemAvailable:   15976720 kB"
+    ],
+    "machine": "aarch64",
+    "kernel": "6.12.75+rpt-rpi-2712",
+    "boot_id": "fce6dba0-f14a-4ff0-8172-e2fc3b72108a",
+    "cpu_count": 4,
+    "thermal_c": 46.85
+  },
+  "source_files_modified": false,
+  "supersedes": "v1; no scoring was started under v1. Implementation corrected after tokenizer-only preflight.",
+  "tokenization_evidence_sha256": "7332a8062bf5c3109698a36e487907fb87a519912c811964d0d014c11a5a6ce9",
+  "tokenization": "Use retained bundle fixed prefix IDs + tokenize canonical flow_block with add_bos=False,special=False + original suffix IDs. All150retained sequences match exactly; separate150confirmation and5donor bodies roundtrip exactly."
+}

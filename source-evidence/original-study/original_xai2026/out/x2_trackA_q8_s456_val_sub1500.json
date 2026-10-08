@@ -1,0 +1,1830 @@
+{
+ "model": "q8_s456",
+ "val": "val_sub1500",
+ "n_val": 1500,
+ "prereg_sha256": "75bba6dbc5bf8fe65482efd5699a03d1e1bc7334224d02a893342007b46e2684",
+ "val_accuracy": 0.9126666666666666,
+ "cv": {
+  "verbal_raw": {
+   "ece": 0.1587593333333333,
+   "auroc": 0.6843583851491394,
+   "aurc": 0.045225140504624166
+  },
+  "verbal_hist": {
+   "ece": 0.023648187943231206,
+   "auroc": 0.7485258613604112,
+   "aurc": 0.035214243535917664
+  },
+  "verbal_isotonic": {
+   "ece": 0.014734356414744885,
+   "auroc": 0.7155967556819138,
+   "aurc": 0.0396019143772961
+  },
+  "intrinsic_raw": {
+   "ece": 0.039878808733012736,
+   "auroc": 0.9383621650045008,
+   "aurc": 0.00967264372163087
+  },
+  "intrinsic_ts": {
+   "ece": 0.04058571889939823,
+   "auroc": 0.9384473281066956,
+   "aurc": 0.009669811939779454
+  },
+  "stack": {
+   "ece": 0.022878577008576227,
+   "auroc": 0.9889576630452541,
+   "aurc": 0.005048280151122825
+  }
+ },
+ "primary_calibrator": "verbal_isotonic",
+ "primary_ranking": "stack",
+ "temperature": 1.5202513433502267,
+ "tests": {
+  "test_sub1500": {
+   "n": 1500,
+   "accuracy": 0.9113333333333333,
+   "macro_f1": 0.9103491592204281,
+   "methods": {
+    "verbal_raw": {
+     "ece": 0.13902000000000003,
+     "ece_mass": 0.13755200000000004,
+     "mce": 0.9406666666666667,
+     "brier": 0.12782851866666667,
+     "nll": 0.43833318123939263,
+     "auroc": 0.730753364757908,
+     "aurc": 0.0389319421554296,
+     "eaurc": 0.034849883054483145,
+     "selacc_80": 0.9441666666666667,
+     "selacc_90": 0.9325925925925926,
+     "selacc_95": 0.9221052631578948,
+     "ece_ci": [
+      0.12293681666666681,
+      0.15624013333333328
+     ],
+     "auroc_ci": [
+      0.6867264204845392,
+      0.7743470956971745
+     ],
+     "aurc_ci": [
+      0.029435611055295057,
+      0.048159407107455046
+     ]
+    },
+    "verbal_hist": {
+     "ece": 0.016972918877542358,
+     "ece_mass": 0.020105682269878647,
+     "mce": 0.09090909090909083,
+     "brier": 0.07119044814941869,
+     "nll": 0.2513322755340051,
+     "auroc": 0.7857005351711392,
+     "aurc": 0.030350817954885364,
+     "eaurc": 0.02626875885393891,
+     "selacc_80": 0.9516666666666667,
+     "selacc_90": 0.9377777777777778,
+     "selacc_95": 0.9284210526315789,
+     "ece_ci": [
+      0.00913202750756171,
+      0.031965840299228034
+     ],
+     "auroc_ci": [
+      0.7448873827583966,
+      0.8241186632037374
+     ],
+     "aurc_ci": [
+      0.022800344795308986,
+      0.03874316264303672
+     ]
+    },
+    "verbal_isotonic": {
+     "ece": 0.012545068548384173,
+     "ece_mass": 0.023996429176582536,
+     "mce": 0.09090909090909083,
+     "brier": 0.07098172996394242,
+     "nll": 0.25151258316636826,
+     "auroc": 0.763705166354071,
+     "aurc": 0.033488801023307826,
+     "eaurc": 0.029406741922361375,
+     "selacc_80": 0.9475,
+     "selacc_90": 0.94,
+     "selacc_95": 0.9312280701754386,
+     "ece_ci": [
+      0.006029290227948458,
+      0.026749359930997866
+     ],
+     "auroc_ci": [
+      0.7235409981020196,
+      0.802420973616609
+     ],
+     "aurc_ci": [
+      0.025077005662021905,
+      0.04207456923047107
+     ]
+    },
+    "intrinsic_raw": {
+     "ece": 0.017898207655626722,
+     "ece_mass": 0.018854380459541804,
+     "mce": 0.2809098948421119,
+     "brier": 0.04830999012636789,
+     "nll": 0.15149526948042558,
+     "auroc": 0.9539961828492225,
+     "aurc": 0.008280757179033746,
+     "eaurc": 0.0041986980780872925,
+     "selacc_80": 0.9941666666666666,
+     "selacc_90": 0.9622222222222222,
+     "selacc_95": 0.9438596491228071,
+     "ece_ci": [
+      0.013898658045475106,
+      0.03220328601441222
+     ],
+     "auroc_ci": [
+      0.942152331697348,
+      0.9651837465648332
+     ],
+     "aurc_ci": [
+      0.006242436234688278,
+      0.010628204703948289
+     ]
+    },
+    "intrinsic_ts": {
+     "ece": 0.022814686115968534,
+     "ece_mass": 0.018084742124733284,
+     "mce": 0.2460240435781765,
+     "brier": 0.04926346056324038,
+     "nll": 0.14842359864976049,
+     "auroc": 0.9537486730725864,
+     "aurc": 0.00829604897273451,
+     "eaurc": 0.004213989871788056,
+     "selacc_80": 0.9916666666666667,
+     "selacc_90": 0.9614814814814815,
+     "selacc_95": 0.9445614035087719,
+     "ece_ci": [
+      0.018650178387656726,
+      0.03684284689676774
+     ],
+     "auroc_ci": [
+      0.9422589633886271,
+      0.9647997736727527
+     ],
+     "aurc_ci": [
+      0.006222125545558815,
+      0.01069970094083933
+     ]
+    },
+    "stack": {
+     "ece": 0.013218400443461698,
+     "ece_mass": 0.007333074114524016,
+     "mce": 0.4485278527850766,
+     "brier": 0.021649513039514144,
+     "nll": 0.0702321319220232,
+     "auroc": 0.9908366380472028,
+     "aurc": 0.0048999295389101135,
+     "eaurc": 0.0008178704379636602,
+     "selacc_80": 1.0,
+     "selacc_90": 0.9874074074074074,
+     "selacc_95": 0.9578947368421052,
+     "ece_ci": [
+      0.010164899021840054,
+      0.02206085419595858
+     ],
+     "auroc_ci": [
+      0.9864837170129142,
+      0.9943107373779514
+     ],
+     "aurc_ci": [
+      0.0034921446066380406,
+      0.006625924229224293
+     ]
+    }
+   },
+   "paired_vs_verbal": {
+    "ece_primary_minus_verbal": {
+     "delta": -0.12647493145161587,
+     "ci": [
+      -0.14637821621580346,
+      -0.09871834663622431
+     ]
+    },
+    "auroc_primary_minus_verbal": {
+     "delta": 0.2600832732892948,
+     "ci": [
+      0.21578964381457125,
+      0.306277007646311
+     ]
+    },
+    "aurc_primary_minus_verbal": {
+     "delta": -0.03403201261651948,
+     "ci": [
+      -0.042780674062471845,
+      -0.025080020835260286
+     ]
+    }
+   },
+   "conformal": {
+    "lac_mondrian_0.1": {
+     "coverage": 0.9093333333333333,
+     "mean_size": 1.1026666666666667,
+     "singleton_rate": 0.8186666666666667,
+     "empty_rate": 0.04,
+     "acc_on_singletons": 0.9543973941368078,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.84,
+       "mean_size": 0.85,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 0.91,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 0.95,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 0.95,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.9,
+       "mean_size": 1.4,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 0.95,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.9,
+       "mean_size": 1.37,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.93,
+       "mean_size": 0.93,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 0.86,
+       "mean_size": 1.33,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.85,
+       "mean_size": 0.93,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.06,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 1.63,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 0.93,
+       "mean_size": 1.02,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 1.18,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.08,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      }
+     },
+     "all_classes_ok": true,
+     "q": [
+      0.0009713226077179282,
+      0.000280264014699827,
+      0.9975816007494127,
+      0.007013805114661764,
+      0.7671644493687543,
+      0.016463037880608433,
+      0.6960115987636811,
+      0.015053288434857093,
+      0.759193579688804,
+      0.0040036245414702964,
+      0.6129093256113474,
+      0.5551039574233236,
+      0.6895211366323197,
+      0.012927073745867657,
+      0.7810787062001527
+     ]
+    },
+    "lac_mondrian_0.05": {
+     "coverage": 0.954,
+     "mean_size": 1.2226666666666666,
+     "singleton_rate": 0.7753333333333333,
+     "empty_rate": 0.016,
+     "acc_on_singletons": 0.9819432502149613,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.89,
+       "mean_size": 0.92,
+       "tolerance": 0.05070230517441983,
+       "ok": false
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 0.95,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 0.99,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 1.09,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 1.55,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 0.99,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.93,
+       "mean_size": 1.57,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 0.95,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 0.93,
+       "mean_size": 1.53,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 1.06,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.24,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.87,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 0.97,
+       "mean_size": 1.14,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 1.19,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.3,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.0012516858505502437,
+      0.000379927601066421,
+      0.9989111317707041,
+      0.00972606239702234,
+      0.8239194461770213,
+      0.027494268581452097,
+      0.7708925315267873,
+      0.025864996259007955,
+      0.785269508275659,
+      0.04254124571526385,
+      0.7290923250947595,
+      0.6032235503342439,
+      0.7369981592578325,
+      0.012927073745867657,
+      0.7817123327127651
+     ]
+    },
+    "lac_mondrian_0.01": {
+     "coverage": 0.9933333333333333,
+     "mean_size": 1.4086666666666667,
+     "singleton_rate": 0.754,
+     "empty_rate": 0.0,
+     "acc_on_singletons": 1.0,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 1.04,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.06,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.15,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.97,
+       "mean_size": 1.7,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.8,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 1.01,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.16,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 1.11,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.35,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.76,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.23,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.25,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.51,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      }
+     },
+     "all_classes_ok": true,
+     "q": [
+      0.8914127060156108,
+      0.0016872676025675437,
+      0.9992292196662649,
+      0.05633823775142077,
+      0.9076550629165668,
+      0.07444161312055908,
+      0.9087313987228087,
+      0.40380600553565926,
+      0.8416006064625197,
+      0.8868631651612904,
+      0.7290923250947595,
+      0.7149242858035002,
+      0.7503990086678635,
+      0.38875022368307377,
+      0.8045553897041557
+     ]
+    },
+    "lac_marginal_0.1": {
+     "coverage": 0.9066666666666666,
+     "mean_size": 0.968,
+     "singleton_rate": 0.9493333333333334,
+     "empty_rate": 0.04133333333333333,
+     "acc_on_singletons": 0.9452247191011236,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 0.98,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.84,
+       "mean_size": 1.03,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.79,
+       "mean_size": 1.09,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 0.58,
+       "mean_size": 0.91,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.96,
+       "mean_size": 0.97,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.86,
+       "mean_size": 0.87,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 0.95,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 0.91,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 0.81,
+       "mean_size": 0.81,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906,
+      0.5606427445761906
+     ]
+    },
+    "lac_marginal_0.05": {
+     "coverage": 0.9486666666666667,
+     "mean_size": 1.1213333333333333,
+     "singleton_rate": 0.8773333333333333,
+     "empty_rate": 0.0006666666666666666,
+     "acc_on_singletons": 0.958966565349544,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.0,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.01,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.88,
+       "mean_size": 1.42,
+       "tolerance": 0.05070230517441983,
+       "ok": false
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.37,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.01,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 0.81,
+       "mean_size": 1.29,
+       "tolerance": 0.05070230517441983,
+       "ok": false
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.96,
+       "mean_size": 1.03,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.1,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.44,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 0.97,
+       "mean_size": 1.05,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 0.81,
+       "mean_size": 1.1,
+       "tolerance": 0.05070230517441983,
+       "ok": false
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898,
+      0.7400632610212898
+     ]
+    },
+    "lac_marginal_0.01": {
+     "coverage": 0.99,
+     "mean_size": 1.4033333333333333,
+     "singleton_rate": 0.7786666666666666,
+     "empty_rate": 0.0,
+     "acc_on_singletons": 0.9948630136986302,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 1.07,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.03,
+       "tolerance": 0.023147201774728628,
+       "ok": false
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.97,
+       "mean_size": 1.71,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.0,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 1.83,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.02,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.2,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 1.12,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.42,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.71,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.27,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.1,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 1.57,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668,
+      0.9076550629165668
+     ]
+    },
+    "aps_mondrian_0.1": {
+     "coverage": 0.9106666666666666,
+     "mean_size": 4.222,
+     "singleton_rate": 0.14866666666666667,
+     "empty_rate": 0.035333333333333335,
+     "acc_on_singletons": 0.8295964125560538,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 2.65,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.89,
+       "mean_size": 1.45,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.86,
+       "mean_size": 2.69,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 0.89,
+       "mean_size": 5.04,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 5.33,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 0.86,
+       "mean_size": 1.98,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.96,
+       "mean_size": 6.53,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.88,
+       "mean_size": 1.49,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 6.64,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 3.56,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.9,
+       "mean_size": 4.86,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 0.9,
+       "mean_size": 8.9,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 3.54,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 4.0,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 4.67,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      }
+     },
+     "all_classes_ok": true,
+     "q": [
+      0.9999688095867403,
+      0.9999862899215678,
+      0.9999629309020599,
+      0.9992841259186012,
+      0.9993780148772247,
+      0.9992524959570976,
+      0.9968402967666473,
+      0.9999453766765258,
+      0.9992728772657438,
+      0.9998414879623613,
+      0.9992671984171638,
+      0.9803217166899402,
+      0.9999726308788025,
+      0.9996019392931644,
+      0.9993516164546598
+     ]
+    },
+    "aps_mondrian_0.05": {
+     "coverage": 0.948,
+     "mean_size": 4.543333333333333,
+     "singleton_rate": 0.11933333333333333,
+     "empty_rate": 0.020666666666666667,
+     "acc_on_singletons": 0.9273743016759777,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.97,
+       "mean_size": 2.91,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 1.63,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.93,
+       "mean_size": 2.9,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 5.73,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 5.73,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 0.93,
+       "mean_size": 2.26,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 0.99,
+       "mean_size": 6.86,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 1.82,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 7.05,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 3.7,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.92,
+       "mean_size": 5.24,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 0.91,
+       "mean_size": 9.1,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 3.72,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 4.27,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 0.96,
+       "mean_size": 5.23,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      }
+     },
+     "all_classes_ok": true,
+     "q": [
+      0.999978323356094,
+      0.9999883310270236,
+      0.9999711460983988,
+      0.9993304535192561,
+      0.9997763161220482,
+      0.9994147498097684,
+      0.9985178643561199,
+      0.9999730315168072,
+      0.9994036755444254,
+      0.9999002850169275,
+      0.999402861704345,
+      0.9852686462879442,
+      0.9999726308788025,
+      0.9996019392931644,
+      0.9995676503381224
+     ]
+    },
+    "aps_mondrian_0.01": {
+     "coverage": 0.9953333333333333,
+     "mean_size": 5.18,
+     "singleton_rate": 0.072,
+     "empty_rate": 0.0,
+     "acc_on_singletons": 0.9722222222222222,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 3.52,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.19,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.97,
+       "mean_size": 3.17,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 5.93,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.57,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.8,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.5,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 2.24,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.86,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 4.55,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 0.98,
+       "mean_size": 6.01,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 9.67,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 4.96,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 5.3,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 5.43,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      }
+     },
+     "all_classes_ok": true,
+     "q": [
+      0.9999886351997221,
+      0.9999939930318774,
+      0.9999792677419327,
+      0.999440685043948,
+      0.9999045138405442,
+      0.9997007439915337,
+      0.9993374604845822,
+      0.999987568867233,
+      0.999644373532545,
+      0.999924106219746,
+      0.9995110978768333,
+      0.9984371104706455,
+      0.9999726308788025,
+      0.9996573982858324,
+      0.9998264493931193
+     ]
+    },
+    "aps_marginal_0.1": {
+     "coverage": 0.894,
+     "mean_size": 5.169333333333333,
+     "singleton_rate": 0.086,
+     "empty_rate": 0.106,
+     "acc_on_singletons": 1.0,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.87,
+       "mean_size": 2.73,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.43,
+       "mean_size": 1.21,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.61,
+       "mean_size": 1.57,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 5.8,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.7,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 3.29,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 8.3,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.82,
+       "mean_size": 2.84,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 8.57,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 3.99,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.38,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 10.71,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 0.68,
+       "mean_size": 4.3,
+       "tolerance": 0.06979143930311224,
+       "ok": false
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 4.89,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.26,
+       "tolerance": 0.06979143930311224,
+       "ok": true
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285,
+      0.9999333586296285
+     ]
+    },
+    "aps_marginal_0.05": {
+     "coverage": 0.9626666666666667,
+     "mean_size": 6.326,
+     "singleton_rate": 0.05533333333333333,
+     "empty_rate": 0.037333333333333336,
+     "acc_on_singletons": 1.0,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 4.32,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.6,
+       "mean_size": 2.34,
+       "tolerance": 0.05070230517441983,
+       "ok": false
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 0.94,
+       "mean_size": 2.99,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.99,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.97,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 3.97,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 9.54,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 0.95,
+       "mean_size": 3.81,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 9.53,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 5.58,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.33,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 11.35,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 5.5,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.32,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.35,
+       "tolerance": 0.05070230517441983,
+       "ok": true
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025,
+      0.9999726308788025
+     ]
+    },
+    "aps_marginal_0.01": {
+     "coverage": 0.992,
+     "mean_size": 7.1706666666666665,
+     "singleton_rate": 0.026,
+     "empty_rate": 0.008,
+     "acc_on_singletons": 1.0,
+     "per_class": {
+      "Normal": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 5.63,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_TCP": {
+       "n": 100,
+       "coverage": 0.88,
+       "mean_size": 3.52,
+       "tolerance": 0.023147201774728628,
+       "ok": false
+      },
+      "DDoS_UDP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 4.19,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_ICMP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.66,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "DDoS_HTTP": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 8.63,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "SQL_injection": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 4.51,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Password": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 10.48,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Vulnerability_scanner": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 4.48,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Uploading": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 10.13,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Backdoor": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.68,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Port_Scanning": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 8.02,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "XSS": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 11.78,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Ransomware": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 6.53,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "MITM": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.33,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      },
+      "Fingerprinting": {
+       "n": 100,
+       "coverage": 1.0,
+       "mean_size": 7.99,
+       "tolerance": 0.023147201774728628,
+       "ok": true
+      }
+     },
+     "all_classes_ok": false,
+     "q": [
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779,
+      0.9999857287063779
+     ]
+    }
+   },
+   "deferral": {
+    "baseline_verbal_floor_0.50": {
+     "floor": 0.5,
+     "catch_rate": 0.49624060150375937,
+     "deferral_rate": 0.17866666666666667,
+     "correct_deferred_per_error_caught": 3.0606060606060606
+    },
+    "primary_ranking_at_val_catch_0.406": {
+     "threshold_from_val": 0.1285290161676223,
+     "test_catch_rate": 0.40601503759398494,
+     "test_deferral_rate": 0.036,
+     "correct_deferred_per_error_caught": 0.0
+    },
+    "verbal_at_val_catch_0.406": {
+     "threshold_from_val": 0.318,
+     "test_catch_rate": 0.38345864661654133,
+     "test_deferral_rate": 0.10733333333333334,
+     "correct_deferred_per_error_caught": 2.156862745098039
+    }
+   }
+  }
+ }
+}

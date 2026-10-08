@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-06T20:10:11.122812+00:00",
+  "source_files_modified": false,
+  "sources": {
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_results_v3.jsonl": "dd8c8aa32b79d52cd52f94d9429686e3819527ee2d870e745d16882574dde61a",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_results_v2.jsonl": "a0f50b4ca5775dfd83d9e59ec153515290a65932cb8773a7a024f354497eec96",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\INTERVENTION_PROTOCOL_v2.json": "47a421ec04a238ab7ac06d4c006ffa525e4ac2008e610066ac11e9a6b05b727d",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\EXECUTION_CONTINUATION_v3.json": "bf22398860adc17055712454be6009c89279f4decdc5ee95e96e2f3757046fa1",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_payload_v2.json": "403dc082f55596bcae44784c6dabad53bb119488ffa2756e50129a7083594d83",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_payload_v3.json": "930b60ad13a259438e786455d9b7ff7a4a5d6d9ab51a23f475cda73042f48fd1",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_remote_v2.py": "e4a4a6ed9bcbe1e7da63d7485ed352f2f9a83bce0ef5cdce822dbc3c0bb64880",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_remote_v3.py": "d70f71e6b7a0797e2e767a3007dfb3631dd03e90a7aaec121816cf3daeb36527",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\continuation_input_event_ledger_v3.json": "844220d553203dea6b630276c75da88906e5acd58b6ed6d618cdb03e1b03bbc2",
+    "C:\\Users\\MJO\\Downloads\\New folder (8)\\review_revision\\pi_sensitivity_terminal_v3.json": "bb3fea0cc0c8ba194789ca9940d8620c298abaea019b6ecde34b29bc508bb897"
+  },
+  "outputs": [
+    {
+      "name": "pi_sensitivity_flow_analysis_v3.json",
+      "sha256": "dc4e8e3e810a4d84eb12c65e231b3cb6e89b9993136d665d621c52bbf320de0b",
+      "bytes": 61683
+    },
+    {
+      "name": "pi_sensitivity_intervention_analysis_v3.json",
+      "sha256": "53c96641a0f7405feb1283b2e9ece45a4bc18487094d183a36bdddf2f70513f2",
+      "bytes": 1994110
+    },
+    {
+      "name": "pi_sensitivity_analysis_v3.json",
+      "sha256": "c52b1d4317c924eb21de09ca057904f554a517b24a909c3207cb9f3b21e0e20a",
+      "bytes": 18229
+    }
+  ],
+  "analysis_script_sha256": "4e374eb13cab44d6322549a0c73f4165ba4edf7240c09c381afec432808df1b6"
+}

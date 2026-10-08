@@ -1,0 +1,15 @@
+import sys,json,time,platform,hashlib,statistics
+t0=time.perf_counter_ns()
+payload=json.loads(PAYLOAD_JSON)
+load_ns=time.perf_counter_ns()-t0
+records=payload['records'];profiles=payload['profiles'];modes=['confidence_floor','set_augmented']
+def once():
+    return [triage(r,p,m) for r in records for p in profiles for m in modes]
+for _ in range(5):once()
+times=[]
+for _ in range(30):
+    t=time.perf_counter_ns();results=once();times.append(time.perf_counter_ns()-t)
+data=json.dumps(results,separators=(',',':'),ensure_ascii=True).encode()
+count=len(results)
+sv=sorted(times);p95=sv[28]
+print(json.dumps({'hostname':platform.node(),'machine':platform.machine(),'system':platform.system(),'python':sys.version,'input_record_count':len(records),'decisions_per_batch':count,'warmup_batches':5,'timed_batches':30,'payload_sha256':hashlib.sha256(PAYLOAD_JSON.encode()).hexdigest(),'policy_core_sha256':CORE_SHA256,'semantic_output_sha256':hashlib.sha256(data).hexdigest(),'json_parse_ms':load_ns/1e6,'batch_ns':times,'median_batch_ms':statistics.median(times)/1e6,'p95_batch_ms':p95/1e6,'median_amortized_microseconds_per_decision':statistics.median(times)/count/1000,'p95_amortized_microseconds_per_decision':p95/count/1000,'cost_scope':'Resident-memory postprocessing only, including result-tuple/list creation; excludes model inference, attribution, source I/O, JSON parse, transport and operational actions.'},indent=2))

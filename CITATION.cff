@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this research evidence repository and identify the commit you used."
+type: dataset
+title: "SecEdge Model research evidence"
+version: "2026.10.08"
+authors:
+  - family-names: "Atrash"
+    given-names: "Amr Jamal"
+  - family-names: "Owda"
+    given-names: "Majdi"
+  - family-names: "Owda"
+    given-names: "Amani Yousef"
+url: "https://github.com/AmrAAUP/SecEdge_Model"
+repository-code: "https://github.com/AmrAAUP/SecEdge_Model"
+abstract: "Registration records, original study outputs and revision-stage Raspberry Pi evidence accompanying Explainable Intrusion Detection with Language Models on GPU-Free Edge Devices."
+keywords:
+  - intrusion detection
+  - explainable artificial intelligence
+  - calibration
+  - Raspberry Pi
